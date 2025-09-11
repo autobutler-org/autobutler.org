@@ -2,23 +2,16 @@
   <div class="landing-page">
     <div class="gradient-overlay" />
     <div class="hero-section">
-      <h1>The New Era of Digital Independence Starts With You.</h1>
-      <p class="subtitle">Own your data. Control your future.</p>
+      <h1>Why would I need this?</h1>
+      <p class="subtitle">
+        Here's a few scenarios where AutoButler might be for you.
+      </p>
     </div>
 
     <div class="content-wrapper">
       <div class="manifesto-section">
-        <h2>The internet used to be about you.</h2>
-        <p>
-          The internet used to be a platform that we used, but increasingly has
-          become a data-mining platform for tech companies. Our plug-and-play
-          product seeks to restore control to consumers, storing your data in a
-          physical device in your home.
-        </p>
-        <p>
-          The future is about the people of the internet, not the corporations.
-          We stand for digital sovereignty.
-        </p>
+        <h2>You have kids.</h2>
+        <p></p>
       </div>
 
       <div class="cta-section">
@@ -39,6 +32,44 @@
           yours.
         </p>
         <NuxtLink to="/about" class="btn primary">Get Started</NuxtLink>
+      </div>
+
+      <div class="manifesto-section">
+        <h2>You have kids.</h2>
+        <p>
+          Did you know that if you post a picture of your kid on Facebook, Meta
+          starts creating a "shadow profile"? This is so that when that kid gets
+          a Facebook account, Meta has background info to immediately start
+          targeting that kid with ads. They also will use any public photo you
+          post for AI training data. Google and Apple both use stored photos in
+          their storage systems for AI training.
+        </p>
+      </div>
+
+      <div class="manifesto-section">
+        <h2>You don't like paying for things you own already.</h2>
+        <p>
+          Remember twenty years ago when buying a movie, music album, or video
+          game meant.. you just owned it? Then iTunes came along and instead of
+          selling us songs, they sold us licenses to listen to songs on our
+          iPods. Microsoft eventually followed suit, and now if you want to use
+          Microsoft Word, you have to buy it again every year. Our document
+          editor and spreadsheets software are yours - you own that version,
+          forever. Only pay for updates when you want them. It's more like
+          owning the plumbing in your house than a Spotify subscription to your
+          own data.
+        </p>
+      </div>
+
+      <div class="manifesto-section">
+        <h2>You believe there's a war for privacy worth fighting.</h2>
+        <p>
+          So much of this war seems lost - we gave Big Tech our data for free,
+          while we recieved convenience. But we don't believe you have to make
+          that into a binary decision - you can protect your data, and still
+          have the convenience of automatically backing up your photos and
+          memories.
+        </p>
       </div>
     </div>
   </div>
