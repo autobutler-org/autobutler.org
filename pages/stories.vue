@@ -9,30 +9,6 @@
     </div>
 
     <div class="content-wrapper">
-      <div class="manifesto-section">
-        <h2>You have kids.</h2>
-        <p></p>
-      </div>
-
-      <div class="cta-section">
-        <p class="highlight">
-          What if your online services worked more like plumbers than
-          subscriptions?
-        </p>
-        <p class="subtitle">
-          Instead of renting your device and storage, you own your own private
-          cloud. Pay for fixes or upgrades... or do them yourself. It's yours to
-          manage as you please.
-        </p>
-        <p class="subtitle">
-          Document editing, file storage, calendar, photos, and an optional
-          assistant to help organize. All your files are stored in your home in
-          a fireproof, waterproof container. Add or remove external hard drives
-          if you want. Mail a backup to your grandma if you feel like it. It's
-          yours.
-        </p>
-        <NuxtLink to="/about" class="btn primary">Get Started</NuxtLink>
-      </div>
 
       <div class="manifesto-section">
         <h2>You have kids.</h2>
