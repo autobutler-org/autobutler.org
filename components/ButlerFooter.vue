@@ -19,6 +19,7 @@
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
         <a href="/contact">Contact</a>
+        <a href="https://github.com/autobutler-org/autobutler">Github</a>
       </div>
     </div>
   </footer>
