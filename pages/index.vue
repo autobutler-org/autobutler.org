@@ -34,9 +34,9 @@
           manage as you please.
         </p>
         <p class="subtitle">
-          Document editing, file storage, calendar, photos, and an optional
-          assistant to help organize. All your files are stored in your home in
-          a fireproof, waterproof container. Add or remove external hard drives
+          Document editing, file storage, calendar, photos, VPN, and more.
+          All your files are stored in your home in a fireproof, waterproof container. 
+          Add or remove external hard drives
           if you want. Mail a backup to your grandma if you feel like it. It's
           yours.
         </p>
