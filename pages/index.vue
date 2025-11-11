@@ -11,7 +11,7 @@
         <h2>The internet used to be about you.</h2>
         <p>
           The internet used to be a platform that we used, but increasingly has
-          become a data-mining platform for tech companies. Our plug-and-play
+          become a data-mining platform for tech companies. Our plug-and-play, no-subscription, no-AI
           product seeks to restore control to consumers, storing your data in a
           physical device in your home.
         </p>
@@ -19,6 +19,8 @@
           The future is about the people of the internet, not the corporations.
           We stand for digital sovereignty.
         </p>
+        <br>
+        <a href="https://github.com/autobutler-org/autobutler">Completely open source.</a>
       </div>
 
       <div class="cta-section">
