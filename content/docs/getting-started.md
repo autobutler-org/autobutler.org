@@ -20,7 +20,7 @@ Before you begin, make sure you have the following:
 ## Quick Installation
 
 To install autobutler, you simply need to download the binary for your hardware from
-[our releases page](https://github.com/autobutler-ai/autobutler.ai/releases).
+[our releases page](https://github.com/autobutler-org/autobutler.org/releases).
 
 Once downloaded, you can extract the binary and run the `install` command with your
 API key, and `sudo` privileges.
@@ -37,7 +37,7 @@ API_KEY="your-api-key"
 OS="$(uname -s)"
 ARCH="$(uname -m)"
 curl --fail -L \
-  "https://github.com/exokomodo/autobutler.ai/releases/latest/download/autobutler_${OS}_${ARCH}.tar.gz" | tar -xvz
+  "https://github.com/exokomodo/autobutler.org/releases/latest/download/autobutler_${OS}_${ARCH}.tar.gz" | tar -xvz
 sudo ./autobutler install "${API_KEY}"
 ```
 
@@ -48,7 +48,7 @@ API_KEY="your-api-key"
 OS="$(uname -s)"
 ARCH="$(uname -m)"
 wget -qO- \
-  "https://github.com/exokomodo/autobutler.ai/releases/latest/download/autobutler_${OS}_${ARCH}.tar.gz" | tar -xvz
+  "https://github.com/exokomodo/autobutler.org/releases/latest/download/autobutler_${OS}_${ARCH}.tar.gz" | tar -xvz
 sudo ./autobutler install "${API_KEY}"
 ```
 

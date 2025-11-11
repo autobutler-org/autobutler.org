@@ -97,7 +97,7 @@
           If you have any questions about privacy or how we handle information, email us at [your-email]. 
           We're happy to explain anything that's unclear.
           <br>
-          If you have ideas for how we can improve, you can also write us to-do items at our <a href="https://github.com/autobutler-ai/autobutler.ai/issues/new/choose" target="_blank">GitHub repository</a>.
+          If you have ideas for how we can improve, you can also write us to-do items at our <a href="https://github.com/autobutler-org/autobutler.org/issues/new/choose" target="_blank">GitHub repository</a>.
         </p>
       </div>
 

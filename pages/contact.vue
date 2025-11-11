@@ -7,7 +7,7 @@
           <h2>Get in Touch</h2>
           <p>Have questions or need assistance? We're here to help!</p>
           <div class="contact-details">
-            <p><strong>Email:</strong> support@autobutler.ai</p>
+            <p><strong>Email:</strong> support@autobutler.org</p>
             <p>
               <strong>Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM EST
             </p>
