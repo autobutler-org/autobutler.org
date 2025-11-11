@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "autobutler-ai-ui",
+      "name": "autobutler-org-ui",
       "dependencies": {
         "@nuxt/content": "^3.5.1",
         "better-sqlite3": "^12.2.0",

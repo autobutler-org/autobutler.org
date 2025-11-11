@@ -1,4 +1,4 @@
-# [`autobutler.ai`](https://autobutler.ai)
+# [`autobutler.org`](https://autobutler.org)
 
 ## Bun
 

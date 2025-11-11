@@ -16,7 +16,7 @@ Get assistance with AutoButler - troubleshooting, support tickets, and community
 
 Make sure you are using the correct installer for your operating system.
 
-You can download the installer from the [AutoButler website](https://autobutler.ai/docs/getting-started).
+You can download the installer from the [AutoButler website](https://autobutler.org/docs/getting-started).
 
 ## I'm getting an error when I try to run AutoButler
 
@@ -32,4 +32,4 @@ Join our [Slack workspace](https://join.slack.com/t/autobutlerworld/shared_invit
 
 ## AutoButler GitHub
 
-Check out our [GitHub repository](https://github.com/autobutler-ai/autobutler.ai) to see the latest updates and report issues.
+Check out our [GitHub repository](https://github.com/autobutler-org/autobutler.org) to see the latest updates and report issues.

@@ -26,7 +26,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          repository: autobutler-ai/autobutler
+          repository: autobutler-org/autobutler
           ref: ${{ inputs.tag }}
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Run GoReleaser
