@@ -2,8 +2,8 @@
   <div class="landing-page">
     <div class="gradient-overlay" />
     <div class="hero-section">
-      <h1>The New Era of Digital Independence Starts With You.</h1>
-      <p class="subtitle">Own your data. Control your future.</p>
+      <h1>Data Sovereignty For Everyone.</h1>
+      <p class="subtitle">Your data should be yours to control.</p>
     </div>
 
     <div class="content-wrapper">
@@ -19,15 +19,16 @@
           The future is about the people of the internet, not the corporations.
           We stand for digital sovereignty.
         </p>
-        <br>
-        <a href="https://github.com/autobutler-org/autobutler">Completely open source.</a>
+        <hr class="divider">
+        <p>No venture capital involved - completely funded by normal people, like you.</p>
+        <a href="https://github.com/autobutler-org/autobutler">Completely open-source for transparency.</a>
+        <p>We show all of our code where anyone can look at it.</p>
       </div>
 
       <div class="cta-section">
-        <p class="highlight">
-          What if your online services worked more like plumbers than
-          subscriptions?
-        </p>
+        <h2 class="highlight">
+          The cloud, in your home.
+        </h2>
         <p class="subtitle">
           Instead of renting your device and storage, you own your own private
           cloud. Pay for fixes or upgrades... or do them yourself. It's yours to
@@ -66,10 +67,14 @@
 
 .hero-section {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 12rem 2rem 8rem;
   max-width: 800px;
   margin: 0 auto;
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .content-wrapper {
@@ -79,7 +84,8 @@
 }
 
 .hero-section h1 {
-  font-size: 3.5rem;
+  font-family: var(--font-hero);
+  font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
@@ -158,11 +164,32 @@
 }
 
 .manifesto-section h2 {
-  font-size: 2.5rem;
+  font-family: var(--font-hero);
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.manifesto-section a {
+  font-family: var(--font-hero);
+  color: rgba(0, 187, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.manifesto-section a:hover {
+  color: rgba(0, 255, 170, 0.9);
+  text-decoration: underline;
+}
+
+.divider {
+  width: 80%;
+  margin: 2rem auto;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .cta-section {
@@ -173,6 +200,7 @@
 }
 
 .highlight {
+  font-family: var(--font-hero);
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -218,7 +246,8 @@
 
 @media (max-width: 768px) {
   .hero-section h1 {
-    font-size: 2.5rem;
+    font-family: var(--font-hero);
+    font-size: 2rem;
   }
 
   .subtitle {

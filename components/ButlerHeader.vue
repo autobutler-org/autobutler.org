@@ -8,9 +8,19 @@
 
       <!-- Desktop Navigation -->
       <nav class="header-links desktop-nav">
-        <NuxtLink to="/docs">Documentation</NuxtLink>
+        <div class="dropdown" @mouseenter="isProductDropdownOpen = true" @mouseleave="isProductDropdownOpen = false">
+          <button class="dropdown-button">
+            Product
+          </button>
+          <div class="dropdown-menu" :class="{ open: isProductDropdownOpen }">
+            <NuxtLink to="/docs" class="dropdown-item">Documentation</NuxtLink>
+            <NuxtLink to="/support" class="dropdown-item">Support</NuxtLink>
+            <NuxtLink to="/community" class="dropdown-item">Community</NuxtLink>
+          </div>
+        </div>
+        <NuxtLink to="/about">About</NuxtLink>
         <a href="https://n0epk0-rt.myshopify.com/" target="_blank">Purchase</a>
-        <NuxtLink to="/login" class="login-link">Login</NuxtLink>
+        <!-- <NuxtLink to="/login" class="login-link">Login</NuxtLink> -->
       </nav>
 
       <!-- Mobile Hamburger Button -->
@@ -38,7 +48,17 @@
         </button>
       </div>
       <nav class="mobile-nav-content">
-        <NuxtLink to="/docs" @click="closeMobileMenu">Documentation</NuxtLink>
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-button" @click="toggleProductDropdown">
+            Product
+          </button>
+          <div class="mobile-dropdown-items" :class="{ open: isProductDropdownOpenMobile }">
+            <NuxtLink to="/docs" @click="closeMobileMenu">Documentation</NuxtLink>
+            <NuxtLink to="/support" @click="closeMobileMenu">Support</NuxtLink>
+            <NuxtLink to="/community" @click="closeMobileMenu">Community</NuxtLink>
+          </div>
+        </div>
+        <NuxtLink to="/about" @click="closeMobileMenu">About</NuxtLink>
         <a href="https://n0epk0-rt.myshopify.com/" @click="closeMobileMenu">Purchase</a>
         <NuxtLink to="/login" class="mobile-login-link" @click="closeMobileMenu"
           >Login</NuxtLink
@@ -59,13 +79,21 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 const isMobileMenuOpen = ref(false);
+const isProductDropdownOpen = ref(false);
+const isProductDropdownOpenMobile = ref(false);
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
+  isProductDropdownOpenMobile.value = false;
+};
+
+const toggleProductDropdown = () => {
+  isProductDropdownOpenMobile.value = !isProductDropdownOpenMobile.value;
 };
 
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false;
+  isProductDropdownOpenMobile.value = false;
 };
 
 // Close mobile menu when clicking outside or on escape key
@@ -125,6 +153,7 @@ onMounted(() => {
 }
 
 .logo-link {
+  font-family: var(--font-hero);
   color: rgba(255, 255, 255, 0.95);
   text-decoration: none;
   font-size: 1.5rem;
@@ -161,6 +190,130 @@ onMounted(() => {
     rgba(0, 187, 255, 0.1)
   );
 }
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+
+.dropdown-button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdown-button:hover {
+  color: #fff;
+  border-color: rgba(0, 255, 170, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 170, 0.1),
+    rgba(0, 187, 255, 0.1)
+  );
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(28, 32, 34, 0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.3s ease;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.dropdown-item:first-child {
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.dropdown-item:last-child {
+  border-radius: 0 0 8px 8px !important;
+}
+
+.dropdown-item:hover {
+  color: #fff !important;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 170, 0.15),
+    rgba(0, 187, 255, 0.15)
+  ) !important;
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-dropdown-button {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-dropdown-button:hover {
+  color: #fff;
+  padding-left: 0.5rem;
+}
+
+.mobile-dropdown-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 1rem;
+}
+
+.mobile-dropdown-items.open {
+  max-height: 300px;
+}
+
+.mobile-dropdown-items a {
+  font-size: 1rem;
+  border: none !important;
+  padding: 0.75rem 0 !important;
+}
+
 
 .login-link {
   border: 1px solid rgba(255, 255, 255, 0.15);
