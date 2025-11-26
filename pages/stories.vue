@@ -9,7 +9,6 @@
     </div>
 
     <div class="content-wrapper">
-
       <div class="manifesto-section">
         <h2>You have kids.</h2>
         <p>

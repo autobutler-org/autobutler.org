@@ -3,9 +3,9 @@
     <div class="gradient-overlay" />
     <div class="card">
       <h1>About Us</h1>
-      <img 
-        src="/assets/images/brandon-james-atlanta.jpeg" 
-        alt="Brandon and James in Atlanta" 
+      <img
+        src="/assets/images/brandon-james-atlanta.jpeg"
+        alt="Brandon and James in Atlanta"
         class="about-image"
       />
       <p>

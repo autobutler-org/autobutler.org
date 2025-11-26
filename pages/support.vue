@@ -1,65 +1,67 @@
 <script setup lang="ts">
 const formData = ref({
-  title: '',
+  title: "",
   component: [] as string[],
-  whatHappened: '',
+  whatHappened: "",
   browsers: [] as string[],
-  url: '',
-  logs: ''
-})
+  url: "",
+  logs: "",
+});
 
 const componentOptions = [
-  'N/A',
-  'Calendar',
-  'Photos',
-  'Docs',
-  'Books',
-  'Cirrus (Drive)',
-  'General UI',
-  'Backend'
-]
+  "N/A",
+  "Calendar",
+  "Photos",
+  "Docs",
+  "Books",
+  "Cirrus (Drive)",
+  "General UI",
+  "Backend",
+];
 
 const browserOptions = [
-  'Firefox',
-  'Chrome',
-  'Safari',
-  'Microsoft Edge',
-  'Other'
-]
+  "Firefox",
+  "Chrome",
+  "Safari",
+  "Microsoft Edge",
+  "Other",
+];
 
 const submitToGitHub = () => {
   // Build the GitHub issue URL with query parameters
-  const baseUrl = 'https://github.com/autobutler-org/autobutler/issues/new'
-  const params = new URLSearchParams()
-  
-  params.append('template', 'bug.yaml')
-  params.append('title', `[Bug] ${formData.value.title}`)
-  
+  const baseUrl = "https://github.com/autobutler-org/autobutler/issues/new";
+  const params = new URLSearchParams();
+
+  params.append("template", "bug.yaml");
+  params.append("title", `[Bug] ${formData.value.title}`);
+
   if (formData.value.whatHappened) {
-    params.append('what-happened', formData.value.whatHappened)
+    params.append("what-happened", formData.value.whatHappened);
   }
-  
+
   if (formData.value.url) {
-    params.append('url', formData.value.url)
+    params.append("url", formData.value.url);
   }
-  
+
   if (formData.value.logs) {
-    params.append('logs', formData.value.logs)
+    params.append("logs", formData.value.logs);
   }
-  
+
   // Open GitHub in a new tab with pre-filled data
-  const issueUrl = `${baseUrl}?${params.toString()}`
-  window.open(issueUrl, '_blank')
-}
+  const issueUrl = `${baseUrl}?${params.toString()}`;
+  window.open(issueUrl, "_blank");
+};
 </script>
 
 <template>
   <PageContainer>
     <div class="support-page">
       <h1>Support</h1>
-      <p class="intro">Found a bug? Report it directly to our GitHub issue tracker.</p>
-      
-      <form @submit.prevent="submitToGitHub" class="bug-report-form">
+      <p class="intro">
+        Found a bug? Report it directly to our GitHub issue tracker.
+      </p>
+
+      <form class="bug-report-form" @submit.prevent="submitToGitHub">
         <div class="form-group">
           <label for="title">Bug Title *</label>
           <input
@@ -74,7 +76,11 @@ const submitToGitHub = () => {
         <div class="form-group">
           <label for="component">Component(s) Affected</label>
           <div class="checkbox-group">
-            <label v-for="option in componentOptions" :key="option" class="checkbox-label">
+            <label
+              v-for="option in componentOptions"
+              :key="option"
+              class="checkbox-label"
+            >
               <input
                 v-model="formData.component"
                 type="checkbox"
@@ -99,7 +105,11 @@ const submitToGitHub = () => {
         <div class="form-group">
           <label for="browsers">Browser(s)</label>
           <div class="checkbox-group">
-            <label v-for="browser in browserOptions" :key="browser" class="checkbox-label">
+            <label
+              v-for="browser in browserOptions"
+              :key="browser"
+              class="checkbox-label"
+            >
               <input
                 v-model="formData.browsers"
                 type="checkbox"
@@ -130,9 +140,7 @@ const submitToGitHub = () => {
           ></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">
-          Open GitHub Issue
-        </button>
+        <button type="submit" class="submit-btn">Open GitHub Issue</button>
       </form>
     </div>
   </PageContainer>

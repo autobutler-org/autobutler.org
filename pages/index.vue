@@ -11,35 +11,37 @@
         <h2>The internet used to be about you.</h2>
         <p>
           The internet used to be a platform that we used, but increasingly has
-          become a data-mining platform for tech companies. Our plug-and-play, no-subscription, no-AI
-          product seeks to restore control to consumers, storing your data in a
-          physical device in your home.
+          become a data-mining platform for tech companies. Our plug-and-play,
+          no-subscription, no-AI product seeks to restore control to consumers,
+          storing your data in a physical device in your home.
         </p>
         <p>
           The future is about the people of the internet, not the corporations.
           We stand for digital sovereignty.
         </p>
-        <hr class="divider">
-        <p>No venture capital involved - completely funded by normal people, like you.</p>
-        <a href="https://github.com/autobutler-org/autobutler">Completely open-source for transparency.</a>
+        <hr class="divider" />
+        <p>
+          No venture capital involved - completely funded by normal people, like
+          you.
+        </p>
+        <a href="https://github.com/autobutler-org/autobutler"
+          >Completely open-source for transparency.</a
+        >
         <p>We show all of our code where anyone can look at it.</p>
       </div>
 
       <div class="cta-section">
-        <h2 class="highlight">
-          The cloud, in your home.
-        </h2>
+        <h2 class="highlight">The cloud, in your home.</h2>
         <p class="subtitle">
           Instead of renting your device and storage, you own your own private
           cloud. Pay for fixes or upgrades... or do them yourself. It's yours to
           manage as you please.
         </p>
         <p class="subtitle">
-          Document editing, file storage, calendar, photos, VPN, and more.
-          All your files are stored in your home in a fireproof, waterproof container. 
-          Add or remove external hard drives
-          if you want. Mail a backup to your grandma if you feel like it. It's
-          yours.
+          Document editing, file storage, calendar, photos, VPN, and more. All
+          your files are stored in your home in a fireproof, waterproof
+          container. Add or remove external hard drives if you want. Mail a
+          backup to your grandma if you feel like it. It's yours.
         </p>
         <NuxtLink to="/about" class="btn primary">Get Started</NuxtLink>
       </div>

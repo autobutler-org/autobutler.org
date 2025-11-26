@@ -2,7 +2,11 @@
   <PageContainer>
     <div class="community-page">
       <h1>Community</h1>
-      <p>Join the AutoButler movement! Slack community coming soon, and you can get our attention or help by visiting our <a href="https://www.reddit.com/r/autobutler/">Reddit community</a>.</p>
+      <p>
+        Join the AutoButler movement! Slack community coming soon, and you can
+        get our attention or help by visiting our
+        <a href="https://www.reddit.com/r/autobutler/">Reddit community</a>.
+      </p>
     </div>
   </PageContainer>
 </template>

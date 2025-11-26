@@ -8,10 +8,12 @@
 
       <!-- Desktop Navigation -->
       <nav class="header-links desktop-nav">
-        <div class="dropdown" @mouseenter="isProductDropdownOpen = true" @mouseleave="isProductDropdownOpen = false">
-          <button class="dropdown-button">
-            Product
-          </button>
+        <div
+          class="dropdown"
+          @mouseenter="isProductDropdownOpen = true"
+          @mouseleave="isProductDropdownOpen = false"
+        >
+          <button class="dropdown-button">Product</button>
           <div class="dropdown-menu" :class="{ open: isProductDropdownOpen }">
             <NuxtLink to="/docs" class="dropdown-item">Documentation</NuxtLink>
             <NuxtLink to="/support" class="dropdown-item">Support</NuxtLink>
@@ -52,14 +54,23 @@
           <button class="mobile-dropdown-button" @click="toggleProductDropdown">
             Product
           </button>
-          <div class="mobile-dropdown-items" :class="{ open: isProductDropdownOpenMobile }">
-            <NuxtLink to="/docs" @click="closeMobileMenu">Documentation</NuxtLink>
+          <div
+            class="mobile-dropdown-items"
+            :class="{ open: isProductDropdownOpenMobile }"
+          >
+            <NuxtLink to="/docs" @click="closeMobileMenu"
+              >Documentation</NuxtLink
+            >
             <NuxtLink to="/support" @click="closeMobileMenu">Support</NuxtLink>
-            <NuxtLink to="/community" @click="closeMobileMenu">Community</NuxtLink>
+            <NuxtLink to="/community" @click="closeMobileMenu"
+              >Community</NuxtLink
+            >
           </div>
         </div>
         <NuxtLink to="/about" @click="closeMobileMenu">About</NuxtLink>
-        <a href="https://n0epk0-rt.myshopify.com/" @click="closeMobileMenu">Purchase</a>
+        <a href="https://n0epk0-rt.myshopify.com/" @click="closeMobileMenu"
+          >Purchase</a
+        >
         <NuxtLink to="/login" class="mobile-login-link" @click="closeMobileMenu"
           >Login</NuxtLink
         >
@@ -196,7 +207,6 @@ onMounted(() => {
   position: relative;
 }
 
-
 .dropdown-button {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -313,7 +323,6 @@ onMounted(() => {
   border: none !important;
   padding: 0.75rem 0 !important;
 }
-
 
 .login-link {
   border: 1px solid rgba(255, 255, 255, 0.15);

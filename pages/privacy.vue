@@ -2,7 +2,7 @@
   <main class="privacy-page">
     <div class="privacy-content">
       <h1>Privacy Policy</h1>
-      
+
       <div class="section">
         <p class="last-updated">Last Updated: July 5, 2025</p>
       </div>
@@ -10,8 +10,9 @@
       <div class="section">
         <h2>We Don't Want Your Data</h2>
         <p>
-          Here's the thing: we really don't want to collect your personal information. 
-          We built this service to be useful without needing to know who you are or track what you do.
+          Here's the thing: we really don't want to collect your personal
+          information. We built this service to be useful without needing to
+          know who you are or track what you do.
         </p>
       </div>
 
@@ -19,7 +20,10 @@
         <h2>What We Don't Collect</h2>
         <p>We don't collect:</p>
         <ul>
-          <li>Your name, email, or contact information (unless you specifically give it to us)</li>
+          <li>
+            Your name, email, or contact information (unless you specifically
+            give it to us)
+          </li>
           <li>Your location or personal details</li>
           <li>Your browsing history or behavior patterns</li>
           <li>Any information we don't absolutely need</li>
@@ -28,30 +32,37 @@
 
       <div class="section">
         <h2>What We Do Collect (And Why)</h2>
-        <p>The only information we gather is what's necessary to keep things running:</p>
-        
+        <p>
+          The only information we gather is what's necessary to keep things
+          running:
+        </p>
+
         <div class="subsection">
           <h3>Basic Technical Stuff</h3>
           <p>
-            When you visit our site, our servers automatically see your IP address and what browser you're using. 
-            This is just how the internet works - we can't avoid it. But we don't store this information or use it to track you.
+            When you visit our site, our servers automatically see your IP
+            address and what browser you're using. This is just how the internet
+            works - we can't avoid it. But we don't store this information or
+            use it to track you.
           </p>
         </div>
 
         <div class="subsection">
           <h3>If You Contact Us</h3>
           <p>
-            If you reach out to us with a question or problem, we'll have whatever information you choose to share. 
-            We use this only to help you and then we delete it.
+            If you reach out to us with a question or problem, we'll have
+            whatever information you choose to share. We use this only to help
+            you and then we delete it.
           </p>
         </div>
 
         <div class="subsection">
           <h3>Cookies (The Bare Minimum)</h3>
           <p>
-            We use a few cookies to remember your preferences so the site works better for you. 
-            These don't track you across other websites. You can turn them off in your browser if you want.
-            Otherwise, the only cookies we like are chocolate chip.
+            We use a few cookies to remember your preferences so the site works
+            better for you. These don't track you across other websites. You can
+            turn them off in your browser if you want. Otherwise, the only
+            cookies we like are chocolate chip.
           </p>
         </div>
       </div>
@@ -64,46 +75,59 @@
           <li>Fix problems when they come up</li>
           <li>Respond if you contact us for help</li>
         </ul>
-        <p>That's it. We don't analyze it, sell it, or share it with anyone else.</p>
+        <p>
+          That's it. We don't analyze it, sell it, or share it with anyone else.
+        </p>
       </div>
 
       <div class="section">
         <h2>Third Parties</h2>
         <p>
-          We don't share your information with other companies, advertisers, or data brokers. 
-          If we ever need to use a service provider (like hosting), we make sure they follow the same privacy-first approach.
+          We don't share your information with other companies, advertisers, or
+          data brokers. If we ever need to use a service provider (like
+          hosting), we make sure they follow the same privacy-first approach.
         </p>
       </div>
 
       <div class="section">
         <h2>Your Control</h2>
         <p>
-          Since we're not collecting much to begin with, there's not much you need to worry about. 
-          But if you want to know what (if any) information we have about you, or if you want us to delete it, just ask.
+          Since we're not collecting much to begin with, there's not much you
+          need to worry about. But if you want to know what (if any) information
+          we have about you, or if you want us to delete it, just ask.
         </p>
       </div>
 
       <div class="section">
         <h2>Changes</h2>
         <p>
-          If we ever need to change how we handle privacy, we'll update this page and let you know. 
-          We won't start collecting more data without being upfront about it.
+          If we ever need to change how we handle privacy, we'll update this
+          page and let you know. We won't start collecting more data without
+          being upfront about it.
         </p>
       </div>
 
       <div class="section">
         <h2>Questions?</h2>
         <p>
-          If you have any questions about privacy or how we handle information, email us at [your-email]. 
-          We're happy to explain anything that's unclear.
-          <br>
-          If you have ideas for how we can improve, you can also write us to-do items at our <a href="https://github.com/autobutler-org/autobutler.org/issues/new/choose" target="_blank">GitHub repository</a>.
+          If you have any questions about privacy or how we handle information,
+          email us at [your-email]. We're happy to explain anything that's
+          unclear.
+          <br />
+          If you have ideas for how we can improve, you can also write us to-do
+          items at our
+          <a
+            href="https://github.com/autobutler-org/autobutler.org/issues/new/choose"
+            target="_blank"
+            >GitHub repository</a
+          >.
         </p>
       </div>
 
       <div class="section bottom-line">
         <p class="emphasis">
-          The bottom line: We built this to work without invading your privacy. Your business is your business.
+          The bottom line: We built this to work without invading your privacy.
+          Your business is your business.
         </p>
       </div>
     </div>
