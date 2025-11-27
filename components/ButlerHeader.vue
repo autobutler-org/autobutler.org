@@ -15,7 +15,7 @@
         >
           <button class="dropdown-button">Product</button>
           <div class="dropdown-menu" :class="{ open: isProductDropdownOpen }">
-            <NuxtLink to="/docs" class="dropdown-item">Documentation</NuxtLink>
+            <NuxtLink to="/docs" class="dropdown-item">How It Works</NuxtLink>
             <NuxtLink to="/support" class="dropdown-item">Support</NuxtLink>
             <NuxtLink to="/community" class="dropdown-item">Community</NuxtLink>
           </div>
@@ -51,7 +51,11 @@
       </div>
       <nav class="mobile-nav-content">
         <div class="mobile-dropdown">
-          <button class="mobile-dropdown-button" @click="toggleProductDropdown">
+          <button 
+            class="mobile-dropdown-button" 
+            :class="{ active: isProductDropdownOpenMobile }"
+            @click="toggleProductDropdown"
+          >
             Product
           </button>
           <div
@@ -59,7 +63,7 @@
             :class="{ open: isProductDropdownOpenMobile }"
           >
             <NuxtLink to="/docs" @click="closeMobileMenu"
-              >Documentation</NuxtLink
+              >How It Works</NuxtLink
             >
             <NuxtLink to="/support" @click="closeMobileMenu">Support</NuxtLink>
             <NuxtLink to="/community" @click="closeMobileMenu"
@@ -300,6 +304,18 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+.mobile-dropdown-button::after {
+  content: "▼";
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mobile-dropdown-button.active::after {
+  transform: rotate(180deg);
 }
 
 .mobile-dropdown-button:hover {
@@ -308,20 +324,40 @@ onMounted(() => {
 }
 
 .mobile-dropdown-items {
+  display: flex;
+  flex-direction: column;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding-left: 1rem;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
 }
 
 .mobile-dropdown-items.open {
   max-height: 300px;
+  opacity: 1;
 }
 
 .mobile-dropdown-items a {
+  display: block;
   font-size: 1rem;
   border: none !important;
-  padding: 0.75rem 0 !important;
+  padding: 0.75rem 1rem !important;
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.mobile-dropdown-items a:last-child {
+  border-bottom: none !important;
+}
+
+.mobile-dropdown-items a:hover {
+  background: rgba(0, 255, 170, 0.1) !important;
+  color: #fff !important;
+  padding-left: 1.5rem !important;
 }
 
 .login-link {
