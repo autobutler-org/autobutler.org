@@ -47,7 +47,14 @@
 
 @media (max-width: 768px) {
   .page-wrapper {
-    padding: 1rem;
+    padding: 0;
+  }
+  
+  .content-card {
+    padding: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 }
 </style>

@@ -1,20 +1,17 @@
 ---
-title: Getting Started
-description: Get up and running quickly with AutoButler
+title: Nerd Notes
+description: A Discussion about the Butler's Guts
 navigation:
-  title: Getting Started
-  order: 2
+  title: Nerd Notes
+  order: 4
 ---
 
-# Getting Started
+# Nerd Notes
 
-This guide will help you get up and running quickly with your new device. Or, if you're a nerd like us, you can install the Autobutler software on whatever Unix-based device you'd like. 
-
-
+This page is an overview of our technical spec - it is essentially a duplicate of our 
 
 
-
-## Quick Installation
+## Quick Installation - Local Hardware
 
 To install autobutler, you simply need to download the binary for your hardware from
 [our releases page](https://github.com/autobutler-org/autobutler.org/releases).
@@ -46,7 +43,7 @@ wget -qO- \
 sudo ./autobutler install
 ```
 
-Autobutler should now be running in the background, and you can check it out at [http://localhost:8081](http://localhost:8081).
+Autobutler should now be running in the background, and you can check it out at [http://localhost:8081](http://localhost:8081). If you've installed it onto a device besides the one you're accessing it from, well, you're installing it yourself, so we assume you can debug the IP address of the device you're running it on. 
 
 ## Next Steps
 

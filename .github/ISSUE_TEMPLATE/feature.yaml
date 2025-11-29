@@ -19,7 +19,6 @@ body:
         - N/A
         - Product
         - UI
-        - LLM
     validations:
       required: true
   - type: textarea
