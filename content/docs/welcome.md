@@ -10,7 +10,8 @@ navigation:
 
 ## What is AutoButler?
 
-AutoButler is many things - the simplest way to explain it is like a Google Drive or iCloud service, but it lives entirely inside your house. No big tech, no data outside of your home, just your files on your stuff in your house. 
+AutoButler is many things - the simplest way to explain it is like a Google Drive or iCloud service, but it lives
+entirely inside your house. No big tech, no data outside of your home, just your files on your stuff in your house.
 
 ## How does AutoButler work securely?
 

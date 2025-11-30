@@ -25,10 +25,13 @@
           your data leaving your house. Store your content on physical hard
           drives again with automatic backups.
         </p>
-        <p>AutoButler is just a little device you plug in to the ethernet port of your router, and then plug in any external storage you want to use. The device automatically runs on your home network, allowing you to back up photos automatically.</p>
         <p>
-          Make yourself independent of major cloud providers.
+          AutoButler is just a little device you plug in to the ethernet port of
+          your router, and then plug in any external storage you want to use.
+          The device automatically runs on your home network, allowing you to
+          back up photos automatically.
         </p>
+        <p>Make yourself independent of major cloud providers.</p>
         <hr class="divider" />
         <p>
           No venture capital involved - completely funded by normal people, like
@@ -280,7 +283,9 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .image-container:hover {
