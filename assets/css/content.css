@@ -246,6 +246,20 @@
 
 /* Mobile responsive styles */
 @media (max-width: 768px) {
+  .document-content h1 {
+    font-size: 1.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .document-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .document-content h3 {
+    font-size: 1.25rem;
+  }
+
   .content-navigation {
     background: transparent;
     padding: 0.5rem;

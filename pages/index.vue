@@ -2,22 +2,32 @@
   <div class="landing-page">
     <div class="gradient-overlay" />
     <div class="hero-section">
-      <h1>Data Sovereignty For Everyone.</h1>
+      <h1>Data Autonomy For Everyone.</h1>
       <p class="subtitle">Your data should be yours to control.</p>
+    </div>
+
+    <div class="image-showcase">
+      <div class="image-container left">
+        <img src="/assets/images/files.png" alt="Files" />
+      </div>
+      <div class="image-container right">
+        <img src="/assets/images/casing.webp" alt="Casing" />
+      </div>
     </div>
 
     <div class="content-wrapper">
       <div class="manifesto-section">
-        <h2>The internet used to be about you.</h2>
+        <h2>The convenience of the cloud, the safety of your home.</h2>
         <p>
-          The internet used to be a platform that we used, but increasingly has
-          become a data-mining platform for tech companies. Our plug-and-play,
-          no-subscription, no-AI product seeks to restore control to consumers,
-          storing your data in a physical device in your home.
+          Our plug-and-play, no-subscription, no-AI product seeks to restore
+          control to consumers, storing your data in a physical device in your
+          home. Automatically back up your photos, documents, and more without
+          your data leaving your house. Store your content on physical hard
+          drives again with automatic backups.
         </p>
+        <p>AutoButler is just a little device you plug in to the ethernet port of your router, and then plug in any external storage you want to use. The device automatically runs on your home network, allowing you to back up photos automatically.</p>
         <p>
-          The future is about the people of the internet, not the corporations.
-          We stand for digital sovereignty.
+          Make yourself independent of major cloud providers.
         </p>
         <hr class="divider" />
         <p>
@@ -77,6 +87,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 8rem;
 }
 
 .content-wrapper {
@@ -93,6 +104,7 @@
   background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transform: translateY(-10vh);
 }
 
 .subtitle {
@@ -246,6 +258,44 @@
   transform: translateY(-2px);
 }
 
+.image-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  margin: 4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  max-width: 1200px;
+  width: 100%;
+}
+
+.image-container {
+  flex: 1;
+  max-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+}
+
 @media (max-width: 768px) {
   .hero-section h1 {
     font-family: var(--font-hero);
@@ -262,6 +312,16 @@
 
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .image-showcase {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .image-container {
+    max-width: 100%;
   }
 }
 </style>

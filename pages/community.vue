@@ -3,8 +3,11 @@
     <div class="community-page">
       <h1>Community</h1>
       <p>
-        Join the AutoButler movement! Slack community coming soon, and you can
-        get our attention or help by visiting our
+        Join the AutoButler movement! Talk to devs in our
+        <a
+          href="https://join.slack.com/t/autobutlerworld/shared_invite/zt-38nisoaua-hJk1KPC5O7OA~eRD8GDVIw"
+          >Slack workspace</a
+        >, or you can get community attention or help by visiting our
         <a href="https://www.reddit.com/r/autobutler/">Reddit community</a>.
       </p>
     </div>

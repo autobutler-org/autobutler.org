@@ -51,8 +51,8 @@
       </div>
       <nav class="mobile-nav-content">
         <div class="mobile-dropdown">
-          <button 
-            class="mobile-dropdown-button" 
+          <button
+            class="mobile-dropdown-button"
             :class="{ active: isProductDropdownOpenMobile }"
             @click="toggleProductDropdown"
           >
@@ -328,7 +328,9 @@ onMounted(() => {
   flex-direction: column;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
   opacity: 0;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 4px;

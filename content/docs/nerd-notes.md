@@ -8,8 +8,7 @@ navigation:
 
 # Nerd Notes
 
-This page is an overview of our technical spec - it is essentially a duplicate of our 
-
+This page is an overview of our technical spec - it is essentially a duplicate of our
 
 ## Quick Installation - Local Hardware
 
@@ -20,7 +19,7 @@ Once downloaded, you can extract the binary and run the `install` command with y
 API key, and `sudo` privileges.
 
 ```bash
-sudo /path/to/autobutler install 
+sudo /path/to/autobutler install
 ```
 
 If you wish to install it via `curl`, you can run the following command:
@@ -43,7 +42,10 @@ wget -qO- \
 sudo ./autobutler install
 ```
 
-Autobutler should now be running in the background, and you can check it out at [http://localhost:8081](http://localhost:8081). If you've installed it onto a device besides the one you're accessing it from, well, you're installing it yourself, so we assume you can debug the IP address of the device you're running it on. 
+Autobutler should now be running in the background, and you can check it out at
+[http://localhost:8081](http://localhost:8081). If you've installed it onto a device besides the one you're accessing
+it from, well, you're installing it yourself, so we assume you can debug the IP address of the device you're running
+it on.
 
 ## Next Steps
 

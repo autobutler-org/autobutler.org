@@ -49,7 +49,7 @@
   .page-wrapper {
     padding: 0;
   }
-  
+
   .content-card {
     padding: 0;
     border-radius: 0;
