@@ -29,6 +29,16 @@ jobs:
           repository: autobutler-org/autobutler
           ref: ${{ inputs.tag }}
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+      - name: Install Node dependencies
+        run: |
+          npm ci --prefix ./app
+      - name: Build frontend
+        run: |
+          make build/frontend
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
