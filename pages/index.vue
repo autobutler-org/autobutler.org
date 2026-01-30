@@ -3,7 +3,9 @@
     <div class="gradient-overlay" />
     <div class="hero-section">
       <h1>Data Autonomy For Everyone.</h1>
-      <p class="subtitle">Your data should be yours to control.</p>
+      <p class="subtitle">
+        A home device that gives you a private personal cloud.
+      </p>
     </div>
 
     <div class="image-showcase">
@@ -27,9 +29,9 @@
         </p>
         <p>
           AutoButler is just a little device you plug in to the ethernet port of
-          your router, and then plug in any external storage you want to use.
-          The device automatically runs on your home network, allowing you to
-          back up photos automatically.
+          your router, and then plug in any external USB storage you want to
+          use. The device automatically runs on your home network, allowing you
+          to back up photos automatically.
         </p>
         <p>Make yourself independent of major cloud providers.</p>
         <hr class="divider" />
@@ -44,17 +46,22 @@
       </div>
 
       <div class="cta-section">
-        <h2 class="highlight">The cloud, in your home.</h2>
-        <p class="subtitle">
-          Instead of renting your device and storage, you own your own private
-          cloud. Pay for fixes or upgrades... or do them yourself. It's yours to
-          manage as you please.
+        <h2 class="highlight">
+          The fourth amendment of the US Constitution prevents the government
+          from entering your home.
+        </h2>
+        <p class="subtitle">Why did this change for digital information?</p>
+        <p>
+          "The right of the people to be secure in their persons, houses,
+          papers, and effects, against unreasonable searches and seizures, shall
+          not be violated, and no Warrants shall issue, but upon probable cause,
+          supported by Oath or affirmation, and particularly describing the
+          place to be searched, and the persons or things to be seized."
         </p>
         <p class="subtitle">
-          Document editing, file storage, calendar, photos, VPN, and more. All
-          your files are stored in your home in a fireproof, waterproof
-          container. Add or remove external hard drives if you want. Mail a
-          backup to your grandma if you feel like it. It's yours.
+          AutoButler gives you private document editing, file storage, calendar, photos, VPN, and more. All
+          your files are stored in your home. Add or remove external hard drives if you want. Mail a
+          backup to your grandma if you feel like it. 
         </p>
         <NuxtLink to="/about" class="btn primary">Get Started</NuxtLink>
       </div>
@@ -86,7 +93,7 @@
   max-width: 800px;
   margin: 0 auto;
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
