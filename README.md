@@ -1,35 +1,10 @@
 # [`autobutler.org`](https://autobutler.org)
 
-## Bun
+## Setup
 
-### Setup
+**Note:** This project requires Node.js and npm. Bun is not compatible with this setup.
 
-```bash
-make setup/js
-```
-
-### Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-bun run dev
-# or
-make run
-```
-
-### Production
-
-Build the application for production:
-
-```bash
-bun run generate
-npx serve .output/public
-```
-
-## NVM
-
-### Setup
+### Using NVM (Recommended)
 
 ```bash
 nvm install
@@ -37,7 +12,15 @@ nvm use
 npm install
 ```
 
-### Development Server
+### Alternative Setup
+
+If not using NVM:
+
+```bash
+npm install
+```
+
+## Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -45,7 +28,7 @@ Start the development server on `http://localhost:3000`:
 npm run dev
 ```
 
-### Production
+## Production
 
 Build the application for production:
 

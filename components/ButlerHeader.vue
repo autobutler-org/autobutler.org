@@ -21,6 +21,7 @@
           </div>
         </div>
         <NuxtLink to="/about">About</NuxtLink>
+        <NuxtLink to="/enterprise">Enterprise</NuxtLink>
         <a href="https://n0epk0-rt.myshopify.com/" target="_blank">Purchase</a>
         <!-- <NuxtLink to="/login" class="login-link">Login</NuxtLink> -->
       </nav>
@@ -72,6 +73,7 @@
           </div>
         </div>
         <NuxtLink to="/about" @click="closeMobileMenu">About</NuxtLink>
+        <NuxtLink to="/enterprise" @click="closeMobileMenu">Enterprise</NuxtLink>
         <a href="https://n0epk0-rt.myshopify.com/" @click="closeMobileMenu"
           >Purchase</a
         >

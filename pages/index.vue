@@ -4,7 +4,7 @@
     <div class="hero-section">
       <h1>Data Autonomy For Everyone.</h1>
       <p class="subtitle">
-        A home device that gives you a private personal cloud.
+        A router plug-in device that turns your USB storage into cloud storage.
       </p>
     </div>
 
@@ -19,7 +19,7 @@
 
     <div class="content-wrapper">
       <div class="manifesto-section">
-        <h2>The convenience of the cloud, the safety of your home.</h2>
+        <h2>The convenience of the cloud, the privacy of your home.</h2>
         <p>
           Our plug-and-play, no-subscription, no-AI product seeks to restore
           control to consumers, storing your data in a physical device in your
@@ -46,18 +46,12 @@
       </div>
 
       <div class="cta-section">
-        <h2 class="highlight">
-          The fourth amendment of the US Constitution prevents the government
-          from entering your home.
-        </h2>
-        <p class="subtitle">Why did this change for digital information?</p>
-        <p>
-          "The right of the people to be secure in their persons, houses,
-          papers, and effects, against unreasonable searches and seizures, shall
-          not be violated, and no Warrants shall issue, but upon probable cause,
-          supported by Oath or affirmation, and particularly describing the
-          place to be searched, and the persons or things to be seized."
-        </p>
+        <h2 class="highlight">The cloud, in your home.</h2>
+        <p class="subtitle">
+          Instead of renting your device and storage, you own your own private
+          cloud. Pay for fixes or upgrades... or do them yourself. It's yours to
+          manage as you please.
+        </p>  
         <p class="subtitle">
           AutoButler gives you private document editing, file storage, calendar, photos, VPN, and more. All
           your files are stored in your home. Add or remove external hard drives if you want. Mail a
