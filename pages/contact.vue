@@ -14,72 +14,192 @@
           </div>
         </div>
 
-        <form class="contact-form" @submit.prevent="handleSubmit">
+        <form v-if="!submitted" class="contact-form" @submit.prevent="handleSubmit">
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Name <span class="required">*</span></label>
             <input
               id="name"
               v-model="formData.name"
               type="text"
               required
+              maxlength="100"
               placeholder="Your name"
             />
           </div>
 
           <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">Email <span class="required">*</span></label>
             <input
               id="email"
               v-model="formData.email"
               type="email"
               required
+              maxlength="254"
               placeholder="your@email.com"
             />
           </div>
 
           <div class="form-group">
-            <label for="subject">Subject</label>
+            <label for="subject">Subject <span class="required">*</span></label>
             <input
               id="subject"
               v-model="formData.subject"
               type="text"
               required
+              maxlength="200"
               placeholder="How can we help?"
             />
           </div>
 
           <div class="form-group">
-            <label for="message">Message</label>
+            <label for="message">Message <span class="required">*</span></label>
             <textarea
               id="message"
               v-model="formData.message"
               required
               rows="5"
+              maxlength="2000"
               placeholder="Your message..."
             />
+            <span class="char-count" v-if="formData.message.length > 0">
+              {{ formData.message.length }}/2000 characters
+            </span>
           </div>
 
-          <button type="submit" class="submit-btn">Send Message</button>
+          <button type="submit" class="submit-btn" :disabled="isSubmitting">
+            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+          </button>
+
+          <p v-if="error" class="error-message">{{ error }}</p>
         </form>
+
+        <div v-else class="success-message">
+          <div class="success-icon">✓</div>
+          <h3>Message Sent!</h3>
+          <p>
+            Thank you for contacting us. We'll get back to you at 
+            <strong>{{ formData.email }}</strong> as soon as possible.
+          </p>
+          <button @click="resetForm" class="reset-btn">Send Another Message</button>
+        </div>
       </div>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
-
-const formData = reactive({
+const formData = ref({
   name: "",
   email: "",
   subject: "",
   message: "",
-});
+})
 
-const handleSubmit = () => {
-  // TODO: Implement form submission logic
-  console.log("Form submitted:", formData);
-};
+const submitted = ref(false)
+const isSubmitting = ref(false)
+const error = ref('')
+
+const sanitizeInput = (input: string): string => {
+  return input.trim().replace(/[<>]/g, '')
+}
+
+const isValidEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
+}
+
+const isValidName = (name: string): boolean => {
+  const trimmedName = name.trim()
+  return trimmedName.length >= 2 && trimmedName.length <= 100
+}
+
+const isValidSubject = (subject: string): boolean => {
+  const trimmedSubject = subject.trim()
+  return trimmedSubject.length >= 3 && trimmedSubject.length <= 200
+}
+
+const isValidMessage = (message: string): boolean => {
+  const trimmedMessage = message.trim()
+  return trimmedMessage.length >= 10 && trimmedMessage.length <= 2000
+}
+
+const validateForm = (): string | null => {
+  const sanitizedName = sanitizeInput(formData.value.name)
+  const sanitizedEmail = sanitizeInput(formData.value.email)
+  const sanitizedSubject = sanitizeInput(formData.value.subject)
+  const sanitizedMessage = sanitizeInput(formData.value.message)
+  
+  if (!isValidName(sanitizedName)) {
+    return 'Please enter a valid name (2-100 characters)'
+  }
+  
+  if (!isValidEmail(sanitizedEmail)) {
+    return 'Please enter a valid email address'
+  }
+  
+  if (!isValidSubject(sanitizedSubject)) {
+    return 'Please enter a valid subject (3-200 characters)'
+  }
+  
+  if (!isValidMessage(sanitizedMessage)) {
+    return 'Please enter a message (10-2000 characters)'
+  }
+  
+  return null
+}
+
+const handleSubmit = async () => {
+  isSubmitting.value = true
+  error.value = ''
+
+  // Validate form
+  const validationError = validateForm()
+  if (validationError) {
+    error.value = validationError
+    isSubmitting.value = false
+    return
+  }
+
+  // Sanitize all inputs
+  const sanitizedData = {
+    name: sanitizeInput(formData.value.name),
+    email: sanitizeInput(formData.value.email),
+    subject: sanitizeInput(formData.value.subject),
+    message: sanitizeInput(formData.value.message)
+  }
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(sanitizedData),
+    })
+
+    if (!response.ok) {
+      throw new Error('Failed to send message')
+    }
+
+    submitted.value = true
+  } catch (err) {
+    error.value = 'Something went wrong. Please try again or email us directly at support@autobutler.org'
+    console.error('Contact form submission error:', err)
+  } finally {
+    isSubmitting.value = false
+  }
+}
+
+const resetForm = () => {
+  formData.value = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  }
+  submitted.value = false
+  error.value = ''
+}
 </script>
 
 <style scoped>
@@ -141,6 +261,18 @@ label {
   font-size: 0.9rem;
 }
 
+.required {
+  color: #ff6b6b;
+}
+
+.char-count {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(224, 224, 224, 0.6);
+  text-align: right;
+}
+
 input,
 textarea {
   width: 100%;
@@ -171,8 +303,75 @@ textarea:focus {
   width: 100%;
 }
 
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   background: linear-gradient(135deg, #45a049, #3d8b40);
   transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ff6b6b;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.success-message {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: #4caf50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+}
+
+.success-message h3 {
+  color: #81c784;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.success-message p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.success-message strong {
+  color: #4caf50;
+}
+
+.reset-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 </style>

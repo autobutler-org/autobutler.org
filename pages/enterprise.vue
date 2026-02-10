@@ -57,7 +57,7 @@
         </p>
         <div class="cta-buttons">
           <NuxtLink to="/contact" class="btn btn-primary">Contact Us</NuxtLink>
-          <a href="https://n0epk0-rt.myshopify.com/" target="_blank" class="btn btn-secondary">Purchase Now</a>
+          <NuxtLink to="/waitlist" class="btn btn-secondary">Sign Up</NuxtLink>
         </div>
       </section>
     </div>

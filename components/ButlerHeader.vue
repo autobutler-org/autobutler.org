@@ -22,7 +22,7 @@
         </div>
         <NuxtLink to="/about">About</NuxtLink>
         <NuxtLink to="/enterprise">Enterprise</NuxtLink>
-        <a href="https://n0epk0-rt.myshopify.com/" target="_blank">Purchase</a>
+        <NuxtLink to="/waitlist" class="signup-link">Sign Up</NuxtLink>
         <!-- <NuxtLink to="/login" class="login-link">Login</NuxtLink> -->
       </nav>
 
@@ -74,8 +74,8 @@
         </div>
         <NuxtLink to="/about" @click="closeMobileMenu">About</NuxtLink>
         <NuxtLink to="/enterprise" @click="closeMobileMenu">Enterprise</NuxtLink>
-        <a href="https://n0epk0-rt.myshopify.com/" @click="closeMobileMenu"
-          >Purchase</a
+        <NuxtLink to="/waitlist" class="mobile-signup-link" @click="closeMobileMenu"
+          >Sign Up</NuxtLink
         >
         <NuxtLink to="/login" class="mobile-login-link" @click="closeMobileMenu"
           >Login</NuxtLink
