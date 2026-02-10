@@ -13,7 +13,7 @@ We're excited to launch the AutoButler blog! This is where we'll share updates a
 
 - **Product Updates**: Learn about new features and improvements
 - **Technical Deep Dives**: Behind-the-scenes looks at how AutoButler works
-- **Community Stories**: Hear from users and see how they're using AutoButler
+- **Security Explanations**: Discourse about how our approach to security functions
 - **Tips & Tricks**: Get the most out of your AutoButler setup
 
 Stay tuned for more posts as we approach our summer 2026 launch!
