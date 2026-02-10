@@ -9,7 +9,7 @@
 
       <div class="mailchimp-embed">
         <iframe
-          src="http://eepurl.com/jy9kaA"
+          src="https://eepurl.com/jy9kaA"
           width="100%"
           height="1200"
           frameborder="0"
