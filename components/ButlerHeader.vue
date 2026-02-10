@@ -20,6 +20,16 @@
             <NuxtLink to="/community" class="dropdown-item">Community</NuxtLink>
           </div>
         </div>
+        <div
+          class="dropdown"
+          @mouseenter="isBlogDropdownOpen = true"
+          @mouseleave="isBlogDropdownOpen = false"
+        >
+          <button class="dropdown-button">Blog</button>
+          <div class="dropdown-menu" :class="{ open: isBlogDropdownOpen }">
+            <NuxtLink to="/blogs" class="dropdown-item">All Posts</NuxtLink>
+          </div>
+        </div>
         <NuxtLink to="/about">About</NuxtLink>
         <NuxtLink to="/enterprise">Enterprise</NuxtLink>
         <NuxtLink to="/waitlist" class="signup-link">Sign Up</NuxtLink>
@@ -72,6 +82,23 @@
             >
           </div>
         </div>
+        <div class="mobile-dropdown">
+          <button
+            class="mobile-dropdown-button"
+            :class="{ active: isBlogDropdownOpenMobile }"
+            @click="toggleBlogDropdown"
+          >
+            Blog
+          </button>
+          <div
+            class="mobile-dropdown-items"
+            :class="{ open: isBlogDropdownOpenMobile }"
+          >
+            <NuxtLink to="/blogs" @click="closeMobileMenu"
+              >All Posts</NuxtLink
+            >
+          </div>
+        </div>
         <NuxtLink to="/about" @click="closeMobileMenu">About</NuxtLink>
         <NuxtLink to="/enterprise" @click="closeMobileMenu">Enterprise</NuxtLink>
         <NuxtLink to="/waitlist" class="mobile-signup-link" @click="closeMobileMenu"
@@ -98,19 +125,27 @@ import { ref, onMounted, onUnmounted } from "vue";
 const isMobileMenuOpen = ref(false);
 const isProductDropdownOpen = ref(false);
 const isProductDropdownOpenMobile = ref(false);
+const isBlogDropdownOpen = ref(false);
+const isBlogDropdownOpenMobile = ref(false);
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
   isProductDropdownOpenMobile.value = false;
+  isBlogDropdownOpenMobile.value = false;
 };
 
 const toggleProductDropdown = () => {
   isProductDropdownOpenMobile.value = !isProductDropdownOpenMobile.value;
 };
 
+const toggleBlogDropdown = () => {
+  isBlogDropdownOpenMobile.value = !isBlogDropdownOpenMobile.value;
+};
+
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false;
   isProductDropdownOpenMobile.value = false;
+  isBlogDropdownOpenMobile.value = false;
 };
 
 // Close mobile menu when clicking outside or on escape key
