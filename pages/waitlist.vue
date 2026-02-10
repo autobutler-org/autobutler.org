@@ -81,7 +81,38 @@
 
 @media (max-width: 768px) {
   .waitlist-card {
-    padding: 1.5rem;
+    padding: 0.5rem;
+    margin: 0;
+  }
+
+  .intro {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .mailchimp-embed {
+    margin: 1rem -0.5rem;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .mailchimp-embed iframe {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .launch-info {
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+  }
+
+  .launch-info p {
+    font-size: 0.9rem;
+  }
+
+  .launch-info strong {
+    font-size: 1rem;
   }
 }
 </style>
