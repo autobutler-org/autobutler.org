@@ -6,15 +6,15 @@
         <p class="subtitle">Updates, insights, and stories from the AutoButler team</p>
       </div>
 
-      <div class="blog-list">
+      <div v-if="articles && articles.length > 0" class="blog-list">
         <article
           v-for="article in articles"
-          :key="article._path"
+          :key="article.path"
           class="blog-card"
         >
-          <NuxtLink :to="article._path" class="blog-link">
+          <NuxtLink :to="article.path" class="blog-link">
             <div class="blog-meta">
-              <time :datetime="article.date">{{ formatDate(article.date) }}</time>
+              <time v-if="article.date" :datetime="article.date">{{ formatDate(article.date) }}</time>
               <span v-if="article.author" class="author">by {{ article.author }}</span>
             </div>
             <h2>{{ article.title }}</h2>
@@ -24,7 +24,7 @@
         </article>
       </div>
 
-      <div v-if="!articles || articles.length === 0" class="no-posts">
+      <div v-else class="no-posts">
         <p>No blog posts yet. Check back soon!</p>
       </div>
     </PageContainer>
@@ -32,13 +32,30 @@
 </template>
 
 <script setup lang="ts">
-const { data: articles } = await useAsyncData('blogs', () =>
-  queryContent('/blogs')
-    .sort({ date: -1 })
-    .find()
+import type { ContentCollectionItem } from '@nuxt/content'
+
+interface BlogPost extends ContentCollectionItem {
+  date?: string
+  author?: string
+}
+
+const { data: allContent } = await useAsyncData('blogs', () =>
+  queryCollection('content').all()
 )
 
-const formatDate = (dateString: string) => {
+const articles = computed(() => {
+  if (!allContent.value) return []
+  return allContent.value
+    .filter((item: any) => item.path?.startsWith('/blogs/') && item.path !== '/blogs')
+    .sort((a: any, b: any) => {
+      const dateA = new Date(a.date || 0).getTime()
+      const dateB = new Date(b.date || 0).getTime()
+      return dateB - dateA
+    }) as BlogPost[]
+})
+
+const formatDate = (dateString?: string) => {
+  if (!dateString) return ''
   const date = new Date(dateString)
   return date.toLocaleDateString('en-US', {
     year: 'numeric',

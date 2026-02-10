@@ -1,7 +1,7 @@
 <template>
   <div class="blog-post-page">
     <PageContainer>
-      <article class="blog-post">
+      <article v-if="page && !isError(page)" class="blog-post">
         <header class="post-header">
           <NuxtLink to="/blogs" class="back-link">← Back to Blog</NuxtLink>
           
@@ -20,20 +20,58 @@
         </header>
 
         <div class="post-content">
-          <ContentDoc />
+          <ContentRenderer v-if="page" :value="page" />
         </div>
       </article>
+      
+      <div v-else-if="page && isError(page)" class="error">
+        <h1>Post Not Found</h1>
+        <p>{{ page.message }}</p>
+        <NuxtLink to="/blogs" class="back-link">← Back to Blog</NuxtLink>
+      </div>
+      
+      <div v-else class="loading">
+        <p>Loading...</p>
+      </div>
     </PageContainer>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { ContentCollectionItem } from '@nuxt/content'
+
+interface BlogPost extends ContentCollectionItem {
+  date?: string
+  author?: string
+}
+
+interface ErrorPage {
+  _error: boolean
+  message: string
+  code: string
+}
+
 const route = useRoute()
-const { data: page } = await useAsyncData(`blog-${route.path}`, () =>
-  queryContent(route.path).findOne()
-)
+
+const { data: page, error } = await useAsyncData(`blog-${route.path}`, async () => {
+  try {
+    const result = await queryCollection('content').path(route.path).first()
+    return result as BlogPost
+  } catch (err) {
+    return {
+      _error: true,
+      message: err instanceof Error ? err.message : String(err),
+      code: 'CONTENT_NOT_FOUND',
+    } as ErrorPage
+  }
+})
+
+const isError = (p: BlogPost | ErrorPage | null): p is ErrorPage => {
+  return p !== null && '_error' in p
+}
 
 const formatDate = (dateString: string) => {
+  if (!dateString) return ''
   const date = new Date(dateString)
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -101,6 +139,27 @@ const formatDate = (dateString: string) => {
 .post-content {
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.8;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.error {
+  text-align: center;
+  padding: 3rem;
+}
+
+.error h1 {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1rem;
+}
+
+.error p {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
