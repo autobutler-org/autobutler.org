@@ -58,12 +58,17 @@ const submitToGitHub = () => {
     <div class="support-page">
       <h1>Support</h1>
       <p class="intro">
-        Found a bug? Report it directly to our GitHub issue tracker.
+        Found a bug? Report it directly to our GitHub issue tracker. Or, if you have a feature request, head to 
+        <a
+          href="https://github.com/autobutler-org/autobutler/issues/new?template=feature.yaml"
+          target="_blank"
+          rel="noopener"
+        >our Feature request page</a>.
       </p>
 
       <form class="bug-report-form" @submit.prevent="submitToGitHub">
         <div class="form-group">
-          <label for="title">Bug Title *</label>
+          <label for="title">Bug/Feature Title *</label>
           <input
             id="title"
             v-model="formData.title"
