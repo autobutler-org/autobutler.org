@@ -29,6 +29,8 @@ jobs:
           repository: autobutler-org/autobutler
           ref: ${{ inputs.tag }}
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          fetch-depth: 1
+          fetch-tags: true
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
