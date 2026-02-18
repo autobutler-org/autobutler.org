@@ -20,17 +20,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
       - name: Install node-gyp
         run: |
-          bun install node-gyp
+          npm install node-gyp
       - name: Install dependencies
         run: |
-          bun install
+          npm ci
       - name: Static HTML export with Nuxt
         run: |
-          bun run generate
+          npm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
