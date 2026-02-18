@@ -7,7 +7,8 @@ author: AutoButler Team
 
 # Welcome to the AutoButler Blog
 
-We're excited to launch the AutoButler blog! This is where we'll share updates about our progress, technical insights, and stories from our journey building the best self-hosted storage solution.
+We're excited to launch the AutoButler blog! This is where we'll share updates about our progress, technical insights,
+and stories from our journey building the best self-hosted storage solution.
 
 ## What to Expect
 

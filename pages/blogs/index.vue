@@ -53,9 +53,10 @@ const articles = computed(() => {
   if (!allContent.value) return [];
   return allContent.value
     .filter(
-      (item: any) => item.path?.startsWith("/blogs/") && item.path !== "/blogs",
+      (item: BlogPost) =>
+        item.path?.startsWith("/blogs/") && item.path !== "/blogs",
     )
-    .sort((a: any, b: any) => {
+    .sort((a: BlogPost, b: BlogPost) => {
       const dateA = new Date(a.date || 0).getTime();
       const dateB = new Date(b.date || 0).getTime();
       return dateB - dateA;
