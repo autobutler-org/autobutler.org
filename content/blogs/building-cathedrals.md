@@ -67,7 +67,7 @@ In order to support this business change, an inordinate amount of work is done b
 - Programmers are then hired to write the code to collect your data from these internet-bound products
 - More programmers are then hired to interpret that data
 - Even more programmers are hired to act on that data to guide personalized advertisements to your internet browsing
-- Now you need people dedicated to stewarding these large system, [a notoriously risky and stressful job](https://www.codereliant.io/p/the-dark-side-of-sre).
+- Now you need people dedicated to stewarding these large systems, [a notoriously risky and stressful job](https://www.codereliant.io/p/the-dark-side-of-sre).
 - Eventually, there is simply too much data and you must build more datacenters,
   ([which in turn makes it harder for consumers to have their own computers](https://fortune.com/2026/02/15/ai-demand-memory-chip-shortage-crisis-dram-hbm-micron-skhynix-samsung/))
 - Designers and psychologists are hired to run [A/B testing experiments](https://www.numberanalytics.com/blog/mastering-ab-testing-user-psychology)
