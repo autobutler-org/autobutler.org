@@ -9,6 +9,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "check-updates": "ncu -u",
     "lint:eslint": "eslint",
     "lint:types": "nuxt typecheck",
     "lint:prettier": "prettier --check .",
@@ -20,20 +21,21 @@
     "fix": "concurrently -m1 npm:fix:*"
   },
   "dependencies": {
-    "@nuxt/content": "^3.5.1",
+    "@nuxt/content": "^3.11.2",
     "better-sqlite3": "^12.6.2",
-    "markdownlint-cli2": "^0.20.0",
-    "nuxt": "^3.19.0",
-    "vue": "^3.5.16",
-    "vue-router": "^4.5.1"
+    "markdownlint-cli2": "^0.21.0",
+    "nuxt": "^4.3.1",
+    "vue": "^3.5.28",
+    "vue-router": "^5.0.2"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^2.4.1",
-    "@nuxt/eslint": "^1.4.1",
-    "concurrently": "^9.1.2",
-    "eslint": "^9.28.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.3",
-    "vue-tsc": "^2.2.10"
+    "@nuxt/devtools": "^3.2.1",
+    "@nuxt/eslint": "^1.15.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^10.0.0",
+    "npm-check-updates": "^19.3.2",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.2.4"
   }
 }
