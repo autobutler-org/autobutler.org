@@ -69,7 +69,10 @@ const { data: page, error } = await useAsyncData(
   },
 );
 
-console.error("Error loading blog post:", error.value);
+if (error && error.value) {
+  console.error("Error loading blog post:", error.value);
+}
+
 
 const isError = (p: BlogPost | ErrorPage | null): p is ErrorPage => {
   return p !== null && "_error" in p;
