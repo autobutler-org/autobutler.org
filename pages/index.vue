@@ -51,11 +51,12 @@
           Instead of renting your device and storage, you own your own private
           cloud. Pay for fixes or upgrades... or do them yourself. It's yours to
           manage as you please.
-        </p>  
+        </p>
         <p class="subtitle">
-          AutoButler gives you private document editing, file storage, calendar, photos, VPN, and more. All
-          your files are stored in your home. Add or remove external hard drives if you want. Mail a
-          backup to your grandma if you feel like it. 
+          AutoButler gives you private document editing, file storage, calendar,
+          photos, VPN, and more. All your files are stored in your home. Add or
+          remove external hard drives if you want. Mail a backup to your grandma
+          if you feel like it.
         </p>
         <NuxtLink to="/about" class="btn primary">Get Started</NuxtLink>
       </div>

@@ -27,11 +27,6 @@ export default defineNuxtConfig({
     },
   },
   content: {
-    experimental: {
-      search: {
-        indexed: false,
-      },
-    },
     build: {
       markdown: {
         // Configure content module for better TOC generation

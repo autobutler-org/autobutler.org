@@ -4,14 +4,16 @@
     <div class="card">
       <h1>Enterprise Solutions</h1>
       <p class="intro">
-        Secure, reliable, and cost-effective storage solutions for churches and small businesses.
+        Secure, reliable, and cost-effective storage solutions for churches and
+        small businesses.
       </p>
 
       <section class="section">
         <h2>Why AutoButler for Your Organization?</h2>
         <p>
-          Stop paying monthly subscriptions for cloud storage. AutoButler gives you complete control 
-          over your data with a one-time purchase, ensuring privacy and long-term cost savings.
+          Stop paying monthly subscriptions for cloud storage. AutoButler gives
+          you complete control over your data with a one-time purchase, ensuring
+          privacy and long-term cost savings.
         </p>
       </section>
 
@@ -22,7 +24,9 @@
             <h3>Churches</h3>
             <ul>
               <li>Store sermons, recordings, and media archives</li>
-              <li>Manage member directories and sensitive information securely</li>
+              <li>
+                Manage member directories and sensitive information securely
+              </li>
               <li>Share resources across staff and ministry teams</li>
               <li>Keep financial records private and accessible</li>
             </ul>
@@ -42,18 +46,34 @@
       <section class="section">
         <h2>Key Benefits</h2>
         <ul class="benefits-list">
-          <li><strong>One-Time Cost:</strong> No recurring monthly fees - pay once, own forever</li>
-          <li><strong>Data Privacy:</strong> Your data stays on your hardware, not in the cloud</li>
-          <li><strong>Easy Setup:</strong> Simple installation with minimal technical knowledge required</li>
-          <li><strong>Scalable Storage:</strong> Add more capacity as your organization grows</li>
-          <li><strong>Reliable Access:</strong> Local network access means faster speeds and no internet dependency</li>
+          <li>
+            <strong>One-Time Cost:</strong> No recurring monthly fees - pay
+            once, own forever
+          </li>
+          <li>
+            <strong>Data Privacy:</strong> Your data stays on your hardware, not
+            in the cloud
+          </li>
+          <li>
+            <strong>Easy Setup:</strong> Simple installation with minimal
+            technical knowledge required
+          </li>
+          <li>
+            <strong>Scalable Storage:</strong> Add more capacity as your
+            organization grows
+          </li>
+          <li>
+            <strong>Reliable Access:</strong> Local network access means faster
+            speeds and no internet dependency
+          </li>
         </ul>
       </section>
 
       <section class="section cta-section">
         <h2>Ready to Get Started?</h2>
         <p>
-          Contact us to discuss how AutoButler can serve your organization's storage needs.
+          Contact us to discuss how AutoButler can serve your organization's
+          storage needs.
         </p>
         <div class="cta-buttons">
           <NuxtLink to="/contact" class="btn btn-primary">Contact Us</NuxtLink>
@@ -210,7 +230,7 @@
   .use-cases {
     grid-template-columns: 1fr;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: stretch;

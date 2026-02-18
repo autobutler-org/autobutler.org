@@ -14,7 +14,11 @@
           </div>
         </div>
 
-        <form v-if="!submitted" class="contact-form" @submit.prevent="handleSubmit">
+        <form
+          v-if="!submitted"
+          class="contact-form"
+          @submit.prevent="handleSubmit"
+        >
           <div class="form-group">
             <label for="name">Name <span class="required">*</span></label>
             <input
@@ -61,13 +65,13 @@
               maxlength="2000"
               placeholder="Your message..."
             />
-            <span class="char-count" v-if="formData.message.length > 0">
+            <span v-if="formData.message.length > 0" class="char-count">
               {{ formData.message.length }}/2000 characters
             </span>
           </div>
 
           <button type="submit" class="submit-btn" :disabled="isSubmitting">
-            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+            {{ isSubmitting ? "Sending..." : "Send Message" }}
           </button>
 
           <p v-if="error" class="error-message">{{ error }}</p>
@@ -77,10 +81,12 @@
           <div class="success-icon">✓</div>
           <h3>Message Sent!</h3>
           <p>
-            Thank you for contacting us. We'll get back to you at 
+            Thank you for contacting us. We'll get back to you at
             <strong>{{ formData.email }}</strong> as soon as possible.
           </p>
-          <button @click="resetForm" class="reset-btn">Send Another Message</button>
+          <button class="reset-btn" @click="resetForm">
+            Send Another Message
+          </button>
         </div>
       </div>
     </div>
@@ -93,71 +99,71 @@ const formData = ref({
   email: "",
   subject: "",
   message: "",
-})
+});
 
-const submitted = ref(false)
-const isSubmitting = ref(false)
-const error = ref('')
+const submitted = ref(false);
+const isSubmitting = ref(false);
+const error = ref("");
 
 const sanitizeInput = (input: string): string => {
-  return input.trim().replace(/[<>]/g, '')
-}
+  return input.trim().replace(/[<>]/g, "");
+};
 
 const isValidEmail = (email: string): boolean => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return emailRegex.test(email)
-}
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
 
 const isValidName = (name: string): boolean => {
-  const trimmedName = name.trim()
-  return trimmedName.length >= 2 && trimmedName.length <= 100
-}
+  const trimmedName = name.trim();
+  return trimmedName.length >= 2 && trimmedName.length <= 100;
+};
 
 const isValidSubject = (subject: string): boolean => {
-  const trimmedSubject = subject.trim()
-  return trimmedSubject.length >= 3 && trimmedSubject.length <= 200
-}
+  const trimmedSubject = subject.trim();
+  return trimmedSubject.length >= 3 && trimmedSubject.length <= 200;
+};
 
 const isValidMessage = (message: string): boolean => {
-  const trimmedMessage = message.trim()
-  return trimmedMessage.length >= 10 && trimmedMessage.length <= 2000
-}
+  const trimmedMessage = message.trim();
+  return trimmedMessage.length >= 10 && trimmedMessage.length <= 2000;
+};
 
 const validateForm = (): string | null => {
-  const sanitizedName = sanitizeInput(formData.value.name)
-  const sanitizedEmail = sanitizeInput(formData.value.email)
-  const sanitizedSubject = sanitizeInput(formData.value.subject)
-  const sanitizedMessage = sanitizeInput(formData.value.message)
-  
+  const sanitizedName = sanitizeInput(formData.value.name);
+  const sanitizedEmail = sanitizeInput(formData.value.email);
+  const sanitizedSubject = sanitizeInput(formData.value.subject);
+  const sanitizedMessage = sanitizeInput(formData.value.message);
+
   if (!isValidName(sanitizedName)) {
-    return 'Please enter a valid name (2-100 characters)'
+    return "Please enter a valid name (2-100 characters)";
   }
-  
+
   if (!isValidEmail(sanitizedEmail)) {
-    return 'Please enter a valid email address'
+    return "Please enter a valid email address";
   }
-  
+
   if (!isValidSubject(sanitizedSubject)) {
-    return 'Please enter a valid subject (3-200 characters)'
+    return "Please enter a valid subject (3-200 characters)";
   }
-  
+
   if (!isValidMessage(sanitizedMessage)) {
-    return 'Please enter a message (10-2000 characters)'
+    return "Please enter a message (10-2000 characters)";
   }
-  
-  return null
-}
+
+  return null;
+};
 
 const handleSubmit = async () => {
-  isSubmitting.value = true
-  error.value = ''
+  isSubmitting.value = true;
+  error.value = "";
 
   // Validate form
-  const validationError = validateForm()
+  const validationError = validateForm();
   if (validationError) {
-    error.value = validationError
-    isSubmitting.value = false
-    return
+    error.value = validationError;
+    isSubmitting.value = false;
+    return;
   }
 
   // Sanitize all inputs
@@ -165,30 +171,31 @@ const handleSubmit = async () => {
     name: sanitizeInput(formData.value.name),
     email: sanitizeInput(formData.value.email),
     subject: sanitizeInput(formData.value.subject),
-    message: sanitizeInput(formData.value.message)
-  }
+    message: sanitizeInput(formData.value.message),
+  };
 
   try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
+    const response = await fetch("/api/contact", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(sanitizedData),
-    })
+    });
 
     if (!response.ok) {
-      throw new Error('Failed to send message')
+      throw new Error("Failed to send message");
     }
 
-    submitted.value = true
+    submitted.value = true;
   } catch (err) {
-    error.value = 'Something went wrong. Please try again or email us directly at support@autobutler.org'
-    console.error('Contact form submission error:', err)
+    error.value =
+      "Something went wrong. Please try again or email us directly at support@autobutler.org";
+    console.error("Contact form submission error:", err);
   } finally {
-    isSubmitting.value = false
+    isSubmitting.value = false;
   }
-}
+};
 
 const resetForm = () => {
   formData.value = {
@@ -196,10 +203,10 @@ const resetForm = () => {
     email: "",
     subject: "",
     message: "",
-  }
-  submitted.value = false
-  error.value = ''
-}
+  };
+  submitted.value = false;
+  error.value = "";
+};
 </script>
 
 <style scoped>

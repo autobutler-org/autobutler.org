@@ -3,7 +3,9 @@
     <PageContainer>
       <div class="blogs-header">
         <h1>Blog</h1>
-        <p class="subtitle">Updates, insights, and stories from the AutoButler team</p>
+        <p class="subtitle">
+          Updates, insights, and stories from the AutoButler team
+        </p>
       </div>
 
       <div v-if="articles && articles.length > 0" class="blog-list">
@@ -14,8 +16,12 @@
         >
           <NuxtLink :to="article.path" class="blog-link">
             <div class="blog-meta">
-              <time v-if="article.date" :datetime="article.date">{{ formatDate(article.date) }}</time>
-              <span v-if="article.author" class="author">by {{ article.author }}</span>
+              <time v-if="article.date" :datetime="article.date">{{
+                formatDate(article.date)
+              }}</time>
+              <span v-if="article.author" class="author"
+                >by {{ article.author }}</span
+              >
             </div>
             <h2>{{ article.title }}</h2>
             <p class="description">{{ article.description }}</p>
@@ -32,37 +38,40 @@
 </template>
 
 <script setup lang="ts">
-import type { ContentCollectionItem } from '@nuxt/content'
+import type { ContentCollectionItem } from "@nuxt/content";
 
 interface BlogPost extends ContentCollectionItem {
-  date?: string
-  author?: string
+  date?: string;
+  author?: string;
 }
 
-const { data: allContent } = await useAsyncData('blogs', () =>
-  queryCollection('content').all()
-)
+const { data: allContent } = await useAsyncData("blogs", () =>
+  queryCollection("content").all(),
+);
 
 const articles = computed(() => {
-  if (!allContent.value) return []
+  if (!allContent.value) return [];
   return allContent.value
-    .filter((item: any) => item.path?.startsWith('/blogs/') && item.path !== '/blogs')
-    .sort((a: any, b: any) => {
-      const dateA = new Date(a.date || 0).getTime()
-      const dateB = new Date(b.date || 0).getTime()
-      return dateB - dateA
-    }) as BlogPost[]
-})
+    .filter(
+      (item: BlogPost) =>
+        item.path?.startsWith("/blogs/") && item.path !== "/blogs",
+    )
+    .sort((a: BlogPost, b: BlogPost) => {
+      const dateA = new Date(a.date || 0).getTime();
+      const dateB = new Date(b.date || 0).getTime();
+      return dateB - dateA;
+    }) as BlogPost[];
+});
 
 const formatDate = (dateString?: string) => {
-  if (!dateString) return ''
-  const date = new Date(dateString)
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+  if (!dateString) return "";
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
 </script>
 
 <style scoped>
