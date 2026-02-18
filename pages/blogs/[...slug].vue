@@ -4,7 +4,7 @@
       <article v-if="page && !isError(page)" class="blog-post">
         <header class="post-header">
           <NuxtLink to="/blogs" class="back-link">← Back to Blog</NuxtLink>
-          
+
           <div class="post-meta">
             <time v-if="page.date" :datetime="page.date">
               {{ formatDate(page.date) }}
@@ -13,7 +13,7 @@
           </div>
 
           <h1>{{ page.title }}</h1>
-          
+
           <p v-if="page.description" class="description">
             {{ page.description }}
           </p>
@@ -23,13 +23,13 @@
           <ContentRenderer v-if="page" :value="page" />
         </div>
       </article>
-      
+
       <div v-else-if="page && isError(page)" class="error">
         <h1>Post Not Found</h1>
         <p>{{ page.message }}</p>
         <NuxtLink to="/blogs" class="back-link">← Back to Blog</NuxtLink>
       </div>
-      
+
       <div v-else class="loading">
         <p>Loading...</p>
       </div>
@@ -38,47 +38,52 @@
 </template>
 
 <script setup lang="ts">
-import type { ContentCollectionItem } from '@nuxt/content'
+import type { ContentCollectionItem } from "@nuxt/content";
 
 interface BlogPost extends ContentCollectionItem {
-  date?: string
-  author?: string
+  date?: string;
+  author?: string;
 }
 
 interface ErrorPage {
-  _error: boolean
-  message: string
-  code: string
+  _error: boolean;
+  message: string;
+  code: string;
 }
 
-const route = useRoute()
+const route = useRoute();
 
-const { data: page, error } = await useAsyncData(`blog-${route.path}`, async () => {
-  try {
-    const result = await queryCollection('content').path(route.path).first()
-    return result as BlogPost
-  } catch (err) {
-    return {
-      _error: true,
-      message: err instanceof Error ? err.message : String(err),
-      code: 'CONTENT_NOT_FOUND',
-    } as ErrorPage
-  }
-})
+const { data: page, error } = await useAsyncData(
+  `blog-${route.path}`,
+  async () => {
+    try {
+      const result = await queryCollection("content").path(route.path).first();
+      return result as BlogPost;
+    } catch (err) {
+      return {
+        _error: true,
+        message: err instanceof Error ? err.message : String(err),
+        code: "CONTENT_NOT_FOUND",
+      } as ErrorPage;
+    }
+  },
+);
+
+console.error("Error loading blog post:", error.value);
 
 const isError = (p: BlogPost | ErrorPage | null): p is ErrorPage => {
-  return p !== null && '_error' in p
-}
+  return p !== null && "_error" in p;
+};
 
 const formatDate = (dateString: string) => {
-  if (!dateString) return ''
-  const date = new Date(dateString)
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+  if (!dateString) return "";
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
 </script>
 
 <style scoped>

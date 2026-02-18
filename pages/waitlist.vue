@@ -4,7 +4,8 @@
     <div class="card waitlist-card">
       <h1>Sign Up for Early Access</h1>
       <p class="intro">
-        We're still building AutoButler and planning to launch this summer! Sign up to be notified when we're ready to ship.
+        We're still building AutoButler and planning to launch this summer! Sign
+        up to be notified when we're ready to ship.
       </p>
 
       <div class="mailchimp-embed">
@@ -14,13 +15,16 @@
           height="1200"
           frameborder="0"
           scrolling="auto"
-          style="border: none;"
+          style="border: none"
         ></iframe>
       </div>
 
       <div class="launch-info">
         <p>🚀 <strong>Coming Summer 2026</strong></p>
-        <p>We're working hard to bring you the best self-hosted storage solution. Stay tuned!</p>
+        <p>
+          We're working hard to bring you the best self-hosted storage solution.
+          Stay tuned!
+        </p>
       </div>
     </div>
   </div>

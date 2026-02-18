@@ -94,14 +94,17 @@
             class="mobile-dropdown-items"
             :class="{ open: isBlogDropdownOpenMobile }"
           >
-            <NuxtLink to="/blogs" @click="closeMobileMenu"
-              >All Posts</NuxtLink
-            >
+            <NuxtLink to="/blogs" @click="closeMobileMenu">All Posts</NuxtLink>
           </div>
         </div>
         <NuxtLink to="/about" @click="closeMobileMenu">About</NuxtLink>
-        <NuxtLink to="/enterprise" @click="closeMobileMenu">Enterprise</NuxtLink>
-        <NuxtLink to="/waitlist" class="mobile-signup-link" @click="closeMobileMenu"
+        <NuxtLink to="/enterprise" @click="closeMobileMenu"
+          >Enterprise</NuxtLink
+        >
+        <NuxtLink
+          to="/waitlist"
+          class="mobile-signup-link"
+          @click="closeMobileMenu"
           >Sign Up</NuxtLink
         >
         <NuxtLink to="/login" class="mobile-login-link" @click="closeMobileMenu"

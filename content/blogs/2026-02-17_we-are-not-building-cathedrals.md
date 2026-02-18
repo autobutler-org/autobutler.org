@@ -11,7 +11,7 @@ Microsoft Word was created in 1983 and Microsoft Excel in 1985. Have you ever co
 it took to create these tools?
 
 For Word, two men by the names of [Charles Simonyi](https://en.wikipedia.org/wiki/Charles_Simonyi) and
-[Richard Brodie](https://en.wikipedia.org/wiki/Richard_Brodie_(programmer)), basing their work on [Xerox's Bravo](https://en.wikipedia.org/wiki/Bravo_(editor)).
+[Richard Brodie](<https://en.wikipedia.org/wiki/Richard_Brodie_(programmer)>), basing their work on [Xerox's Bravo](<https://en.wikipedia.org/wiki/Bravo_(editor)>).
 
 For Excel, [ten people took on the task](https://itraining.bg/40-years-microsoft-excel-history/), basing their work heavily
 upon [VisiCalc](https://en.wikipedia.org/wiki/VisiCalc).
@@ -37,9 +37,9 @@ Many reasons are often given to this question:
 
 - Software is visually much more appealing these days and that requires a lot of time and effort.
 - A small group of people could not possibly understand all the constraints a product requires. You must have many voices
-actively involved in the process for the product to be successful.
+  actively involved in the process for the product to be successful.
 - The programmers responsible for these early systems were special geniuses of their time, and so we should not compare
-apples to oranges by pitting modern developers against them.
+  apples to oranges by pitting modern developers against them.
 
 To be frank, we at Autobutler believe these reasons are nothing more than [copium](https://knowyourmeme.com/memes/copium),
 and are a result of the people working on these products missing the forest for the trees. There are some grains of truth
@@ -69,9 +69,9 @@ In order to support this business change, an inordinate amount of work is done b
 - Even more programmers are hired to act on that data to guide personalized advertisements to your internet browsing
 - Now you need people dedicated to stewarding these large system, [a notoriously risky and stressful job](https://www.codereliant.io/p/the-dark-side-of-sre).
 - Eventually, there is simply too much data and you must build more datacenters,
-([which in turn makes it harder for consumers to have their own computers](https://fortune.com/2026/02/15/ai-demand-memory-chip-shortage-crisis-dram-hbm-micron-skhynix-samsung/))
+  ([which in turn makes it harder for consumers to have their own computers](https://fortune.com/2026/02/15/ai-demand-memory-chip-shortage-crisis-dram-hbm-micron-skhynix-samsung/))
 - Designers and psychologists are hired to run [A/B testing experiments](https://www.numberanalytics.com/blog/mastering-ab-testing-user-psychology)
-on their users, in order to maximize the data they can collect from your usage of the product
+  on their users, in order to maximize the data they can collect from your usage of the product
 
 No longer is this about a word processing or spreadsheet product, but now it is all about you and
 [what others can sell to you across the rest of the internet](https://www.simpleanalytics.com/blog/does-google-sell-your-data).
@@ -83,7 +83,7 @@ for the upcoming year.
 
 Slash and burn.
 
-From __The mythical man-month__, "As time passes, the system becomes less and less well-ordered. Sooner or later the fixing
+From **The mythical man-month**, "As time passes, the system becomes less and less well-ordered. Sooner or later the fixing
 cease to gain any ground. Each forward step is matched by a backward one. Although in principle usable forever, the system
 has worn out as a base for progress...A brand-new, from-the-ground-up redesign is necessary." (Brooks, 1995)
 
