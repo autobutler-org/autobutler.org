@@ -132,7 +132,8 @@ const formatDate = (dateString: string) => {
 }
 
 .post-header h1 {
-  font-size: 3rem;
+  font-family: var(--font-hero);
+  font-size: 3.5rem;
   color: rgba(255, 255, 255, 0.95);
   line-height: 1.2;
   margin-bottom: 1rem;
