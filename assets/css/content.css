@@ -1,5 +1,6 @@
 /* Content rendering styles for Nuxt Content */
-.document-content {
+.document-content,
+.post-content {
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -8,7 +9,13 @@
 .document-content h3,
 .document-content h4,
 .document-content h5,
-.document-content h6 {
+.document-content h6,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: #fff;
@@ -16,43 +23,70 @@
   scroll-margin-top: 2rem; /* Account for sticky header */
 }
 
-.document-content h1:first-child {
+.document-content h1:first-child,
+.post-content h1:first-child {
   margin-top: 0;
 }
 
-.document-content h1 {
-  font-family: var(--font-hero);
-  font-size: 2.25rem;
+.document-content h1,
+.post-content h1 {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 800;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.document-content h2,
+.post-content h2 {
+  font-size: 2rem;
   font-weight: 700;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 0.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: #3dd68c;
 }
 
-.document-content h2 {
-  font-size: 1.75rem;
+.document-content h3,
+.post-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #5fe3a1;
 }
 
-.document-content h3 {
-  font-size: 1.375rem;
-}
-
-.document-content p {
+.document-content p,
+.post-content p {
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 
 .document-content ul,
-.document-content ol {
+.document-content ol,
+.post-content ul,
+.post-content ol {
   margin-bottom: 1rem;
-  padding-left: 1.5rem;
+  margin-left: 0;
+  padding-left: 2.5rem;
+  list-style-position: outside;
+  font-weight: 300;
+  font-family: var(--font-secondary);
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.document-content li {
+.document-content li,
+.post-content li {
   margin-bottom: 0.5rem;
   line-height: 1.5;
+  font-weight: 300;
+  font-family: var(--font-secondary);
+  color: rgba(255, 255, 255, 0.9);
+  padding-left: 0.5rem;
 }
 
-.document-content pre {
+.document-content pre,
+.post-content pre {
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.5rem;
@@ -62,7 +96,8 @@
   font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
 }
 
-.document-content code {
+.document-content code,
+.post-content code {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.25rem;
@@ -72,7 +107,8 @@
   color: rgba(0, 255, 170, 0.9);
 }
 
-.document-content pre code {
+.document-content pre code,
+.post-content pre code {
   background: none;
   border: none;
   padding: 0;
@@ -80,27 +116,33 @@
   font-size: inherit;
 }
 
-.document-content a {
+.document-content a,
+.post-content a {
   color: rgba(0, 187, 255, 0.9);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.document-content a:hover {
+.document-content a:hover,
+.post-content a:hover {
   color: rgba(0, 255, 170, 0.9);
   text-decoration: underline;
 }
 
-.document-content strong {
-  font-weight: 600;
+.document-content strong,
+.post-content strong {
+  font-weight: 700;
   color: #fff;
+  letter-spacing: 0.01em;
 }
 
-.document-content em {
+.document-content em,
+.post-content em {
   font-style: italic;
 }
 
-.document-content img {
+.document-content img,
+.post-content img {
   max-width: 100%;
   height: auto;
   display: block;
@@ -108,7 +150,8 @@
   border-radius: 0.5rem;
 }
 
-.document-content table {
+.document-content table,
+.post-content table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0;
@@ -118,36 +161,48 @@
 }
 
 .document-content th,
-.document-content td {
+.document-content td,
+.post-content th,
+.post-content td {
   padding: 0.75rem;
   text-align: left;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.document-content th {
+.document-content th,
+.post-content th {
   background: rgba(255, 255, 255, 0.05);
   font-weight: 600;
   color: #fff;
 }
 
-.document-content td {
+.document-content td,
+.post-content td {
   color: rgba(255, 255, 255, 0.9);
 }
 
-.document-content blockquote {
-  border-left: 4px solid rgba(0, 255, 170, 0.5);
-  margin: 1rem 0;
-  padding: 0.5rem 0 0.5rem 1rem;
-  background: rgba(0, 255, 170, 0.05);
-  border-radius: 0 0.25rem 0.25rem 0;
+.document-content blockquote,
+.post-content blockquote {
+  border-left: 6px solid rgba(0, 255, 170, 0.7);
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 255, 170, 0.08);
+  border-radius: 0.25rem;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 12px rgba(0,255,170,0.05);
 }
 
-.document-content blockquote p {
+.document-content blockquote p,
+.post-content blockquote p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+  font-size: 1.1rem;
 }
 
-.document-content hr {
+.document-content hr,
+.post-content hr {
   border: none;
   height: 1px;
   background: rgba(255, 255, 255, 0.1);
@@ -242,6 +297,75 @@
   width: 8px;
   height: 8px;
   background: rgba(0, 255, 170, 0.6);
+}
+
+/* Footnotes */
+.document-content .footnotes,
+.post-content .footnotes {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.document-content .footnotes ol,
+.post-content .footnotes ol {
+  padding-left: 1.5rem;
+}
+
+.document-content .footnotes li,
+.post-content .footnotes li {
+  margin-bottom: 0.75rem;
+}
+
+.document-content .footnotes p,
+.post-content .footnotes p {
+  display: inline;
+  margin: 0;
+}
+
+.document-content .footnotes a,
+.post-content .footnotes a {
+  color: #20b2aa;
+  text-decoration: none;
+}
+
+.document-content .footnotes a:hover,
+.post-content .footnotes a:hover {
+  color: #3dd68c;
+  text-decoration: underline;
+}
+
+.document-content sup,
+.post-content sup {
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+.document-content a[data-footnote-ref],
+.post-content a[data-footnote-ref] {
+  color: #20b2aa;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.document-content a[data-footnote-ref]:hover,
+.post-content a[data-footnote-ref]:hover {
+  color: #3dd68c;
+  text-decoration: underline;
+}
+
+.document-content a[data-footnote-backref],
+.post-content a[data-footnote-backref] {
+  margin-left: 0.25rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+.document-content a[data-footnote-backref]:hover,
+.post-content a[data-footnote-backref]:hover {
+  color: #20b2aa;
 }
 
 /* Mobile responsive styles */

@@ -22,6 +22,13 @@
         <div class="post-content">
           <ContentRenderer v-if="page" :value="page" />
         </div>
+
+        <footer class="post-footer">
+          <div class="cta-buttons">
+            <NuxtLink to="/" class="btn btn-primary">Learn More</NuxtLink>
+            <NuxtLink to="/waitlist" class="btn btn-secondary">Join The Waitlist</NuxtLink>
+          </div>
+        </footer>
       </article>
 
       <div v-else-if="page && isError(page)" class="error">
@@ -132,7 +139,8 @@ const formatDate = (dateString: string) => {
 }
 
 .post-header h1 {
-  font-size: 3rem;
+  font-family: var(--font-hero);
+  font-size: 3.5rem;
   color: rgba(255, 255, 255, 0.95);
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -147,6 +155,52 @@ const formatDate = (dateString: string) => {
 .post-content {
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.8;
+}
+
+.post-footer {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #20b2aa, #1a8f89);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1a8f89, #156d68);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #20b2aa;
+  border: 2px solid #20b2aa;
+}
+
+.btn-secondary:hover {
+  background: rgba(32, 178, 170, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
 }
 
 .loading {
@@ -177,6 +231,16 @@ const formatDate = (dateString: string) => {
 
   .description {
     font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
   }
 }
 </style>
