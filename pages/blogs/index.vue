@@ -16,11 +16,11 @@
         >
           <NuxtLink :to="article.path" class="blog-link">
             <div class="blog-meta">
-              <time v-if="article.date" :datetime="article.date">{{
-                formatDate(article.date)
+              <time v-if="article.date || article.meta?.date" :datetime="(article.date || article.meta?.date) as string">{{
+                formatDate((article.date || article.meta?.date) as string)
               }}</time>
-              <span v-if="article.author" class="author"
-                >by {{ article.author }}</span
+              <span v-if="article.author || article.meta?.author" class="author"
+                >by {{ article.author || article.meta?.author }}</span
               >
             </div>
             <h2>{{ article.title }}</h2>
@@ -45,22 +45,23 @@ interface BlogPost extends ContentCollectionItem {
   author?: string;
 }
 
-const { data: allContent } = await useAsyncData("blogs", () =>
-  queryCollection("content").all(),
-);
-
-const articles = computed(() => {
-  if (!allContent.value) return [];
-  return allContent.value
+const { data: articles } = await useAsyncData("blogs", async () => {
+  const allContent = await queryCollection("content").all();
+  
+  const blogs = allContent
     .filter(
       (item: BlogPost) =>
         item.path?.startsWith("/blogs/") && item.path !== "/blogs",
-    )
-    .sort((a: BlogPost, b: BlogPost) => {
-      const dateA = new Date(a.date || 0).getTime();
-      const dateB = new Date(b.date || 0).getTime();
-      return dateB - dateA;
-    }) as BlogPost[];
+    ) as BlogPost[];
+  
+  // Sort by date - check both direct property and meta property
+  blogs.sort((a: BlogPost, b: BlogPost) => {
+    const dateA = new Date(a.date || (a.meta?.date as string) || 0).getTime();
+    const dateB = new Date(b.date || (b.meta?.date as string) || 0).getTime();
+    return dateB - dateA;
+  });
+  
+  return blogs;
 });
 
 const formatDate = (dateString?: string) => {
