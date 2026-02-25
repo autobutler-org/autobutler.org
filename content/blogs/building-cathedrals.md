@@ -94,6 +94,9 @@ in the first place.
 
 ## What is Autobutler doing?
 
-We hope to inspire people to take this issue into their own hands, and for companies to respect the consumer once again. For too long they have created abstractions that benefit them at the cost of the dignity of the consumer.
-Autobutler is rebuilding data storage systems "from-the-ground-up". These are not cathedrals that will take hundreds of years, however,
-we share fraternity with [the third stonecutter](https://josephenglishtest.wordpress.com/2024/09/27/the-parable-of-laying-bricks-or-building-a-cathedral/); this is not just a job to us. He was building a cathedral, and we are building the resistance.
+We hope to inspire people to take this issue into their own hands, and for companies to respect the consumer once again.
+For too long they have created abstractions that benefit them at the cost of the dignity of the consumer.
+Autobutler is rebuilding data storage systems "from-the-ground-up". These are not cathedrals that will take hundreds of
+years, however, we share fraternity with
+[the third stonecutter](https://josephenglishtest.wordpress.com/2024/09/27/the-parable-of-laying-bricks-or-building-a-cathedral/);
+this is not just a job to us. He was building a cathedral, and we are building the resistance.

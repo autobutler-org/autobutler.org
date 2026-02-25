@@ -26,7 +26,9 @@
         <footer class="post-footer">
           <div class="cta-buttons">
             <NuxtLink to="/" class="btn btn-primary">Learn More</NuxtLink>
-            <NuxtLink to="/waitlist" class="btn btn-secondary">Join The Waitlist</NuxtLink>
+            <NuxtLink to="/waitlist" class="btn btn-secondary"
+              >Join The Waitlist</NuxtLink
+            >
           </div>
         </footer>
       </article>
@@ -79,7 +81,6 @@ const { data: page, error } = await useAsyncData(
 if (error && error.value) {
   console.error("Error loading blog post:", error.value);
 }
-
 
 const isError = (p: BlogPost | ErrorPage | null): p is ErrorPage => {
   return p !== null && "_error" in p;

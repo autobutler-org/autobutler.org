@@ -58,18 +58,283 @@
           remove external hard drives if you want. Mail a backup to your grandma
           if you feel like it.
         </p>
-        <NuxtLink to="/about" class="btn primary">Get Started</NuxtLink>
+        <div id="mc_embed_shell">
+          <div id="mc_embed_signup">
+            <form
+              id="mc-embedded-subscribe-form"
+              action="https://autobutler.us5.list-manage.com/subscribe/post?u=83e0cf2d6edd852308ba6671f&amp;id=a3382ba074&amp;f_id=00a0c2e1f0"
+              method="post"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+            >
+              <div id="mc_embed_signup_scroll">
+                <h2>Want updates?</h2>
+                <p class="mc-powered-by">Powered by Mailchimp</p>
+                <div class="mc-field-group">
+                  <label for="mce-EMAIL">Email Address</label
+                  ><input
+                    id="mce-EMAIL"
+                    type="email"
+                    name="EMAIL"
+                    class="required email"
+                    required="true"
+                    value=""
+                  />
+                </div>
+                <div id="mce-responses" class="clear">
+                  <div
+                    id="mce-error-response"
+                    class="response"
+                    style="display: none"
+                  ></div>
+                  <div
+                    id="mce-success-response"
+                    class="response"
+                    style="display: none"
+                  ></div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  style="position: absolute; left: -5000px"
+                >
+                  <input
+                    type="text"
+                    name="b_83e0cf2d6edd852308ba6671f_a3382ba074"
+                    tabindex="-1"
+                    value=""
+                  />
+                </div>
+                <div class="clear">
+                  <input
+                    id="mc-embedded-subscribe"
+                    type="submit"
+                    name="subscribe"
+                    class="button"
+                    value="Subscribe"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// Component logic can be added here if needed
+import { onMounted } from "vue";
+
+// Load Mailchimp CSS
+useHead({
+  link: [
+    {
+      rel: "stylesheet",
+      href: "//cdn-images.mailchimp.com/embedcode/classic-061523.css",
+      type: "text/css",
+    },
+  ],
+});
+
+// Initialize Mailchimp validation and custom functionality
+onMounted(() => {
+  // Load the Mailchimp validation script
+  const script = document.createElement("script");
+  script.src = "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js";
+  script.type = "text/javascript";
+  script.onload = () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    // Initialize Mailchimp validation
+    if (typeof window !== "undefined" && (window as any).jQuery) {
+      (function (_$: any) {
+        (window as any).fnames = [];
+        (window as any).ftypes = [];
+        (window as any).fnames[0] = "EMAIL";
+        (window as any).ftypes[0] = "email";
+        (window as any).fnames[1] = "FNAME";
+        (window as any).ftypes[1] = "text";
+        (window as any).fnames[2] = "LNAME";
+        (window as any).ftypes[2] = "text";
+        (window as any).fnames[6] = "COMPANY";
+        (window as any).ftypes[6] = "text";
+        (window as any).fnames[3] = "OTHER";
+        (window as any).ftypes[3] = "text";
+      })((window as any).jQuery);
+      (window as any).$mcj = (window as any).jQuery.noConflict(true);
+    }
+
+    // SMS Phone Multi-Country Functionality
+    if (!(window as any).MC) {
+      (window as any).MC = {};
+    }
+    (window as any).MC.smsPhoneData = {
+      defaultCountryCode: "US",
+      programs: [],
+      smsProgramDataCountryNames: [],
+    };
+
+    // Initialize SMS phone dropdowns if they exist
+    const smsPhoneFields = document.querySelectorAll('[id^="country-select-"]');
+    smsPhoneFields.forEach(function (dropdown: any) {
+      const _fieldName = dropdown?.id.replace("country-select-", "");
+      // initializeSmsPhoneDropdown would go here if SMS fields are used
+    });
+    /* eslint-enable @typescript-eslint/no-explicit-any */
+  };
+  document.head.appendChild(script);
+});
 </script>
 
 <style>
 @import "@/assets/css/common.css";
+
+/* Mailchimp form styles */
+#mc_embed_shell {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+#mc_embed_signup {
+  background: rgba(255, 255, 255, 0.05);
+  clear: left;
+  font:
+    14px Helvetica,
+    Arial,
+    sans-serif;
+  width: 600px;
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+#mc_embed_signup * {
+  box-sizing: border-box;
+}
+
+#mc_embed_signup h2 {
+  font-family: var(--font-hero);
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#mc_embed_signup .mc-powered-by {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+#mc_embed_signup .mc-field-group {
+  margin-bottom: 1.5rem;
+}
+
+#mc_embed_signup label {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+#mc_embed_signup input[type="email"],
+#mc_embed_signup input[type="text"] {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#mc_embed_signup input[type="email"]:focus,
+#mc_embed_signup input[type="text"]:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+#mc_embed_signup input[type="email"]::placeholder,
+#mc_embed_signup input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#mc_embed_signup .button {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 187, 255, 0.85),
+    rgba(0, 149, 255, 0.75)
+  ) !important;
+  border: 1px solid rgba(0, 187, 255, 0.5) !important;
+  color: #fff !important;
+  padding: 1rem 2.5rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem !important;
+  line-height: 1.5 !important;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: inherit !important;
+  height: auto !important;
+  min-height: auto !important;
+  box-shadow: 0 4px 15px rgba(0, 187, 255, 0.3);
+}
+
+#mc_embed_signup .button:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 220, 255, 0.95),
+    rgba(0, 187, 255, 0.85)
+  ) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 187, 255, 0.5);
+}
+
+#mc_embed_signup .response {
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+#mc_embed_signup #mce-error-response {
+  background: rgba(255, 50, 50, 0.1);
+  border: 1px solid rgba(255, 50, 50, 0.3);
+}
+
+#mc_embed_signup #mce-success-response {
+  background: rgba(50, 255, 150, 0.1);
+  border: 1px solid rgba(50, 255, 150, 0.3);
+}
+
+#mc_embed_signup .clear {
+  clear: both;
+  text-align: center;
+}
+
+#mc_embed_signup div#mce-responses {
+  margin: 0;
+  padding: 0;
+}
 
 .landing-page {
   min-height: 100vh;
@@ -108,6 +373,7 @@
   margin-bottom: 1.5rem;
   background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: translateY(-10vh);
 }
@@ -188,6 +454,7 @@
   margin-bottom: 2rem;
   background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -225,6 +492,7 @@
   margin-bottom: 2rem;
   background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -329,6 +597,34 @@
 
   .image-container {
     max-width: 100%;
+  }
+
+  #mc_embed_signup {
+    padding: 2rem 1.5rem;
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  #mc_embed_signup h2 {
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  #mc_embed_signup input[type="email"],
+  #mc_embed_signup input[type="text"] {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    padding: 1rem !important;
+  }
+
+  #mc_embed_signup .button {
+    width: 100%;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+
+  #mc_embed_signup label {
+    font-size: 0.95rem;
   }
 }
 </style>
