@@ -276,10 +276,10 @@ onMounted(() => {
 #mc_embed_signup .button {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.1)
+    rgba(0, 187, 255, 0.85),
+    rgba(0, 149, 255, 0.75)
   ) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border: 1px solid rgba(0, 187, 255, 0.5) !important;
   color: #fff !important;
   padding: 1rem 2.5rem !important;
   font-size: 1.1rem !important;
@@ -296,16 +296,17 @@ onMounted(() => {
   font-family: inherit !important;
   height: auto !important;
   min-height: auto !important;
+  box-shadow: 0 4px 15px rgba(0, 187, 255, 0.3);
 }
 
 #mc_embed_signup .button:hover {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0.2)
+    rgba(0, 220, 255, 0.95),
+    rgba(0, 187, 255, 0.85)
   ) !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 187, 255, 0.5);
 }
 
 #mc_embed_signup .response {
