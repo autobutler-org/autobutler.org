@@ -61,9 +61,9 @@
         <div id="mc_embed_shell">
           <div id="mc_embed_signup">
             <form
+              id="mc-embedded-subscribe-form"
               action="https://autobutler.us5.list-manage.com/subscribe/post?u=83e0cf2d6edd852308ba6671f&amp;id=a3382ba074&amp;f_id=00a0c2e1f0"
               method="post"
-              id="mc-embedded-subscribe-form"
               name="mc-embedded-subscribe-form"
               class="validate"
               target="_blank"
@@ -74,23 +74,23 @@
                 <div class="mc-field-group">
                   <label for="mce-EMAIL">Email Address</label
                   ><input
+                    id="mce-EMAIL"
                     type="email"
                     name="EMAIL"
                     class="required email"
-                    id="mce-EMAIL"
                     required="true"
                     value=""
                   />
                 </div>
                 <div id="mce-responses" class="clear">
                   <div
-                    class="response"
                     id="mce-error-response"
+                    class="response"
                     style="display: none"
                   ></div>
                   <div
-                    class="response"
                     id="mce-success-response"
+                    class="response"
                     style="display: none"
                   ></div>
                 </div>
@@ -107,9 +107,9 @@
                 </div>
                 <div class="clear">
                   <input
+                    id="mc-embedded-subscribe"
                     type="submit"
                     name="subscribe"
-                    id="mc-embedded-subscribe"
                     class="button"
                     value="Subscribe"
                   />
@@ -124,41 +124,42 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted } from "vue";
 
 // Load Mailchimp CSS
 useHead({
   link: [
     {
-      rel: 'stylesheet',
-      href: '//cdn-images.mailchimp.com/embedcode/classic-061523.css',
-      type: 'text/css'
-    }
-  ]
+      rel: "stylesheet",
+      href: "//cdn-images.mailchimp.com/embedcode/classic-061523.css",
+      type: "text/css",
+    },
+  ],
 });
 
 // Initialize Mailchimp validation and custom functionality
 onMounted(() => {
   // Load the Mailchimp validation script
-  const script = document.createElement('script');
-  script.src = '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js';
-  script.type = 'text/javascript';
+  const script = document.createElement("script");
+  script.src = "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js";
+  script.type = "text/javascript";
   script.onload = () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     // Initialize Mailchimp validation
-    if (typeof window !== 'undefined' && (window as any).jQuery) {
-      (function ($: any) {
-        (window as any).fnames = new Array();
-        (window as any).ftypes = new Array();
-        (window as any).fnames[0] = 'EMAIL';
-        (window as any).ftypes[0] = 'email';
-        (window as any).fnames[1] = 'FNAME';
-        (window as any).ftypes[1] = 'text';
-        (window as any).fnames[2] = 'LNAME';
-        (window as any).ftypes[2] = 'text';
-        (window as any).fnames[6] = 'COMPANY';
-        (window as any).ftypes[6] = 'text';
-        (window as any).fnames[3] = 'OTHER';
-        (window as any).ftypes[3] = 'text';
+    if (typeof window !== "undefined" && (window as any).jQuery) {
+      (function (_$: any) {
+        (window as any).fnames = [];
+        (window as any).ftypes = [];
+        (window as any).fnames[0] = "EMAIL";
+        (window as any).ftypes[0] = "email";
+        (window as any).fnames[1] = "FNAME";
+        (window as any).ftypes[1] = "text";
+        (window as any).fnames[2] = "LNAME";
+        (window as any).ftypes[2] = "text";
+        (window as any).fnames[6] = "COMPANY";
+        (window as any).ftypes[6] = "text";
+        (window as any).fnames[3] = "OTHER";
+        (window as any).ftypes[3] = "text";
       })((window as any).jQuery);
       (window as any).$mcj = (window as any).jQuery.noConflict(true);
     }
@@ -168,17 +169,18 @@ onMounted(() => {
       (window as any).MC = {};
     }
     (window as any).MC.smsPhoneData = {
-      defaultCountryCode: 'US',
+      defaultCountryCode: "US",
       programs: [],
-      smsProgramDataCountryNames: []
+      smsProgramDataCountryNames: [],
     };
 
     // Initialize SMS phone dropdowns if they exist
     const smsPhoneFields = document.querySelectorAll('[id^="country-select-"]');
     smsPhoneFields.forEach(function (dropdown: any) {
-      const fieldName = dropdown?.id.replace('country-select-', '');
+      const _fieldName = dropdown?.id.replace("country-select-", "");
       // initializeSmsPhoneDropdown would go here if SMS fields are used
     });
+    /* eslint-enable @typescript-eslint/no-explicit-any */
   };
   document.head.appendChild(script);
 });
@@ -196,7 +198,10 @@ onMounted(() => {
 #mc_embed_signup {
   background: rgba(255, 255, 255, 0.05);
   clear: left;
-  font: 14px Helvetica, Arial, sans-serif;
+  font:
+    14px Helvetica,
+    Arial,
+    sans-serif;
   width: 600px;
   max-width: 100%;
   margin: 2rem auto;
@@ -269,7 +274,11 @@ onMounted(() => {
 }
 
 #mc_embed_signup .button {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  ) !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
   color: #fff !important;
   padding: 1rem 2.5rem !important;
@@ -290,7 +299,11 @@ onMounted(() => {
 }
 
 #mc_embed_signup .button:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2)) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.2)
+  ) !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
