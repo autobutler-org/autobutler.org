@@ -10,7 +10,7 @@
 
     <div class="image-showcase">
       <div class="image-container left">
-        <img src="/assets/images/files.png" alt="Files" />
+        <img src="/assets/images/files.webp" alt="Files" />
       </div>
       <div class="image-container right">
         <img src="/assets/images/casing.webp" alt="Casing" />
