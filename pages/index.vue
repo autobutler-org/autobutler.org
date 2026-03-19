@@ -126,6 +126,13 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 
+// SEO meta
+useSeoMeta({
+  title: "AutoButler — Data Autonomy For Everyone",
+  description:
+    "AutoButler is a plug-and-play, no-subscription home cloud device. Store your photos, files, and data on your own hardware — no Google, no AWS, no monthly fees.",
+});
+
 // Load Mailchimp CSS
 useHead({
   link: [
