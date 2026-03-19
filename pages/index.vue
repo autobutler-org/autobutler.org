@@ -131,6 +131,15 @@ useSeoMeta({
   title: "AutoButler — Data Autonomy For Everyone",
   description:
     "AutoButler is a plug-and-play, no-subscription home cloud device. Store your photos, files, and data on your own hardware — no Google, no AWS, no monthly fees.",
+  ogTitle: "AutoButler — Data Autonomy For Everyone",
+  ogDescription:
+    "A plug-and-play home cloud device. Your photos and files, stored on your own hardware. No subscriptions, no big tech.",
+  ogType: "website",
+  ogUrl: "https://autobutler.org",
+  twitterCard: "summary_large_image",
+  twitterTitle: "AutoButler — Data Autonomy For Everyone",
+  twitterDescription:
+    "A plug-and-play home cloud device. Your photos and files, stored on your own hardware. No subscriptions, no big tech.",
 });
 
 // Load Mailchimp CSS
