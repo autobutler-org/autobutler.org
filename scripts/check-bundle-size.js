@@ -24,6 +24,10 @@ const BUDGETS = {
   total: { label: 'Total', maxKB: 5120 },
 };
 
+// Source maps are excluded from budgets — they're dev artifacts and
+// would inflate JS/CSS totals by 5-10x.
+const EXCLUDED_EXTS = new Set(['.map']);
+
 const EXT_MAP = {
   '.js': 'js',
   '.mjs': 'js',
@@ -66,9 +70,10 @@ try {
 const totals = { js: 0, css: 0, images: 0, total: 0 };
 
 for (const file of files) {
+  const ext = extname(file).toLowerCase();
+  if (EXCLUDED_EXTS.has(ext)) continue;
   const size = statSync(file).size;
   totals.total += size;
-  const ext = extname(file).toLowerCase();
   const type = EXT_MAP[ext];
   if (type) totals[type] += size;
 }
