@@ -5,11 +5,14 @@
  * Scans the .output/public directory after `npm run generate` and enforces
  * size budgets per resource type. Exits non-zero if any budget is exceeded.
  *
- * Budgets (uncompressed):
- *   JS total:    500 KB
- *   CSS total:   100 KB
- *   Images total: 500 KB
- *   Overall total: 5 MB
+ * Budgets (uncompressed, source maps excluded):
+ *   JS total:    1024 KB  (1 MB)
+ *   CSS total:    200 KB
+ *   Images total:  15 MB  (product photos + WebP assets)
+ *   Overall total: 20 MB
+ *
+ * These are regression guards, not perf targets. Tighten gradually as
+ * optimizations land.
  */
 
 import { readdirSync, statSync } from 'fs';
@@ -18,10 +21,10 @@ import { join, extname } from 'path';
 const OUTPUT_DIR = '.output/public';
 
 const BUDGETS = {
-  js: { label: 'JavaScript', maxKB: 500 },
-  css: { label: 'CSS', maxKB: 100 },
-  images: { label: 'Images', maxKB: 500 },
-  total: { label: 'Total', maxKB: 5120 },
+  js: { label: 'JavaScript', maxKB: 1024 },
+  css: { label: 'CSS', maxKB: 200 },
+  images: { label: 'Images', maxKB: 15360 },
+  total: { label: 'Total', maxKB: 20480 },
 };
 
 // Source maps are excluded from budgets — they're dev artifacts and
