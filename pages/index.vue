@@ -58,6 +58,7 @@
           remove external hard drives if you want. Mail a backup to your grandma
           if you feel like it.
         </p>
+        <ClientOnly>
         <div id="mc_embed_shell">
           <div id="mc_embed_signup">
             <form
@@ -118,6 +119,7 @@
             </form>
           </div>
         </div>
+        </ClientOnly>
       </div>
     </div>
   </div>
@@ -125,6 +127,16 @@
 
 <script setup lang="ts">
 import { onMounted } from "vue";
+
+useSeoMeta({
+  title: 'AutoButler — Your Private Cloud, At Home',
+  description:
+    'AutoButler is a plug-and-play private cloud device that turns your USB storage into your own cloud. No subscriptions, no data mining — your data stays in your home.',
+  ogTitle: 'AutoButler — Your Private Cloud, At Home',
+  ogDescription:
+    'Plug-and-play private cloud. No subscriptions. No AI. Your data, your home.',
+  ogType: 'website',
+});
 
 // Load Mailchimp CSS
 useHead({
