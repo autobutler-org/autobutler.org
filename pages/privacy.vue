@@ -134,6 +134,17 @@
   </main>
 </template>
 
+
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Privacy Policy — AutoButler',
+  description: "AutoButler privacy policy. We don't collect your data — that's the whole point.",
+  ogTitle: 'Privacy Policy — AutoButler',
+  ogDescription: "AutoButler privacy policy. We don't collect your data — that's the whole point.",
+  ogType: 'website',
+});
+</script>
+
 <style scoped>
 .privacy-page {
   flex: 1;

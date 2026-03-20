@@ -51,6 +51,13 @@
 
 <script setup lang="ts">
 // Component is stateless
+useSeoMeta({
+  title: 'Terms of Service — AutoButler',
+  description: 'AutoButler terms of service.',
+  ogTitle: 'Terms of Service — AutoButler',
+  ogDescription: 'AutoButler terms of service.',
+  ogType: 'website',
+});
 </script>
 
 <style scoped>
