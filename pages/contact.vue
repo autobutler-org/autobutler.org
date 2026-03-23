@@ -207,6 +207,13 @@ const resetForm = () => {
   submitted.value = false;
   error.value = "";
 };
+useSeoMeta({
+  title: 'Contact — AutoButler',
+  description: 'Get in touch with the AutoButler team.',
+  ogTitle: 'Contact — AutoButler',
+  ogDescription: 'Get in touch with the AutoButler team.',
+  ogType: 'website',
+});
 </script>
 
 <style scoped>

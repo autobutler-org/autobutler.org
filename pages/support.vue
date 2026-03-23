@@ -51,6 +51,13 @@ const submitToGitHub = () => {
   const issueUrl = `${baseUrl}?${params.toString()}`;
   window.open(issueUrl, "_blank");
 };
+useSeoMeta({
+  title: 'Support — AutoButler',
+  description: 'Get help with AutoButler. Report bugs, request features, and find answers.',
+  ogTitle: 'Support — AutoButler',
+  ogDescription: 'Get help with AutoButler. Report bugs, request features, and find answers.',
+  ogType: 'website',
+});
 </script>
 
 <template>
