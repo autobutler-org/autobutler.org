@@ -18,7 +18,8 @@
     "fix:eslint": "npm run lint:eslint -- --fix",
     "fix:prettier": "prettier --write .",
     "fix:md": "markdownlint-cli2 --fix \"**/*.md\" \"!node_modules/**\"",
-    "fix": "concurrently -m1 npm:fix:*"
+    "fix": "concurrently -m1 npm:fix:*",
+    "check:size": "node scripts/check-bundle-size.js"
   },
   "dependencies": {
     "@nuxt/content": "^3.11.2",

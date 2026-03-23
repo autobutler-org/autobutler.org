@@ -32,3 +32,6 @@ jobs:
       - name: Generate
         run: |
           npm run generate
+      - name: Check bundle size budgets
+        run: |
+          node scripts/check-bundle-size.js
