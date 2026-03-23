@@ -1,57 +1,113 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: "Terms of Service — AutoButler",
+  description:
+    "AutoButler terms of service. Open-source, self-hosted, and straightforward.",
+  ogTitle: "Terms of Service — AutoButler",
+  ogDescription:
+    "AutoButler terms of service. Open-source, self-hosted, and straightforward.",
+  ogType: "website",
+});
+</script>
+
 <template>
   <main class="terms-page">
     <div class="terms-content">
       <h1>Terms of Service</h1>
-      <div class="section">
-        <h2>1. Acceptance of Terms</h2>
+      <p class="last-updated">Last updated: March 2026</p>
+
+      <div class="section plain-talk">
         <p>
-          By accessing and using AutoButler, you agree to be bound by these
-          Terms of Service and all applicable laws and regulations.
+          Plain talk first: AutoButler is open-source software you run on your
+          own hardware. We don't host your data and we don't have a subscription
+          to cancel. These terms are about using this website
+          (autobutler.org) and the software we publish here.
         </p>
       </div>
 
       <div class="section">
-        <h2>2. Use License</h2>
+        <h2>1. The Software</h2>
         <p>
-          Permission is granted to temporarily access AutoButler for personal,
-          non-commercial use only. This license does not include:
+          AutoButler is released under an open-source license. You can view the
+          source code, fork it, run it, and modify it within the terms of that
+          license. The license file in the repository is the authoritative
+          source on what you can and can't do with the code.
         </p>
-        <ul>
-          <li>Modifying or copying the materials</li>
-          <li>Using the materials for commercial purposes</li>
-          <li>Attempting to decompile or reverse engineer any software</li>
-          <li>Removing any copyright or proprietary notations</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h2>3. User Responsibilities</h2>
-        <p>As a user of AutoButler, you agree to:</p>
-        <ul>
-          <li>Provide accurate and complete information</li>
-          <li>Maintain the security of your account</li>
-          <li>Use the service in compliance with all applicable laws</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h2>4. Disclaimer</h2>
         <p>
-          The materials on AutoButler are provided on an 'as is' basis. We make
-          no warranties, expressed or implied, and hereby disclaim all other
-          warranties including, without limitation, implied warranties or
-          conditions of merchantability, fitness for a particular purpose, or
-          non-infringement of intellectual property or other violation of
-          rights.
+          <a
+            href="https://github.com/autobutler-org/autobutler"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View the source and license on GitHub →</a
+          >
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>2. This Website</h2>
+        <p>
+          Autobutler.org is an informational site. You're welcome to read it,
+          link to it, and share it. We ask only that you don't use it in a way
+          that's misleading (for example, implying we endorse something we
+          don't).
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>3. No Warranty</h2>
+        <p>
+          AutoButler is provided as-is. We do our best to make it reliable and
+          secure, but we can't guarantee it will always work perfectly. You're
+          running it on your own hardware — you're responsible for your own
+          data and backups.
+        </p>
+        <p>
+          To be explicit: we're not liable for data loss, downtime, or anything
+          else that goes wrong when you use this software. Back up your data.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>4. Contributing</h2>
+        <p>
+          If you contribute to AutoButler — code, bug reports, documentation —
+          thank you. By submitting a pull request you agree that your
+          contribution can be included under the project's existing license.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>5. Changes</h2>
+        <p>
+          If we update these terms, we'll update the date above. We won't
+          change them in ways that are sneaky or harmful — if something
+          significant changes, we'll say so clearly.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Questions?</h2>
+        <p>
+          If something here is unclear or you have questions, open an issue or
+          start a conversation on
+          <a
+            href="https://github.com/autobutler-org/autobutler"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          or
+          <a
+            href="https://discord.com/invite/clawd"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Discord</a
+          >.
         </p>
       </div>
     </div>
   </main>
 </template>
-
-<script setup lang="ts">
-// Component is stateless
-</script>
 
 <style scoped>
 .terms-page {
@@ -69,6 +125,13 @@
 h1 {
   color: #4caf50;
   font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.last-updated {
+  color: #b0b0b0;
+  font-style: italic;
+  font-size: 0.9rem;
   margin-bottom: 2rem;
 }
 
@@ -76,35 +139,31 @@ h1 {
   margin-bottom: 2.5rem;
 }
 
+.plain-talk {
+  background: rgba(76, 175, 80, 0.06);
+  border-left: 3px solid #4caf50;
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+}
+
 h2 {
   color: #81c784;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 p {
   color: #e0e0e0;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 1rem;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 1.5rem;
-}
-
-ul li {
-  color: #e0e0e0;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
-  position: relative;
-}
-
-ul li::before {
-  content: "•";
+a {
   color: #4caf50;
-  position: absolute;
-  left: -1.5rem;
-  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 </style>
