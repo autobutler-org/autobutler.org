@@ -1,3 +1,15 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: "Privacy Policy — AutoButler",
+  description:
+    "AutoButler doesn't collect your data. Here's what that means in plain English.",
+  ogTitle: "Privacy Policy — AutoButler",
+  ogDescription:
+    "AutoButler doesn't collect your data. Here's what that means in plain English.",
+  ogType: "website",
+});
+</script>
+
 <template>
   <main class="privacy-page">
     <div class="privacy-content">
@@ -111,7 +123,7 @@
         <h2>Questions?</h2>
         <p>
           If you have any questions about privacy or how we handle information,
-          email us at [your-email]. We're happy to explain anything that's
+          email us at support@autobutler.org. We're happy to explain anything that's
           unclear.
           <br />
           If you have ideas for how we can improve, you can also write us to-do
