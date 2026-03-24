@@ -85,7 +85,13 @@
 </template>
 
 <script setup lang="ts">
-// Component logic can be added here if needed
+useSeoMeta({
+  title: 'Enterprise — AutoButler',
+  description: 'AutoButler for organizations. Private, self-hosted cloud storage with no vendor lock-in.',
+  ogTitle: 'Enterprise — AutoButler',
+  ogDescription: 'AutoButler for organizations. Private, self-hosted cloud storage with no vendor lock-in.',
+  ogType: 'website',
+});
 </script>
 
 <style scoped>

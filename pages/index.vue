@@ -58,6 +58,7 @@
           remove external hard drives if you want. Mail a backup to your grandma
           if you feel like it.
         </p>
+        <ClientOnly>
         <div id="mc_embed_shell">
           <div id="mc_embed_signup">
             <form
@@ -118,6 +119,7 @@
             </form>
           </div>
         </div>
+        </ClientOnly>
       </div>
     </div>
   </div>

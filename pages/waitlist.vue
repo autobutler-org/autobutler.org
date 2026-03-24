@@ -32,6 +32,13 @@
 
 <script setup lang="ts">
 // Mailchimp embed - no additional logic needed
+useSeoMeta({
+  title: 'Join the Waitlist — AutoButler',
+  description: 'Get early access to AutoButler. Join the waitlist for the private cloud device built for your home.',
+  ogTitle: 'Join the Waitlist — AutoButler',
+  ogDescription: 'Get early access to AutoButler. Join the waitlist for the private cloud device built for your home.',
+  ogType: 'website',
+});
 </script>
 
 <style scoped>

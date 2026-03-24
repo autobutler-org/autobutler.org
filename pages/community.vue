@@ -14,6 +14,17 @@
   </PageContainer>
 </template>
 
+
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Community — AutoButler',
+  description: 'Join the AutoButler community. Get help, share tips, and connect with others building a more private digital life.',
+  ogTitle: 'Community — AutoButler',
+  ogDescription: 'Join the AutoButler community. Get help, share tips, and connect with others building a more private digital life.',
+  ogType: 'website',
+});
+</script>
+
 <style scoped>
 .community-page {
   max-width: 800px;
@@ -36,3 +47,4 @@
   line-height: 1.6;
 }
 </style>
+
