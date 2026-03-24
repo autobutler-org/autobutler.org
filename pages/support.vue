@@ -79,10 +79,10 @@ useSeoMeta({
             <span class="help-link-title">Troubleshooting</span>
             <span class="help-link-desc">Common issues and how to fix them</span>
           </a>
-          <a href="https://discord.gg/autobutler" target="_blank" rel="noopener" class="help-link-card">
+          <a href="https://github.com/autobutler-org/autobutler/issues" target="_blank" rel="noopener" class="help-link-card">
             <span class="help-link-icon">💬</span>
-            <span class="help-link-title">Community (Discord)</span>
-            <span class="help-link-desc">Chat with developers and users</span>
+            <span class="help-link-title">GitHub Issues</span>
+            <span class="help-link-desc">Ask questions and report problems</span>
           </a>
           <a href="https://github.com/autobutler-org/autobutler" target="_blank" rel="noopener" class="help-link-card">
             <span class="help-link-icon">🤝</span>
