@@ -88,20 +88,12 @@ useSeoMeta({
       <div class="section">
         <h2>Questions?</h2>
         <p>
-          If something here is unclear or you have questions, open an issue or
-          start a conversation on
+          If something here is unclear or you have questions, open an issue on
           <a
             href="https://github.com/autobutler-org/autobutler"
             target="_blank"
             rel="noopener noreferrer"
             >GitHub</a
-          >
-          or
-          <a
-            href="https://discord.com/invite/clawd"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Discord</a
           >.
         </p>
       </div>
