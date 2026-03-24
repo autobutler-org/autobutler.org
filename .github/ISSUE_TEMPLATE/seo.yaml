@@ -1,0 +1,40 @@
+name: SEO / Meta
+description: Missing or incorrect meta tags, OG images, structured data, sitemap, or other SEO concerns.
+title: "seo: "
+labels: ["seo"]
+assignees: []
+body:
+  - type: dropdown
+    id: seo-type
+    attributes:
+      label: Type
+      multiple: true
+      options:
+        - Missing meta title/description
+        - Missing OG/social tags
+        - Missing or broken OG image
+        - Structured data (JSON-LD)
+        - Sitemap
+        - Canonical URL
+        - Page speed / Core Web Vitals
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: affected-pages
+    attributes:
+      label: Affected pages
+      description: List the routes or page names.
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's missing or wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: suggested
+    attributes:
+      label: Suggested fix
+      description: Proposed meta values, copy, or approach.
