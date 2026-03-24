@@ -1,0 +1,35 @@
+name: Chore / Maintenance
+description: Dependency updates, refactors, CI changes, tooling, cleanup — work that doesn't change user-facing content.
+title: "chore: "
+labels: ["chore"]
+assignees: []
+body:
+  - type: dropdown
+    id: chore-type
+    attributes:
+      label: Type of chore
+      options:
+        - Dependency update
+        - Refactor / cleanup
+        - CI / tooling
+        - Performance
+        - Accessibility
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs doing?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why now?
+      description: Blocking something? Routine hygiene? Optional but helpful.
+  - type: textarea
+    id: bot-guidance
+    attributes:
+      label: Bot guidance
+      description: Scope limits, related issues, or anything Sable should know when picking this up.

@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: GitHub Security Bug Bounty
-    url: https://bounty.github.com/
-    about: Please report security vulnerabilities here.
+  - name: Community Discord
+    url: https://discord.com/invite/clawd
+    about: Questions, help, and general discussion.
+  - name: Main AutoButler Repo
+    url: https://github.com/autobutler-org/autobutler/issues/new/choose
+    about: Bugs and feature requests for the AutoButler app itself.

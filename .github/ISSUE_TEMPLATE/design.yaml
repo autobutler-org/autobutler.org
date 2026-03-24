@@ -1,0 +1,45 @@
+name: Design / UI
+description: Visual issues, layout problems, accessibility concerns, or design improvements.
+title: "design: "
+labels: ["design"]
+assignees: []
+body:
+  - type: dropdown
+    id: design-type
+    attributes:
+      label: Type
+      multiple: true
+      options:
+        - Layout / spacing
+        - Typography
+        - Color / theming
+        - Responsiveness / mobile
+        - Accessibility (a11y)
+        - Animation / transitions
+        - Dark mode
+        - New component
+    validations:
+      required: true
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected pages or components
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's the issue or improvement?
+      description: Describe what looks wrong or what should change. Screenshots welcome.
+    validations:
+      required: true
+  - type: dropdown
+    id: local-test
+    attributes:
+      label: Local testing needed?
+      description: Visual changes almost always benefit from local review.
+      options:
+        - "Yes — reviewer should run npm run dev"
+        - "No — trivial or config-only change"
+    validations:
+      required: true

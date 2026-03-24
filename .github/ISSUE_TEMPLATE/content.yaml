@@ -1,0 +1,41 @@
+name: Content / Copy
+description: New or updated website copy, blog posts, docs pages, or marketing text.
+title: "content: "
+labels: ["content"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For changes to what the site *says* rather than how it looks or works.
+  - type: dropdown
+    id: content-type
+    attributes:
+      label: Content type
+      multiple: true
+      options:
+        - Docs page (new)
+        - Docs page (update)
+        - Blog post
+        - Marketing copy (homepage, landing pages)
+        - Legal (privacy, terms)
+        - Error / empty states
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What content is needed?
+      description: Describe what should be written or changed. Link to existing pages if updating.
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Who is this for?
+      description: End users? Developers? Potential customers? Helps set the right tone.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Key points to hit, things to avoid, links to reference material.
