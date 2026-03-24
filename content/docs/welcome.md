@@ -15,7 +15,7 @@ entirely inside your house. No big tech, no data outside of your home, just your
 
 ## How does AutoButler work securely?
 
-![AutoButler Architecture](/assets/images/Autobutler-architecture.png)
+![AutoButler Architecture](/assets/images/autobutler-architecture.webp)
 
 You know how you can't use your home printer when you leave your WiFi network? Autobutler also works entirely
 locally, meaning that public internet can't really access the Butler. (We are working on secure ways to access the
