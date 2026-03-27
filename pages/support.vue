@@ -64,6 +64,35 @@ useSeoMeta({
   <PageContainer>
     <div class="support-page">
       <h1>Support</h1>
+
+      <div class="help-links">
+        <h2>Need Help?</h2>
+        <p>Check our documentation first — most questions are answered there.</p>
+        <div class="help-link-grid">
+          <a href="/docs/getting-started" class="help-link-card" aria-label="Getting started guide">
+            <Icon name="heroicons:rocket-launch" class="help-link-icon" />
+            <span class="help-link-title">Getting Started</span>
+            <span class="help-link-desc">Set up your AutoButler for the first time</span>
+          </a>
+          <a href="/docs/help" class="help-link-card" aria-label="Troubleshooting guide">
+            <Icon name="heroicons:wrench-screwdriver" class="help-link-icon" />
+            <span class="help-link-title">Troubleshooting</span>
+            <span class="help-link-desc">Common issues and how to fix them</span>
+          </a>
+          <a href="https://github.com/autobutler-org/autobutler/issues" target="_blank" rel="noopener" class="help-link-card" aria-label="GitHub Issues — ask questions and report problems (opens in new tab)">
+            <Icon name="heroicons:chat-bubble-left-right" class="help-link-icon" />
+            <span class="help-link-title">GitHub Issues</span>
+            <span class="help-link-desc">Ask questions and report problems</span>
+          </a>
+          <a href="https://github.com/autobutler-org/autobutler" target="_blank" rel="noopener" class="help-link-card" aria-label="AutoButler GitHub repository (opens in new tab)">
+            <Icon name="mdi:github" class="help-link-icon" />
+            <span class="help-link-title">GitHub</span>
+            <span class="help-link-desc">Browse source, file issues, and contribute</span>
+          </a>
+        </div>
+      </div>
+
+      <h2 class="report-heading">Report an Issue</h2>
       <p class="intro">
         Found a bug? Report it directly to our GitHub issue tracker. Or, if you
         have a feature request, head to
@@ -174,6 +203,75 @@ useSeoMeta({
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.help-links {
+  margin-bottom: 3rem;
+}
+
+.help-links h2,
+.report-heading {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.75rem;
+}
+
+.help-links p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.25rem;
+}
+
+.help-link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.help-link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+
+.help-link-card:hover {
+  background: rgba(0, 255, 170, 0.06);
+  border-color: rgba(0, 255, 170, 0.3);
+  transform: translateY(-2px);
+}
+
+.help-link-icon {
+  width: 24px;
+  height: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.help-link-card:hover .help-link-icon {
+  color: rgba(0, 255, 170, 0.9);
+}
+
+.help-link-title {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1rem;
+}
+
+.help-link-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.4;
+}
+
+.report-heading {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 .intro {

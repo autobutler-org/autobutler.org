@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["@nuxt/eslint", "@nuxt/content"],
+  modules: ["@nuxt/eslint", "@nuxt/content", "@nuxt/icon"],
   css: ["~/assets/css/content.css"],
   nitro: {
     static: true,
