@@ -250,7 +250,7 @@ const isIndexPage = computed(
 
 // Use proper Nuxt data fetching without top-level awaits
 const { data: allDocs } = await useAsyncData(route.path, () =>
-  queryCollection("content").all(),
+  queryCollection("content").where("path", "LIKE", "/docs%").all(),
 );
 
 // Get current document based on route

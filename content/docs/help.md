@@ -8,41 +8,41 @@ navigation:
 
 # Help & Support
 
-Get assistance with AutoButler - troubleshooting, support tickets, and community resources. **The best way to get
-support for installing things yourself is to reach out to the community and developers on Reddit or Slack.**
+---
 
-# Troubleshooting
+## Troubleshooting
 
-## I'm getting an error when I try to install AutoButler
+### I can't reach AutoButler in my browser
 
-Make sure you are using the correct installer for your operating system.
+- Make sure the device running AutoButler is powered on
+- Make sure you're on the same WiFi network as the AutoButler device
+- Try `http://autobutler.home.local` — if you changed the hostname during setup, use that instead
+- Try restarting your router and the AutoButler device
 
-You can download the installer from the [AutoButler website](https://autobutler.org/docs/nerd-notes).
+### I'm getting an error when I try to install AutoButler
 
-## I'm not getting the right URL when I install at home
+Make sure you're using the installer for your operating system and architecture. The [nerd notes](/docs/nerd-notes) page has installation details. If you're still stuck, [open a GitHub issue](https://github.com/autobutler-org/autobutler/issues) and someone will help.
 
-If you're doing this yourself, make sure your host name is `autobutler`, otherwise, whatever your hostname is will
-be the URL name of the device i.e. `my-computer.home.local`.
+### AutoButler doesn't work with my VPN
 
-## The Butler doesn't work with my VPN
+This is expected. AutoButler runs entirely on your local network — connecting through a VPN routes traffic outside your home, so the two conflict. Disable your VPN when accessing AutoButler on your home network. (We're working on built-in remote access so you won't need a third-party VPN to reach your butler from outside your home.)
 
-This sort of defeats the purpose of running the butler in your house - if we put the Butler into the cloud (which is
-just other people's computers) then you would be accessing your data from outside of your house. Eventually we intend
-to build a VPN into the butler to help with accessing the device from outside of your home securely, but if they're
-clashing, you will have to access your own home network locally.
+### I'm having performance issues
 
-## I'm having performance issues with my AutoButler
+1. Check the **Health** page in AutoButler — high disk usage or high temperatures can cause slowdowns
+2. In Settings, click **Export Performance Metrics** — this saves recent health data to a `metrics.sqlite` file
+3. Share that file in a [GitHub issue](https://github.com/autobutler-org/autobutler/issues) or email it to [support@autobutler.org](mailto:support@autobutler.org) and we'll take a look
 
-There is a button in the settings page that reads "Export Performance Metrics". This will save the last week or so
-of metrics (the data on the Health page) into a sqlite file called metrics.sqlite - you can send this to
-<admin@autobutler.org> and we can look at what is wrong.
+### My files aren't showing up after I uploaded them
 
-# Community Resources
+Try refreshing the page. If they still don't appear, check that your upload completed successfully (the progress indicator should have reached 100%). Very large files can take a minute.
 
-<!-- markdownlint-disable -->
+---
 
-You can join our [Reddit](https://www.reddit.com/r/autobutler/) or join our [Slack workspace](https://join.slack.com/t/autobutlerworld/shared_invite/zt-38nisoaua-hJk1KPC5O7OA~eRD8GDVIw) to get help from the community.
+## Get Help
 
-## AutoButler GitHub
+**GitHub Issues** for questions, bug reports, and feature requests:
+→ [github.com/autobutler-org/autobutler/issues](https://github.com/autobutler-org/autobutler/issues)
 
-Check out our [GitHub repository](https://github.com/autobutler-org/autobutler.org) to see the latest updates and report issues.
+**Email** for private matters:
+→ [support@autobutler.org](mailto:support@autobutler.org)
