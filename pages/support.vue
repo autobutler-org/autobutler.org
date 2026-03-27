@@ -70,18 +70,22 @@ useSeoMeta({
         <p>Check our documentation first — most questions are answered there.</p>
         <div class="help-link-grid">
           <a href="/docs/getting-started" class="help-link-card" aria-label="Getting started guide">
+            <Icon name="heroicons:rocket-launch" class="help-link-icon" />
             <span class="help-link-title">Getting Started</span>
             <span class="help-link-desc">Set up your AutoButler for the first time</span>
           </a>
           <a href="/docs/help" class="help-link-card" aria-label="Troubleshooting guide">
+            <Icon name="heroicons:wrench-screwdriver" class="help-link-icon" />
             <span class="help-link-title">Troubleshooting</span>
             <span class="help-link-desc">Common issues and how to fix them</span>
           </a>
           <a href="https://github.com/autobutler-org/autobutler/issues" target="_blank" rel="noopener" class="help-link-card" aria-label="GitHub Issues — ask questions and report problems (opens in new tab)">
+            <Icon name="heroicons:chat-bubble-left-right" class="help-link-icon" />
             <span class="help-link-title">GitHub Issues</span>
             <span class="help-link-desc">Ask questions and report problems</span>
           </a>
           <a href="https://github.com/autobutler-org/autobutler" target="_blank" rel="noopener" class="help-link-card" aria-label="AutoButler GitHub repository (opens in new tab)">
+            <Icon name="mdi:github" class="help-link-icon" />
             <span class="help-link-title">GitHub</span>
             <span class="help-link-desc">Browse source, file issues, and contribute</span>
           </a>
@@ -241,6 +245,16 @@ useSeoMeta({
   background: rgba(0, 255, 170, 0.06);
   border-color: rgba(0, 255, 170, 0.3);
   transform: translateY(-2px);
+}
+
+.help-link-icon {
+  width: 24px;
+  height: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.help-link-card:hover .help-link-icon {
+  color: rgba(0, 255, 170, 0.9);
 }
 
 .help-link-title {

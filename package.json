@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^3.11.2",
+    "@nuxt/icon": "^2.2.1",
     "better-sqlite3": "^12.6.2",
     "markdownlint-cli2": "^0.21.0",
     "nuxt": "^4.3.1",
