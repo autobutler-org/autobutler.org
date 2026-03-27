@@ -69,22 +69,22 @@ useSeoMeta({
         <h2>Need Help?</h2>
         <p>Check our documentation first — most questions are answered there.</p>
         <div class="help-link-grid">
-          <a href="/docs/getting-started" class="help-link-card">
+          <a href="/docs/getting-started" class="help-link-card" aria-label="Getting started guide">
             <span class="help-link-icon">🚀</span>
             <span class="help-link-title">Getting Started</span>
             <span class="help-link-desc">Set up your AutoButler for the first time</span>
           </a>
-          <a href="/docs/help" class="help-link-card">
+          <a href="/docs/help" class="help-link-card" aria-label="Troubleshooting guide">
             <span class="help-link-icon">🔧</span>
             <span class="help-link-title">Troubleshooting</span>
             <span class="help-link-desc">Common issues and how to fix them</span>
           </a>
-          <a href="https://github.com/autobutler-org/autobutler/issues" target="_blank" rel="noopener" class="help-link-card">
+          <a href="https://github.com/autobutler-org/autobutler/issues" target="_blank" rel="noopener" class="help-link-card" aria-label="GitHub Issues — ask questions and report problems (opens in new tab)">
             <span class="help-link-icon">💬</span>
             <span class="help-link-title">GitHub Issues</span>
             <span class="help-link-desc">Ask questions and report problems</span>
           </a>
-          <a href="https://github.com/autobutler-org/autobutler" target="_blank" rel="noopener" class="help-link-card">
+          <a href="https://github.com/autobutler-org/autobutler" target="_blank" rel="noopener" class="help-link-card" aria-label="AutoButler GitHub repository (opens in new tab)">
             <span class="help-link-icon">🤝</span>
             <span class="help-link-title">GitHub</span>
             <span class="help-link-desc">Browse source, file issues, and contribute</span>
