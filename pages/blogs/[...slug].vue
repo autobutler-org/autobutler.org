@@ -108,6 +108,14 @@ if (page.value && !isError(page.value)) {
 
   useHead({
     title: `${title} — AutoButler`,
+    meta: [
+      ...(post.date
+        ? [{ property: "article:published_time", content: post.date }]
+        : []),
+      ...(post.author
+        ? [{ property: "article:author", content: post.author }]
+        : []),
+    ],
   });
 }
 
