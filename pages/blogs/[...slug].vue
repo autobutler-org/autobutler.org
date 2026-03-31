@@ -86,6 +86,33 @@ const isError = (p: BlogPost | ErrorPage | null): p is ErrorPage => {
   return p !== null && "_error" in p;
 };
 
+if (page.value && !isError(page.value)) {
+  const post = page.value as BlogPost;
+  const url = `https://autobutler.org${route.path}`;
+  useSeoMeta({
+    title: post.title ? `${post.title} — AutoButler Blog` : "AutoButler Blog",
+    description: post.description ?? "",
+    ogTitle: post.title,
+    ogDescription: post.description ?? "",
+    ogType: "article",
+    ogUrl: url,
+    ogSiteName: "AutoButler",
+    twitterCard: "summary_large_image",
+    twitterTitle: post.title,
+    twitterDescription: post.description ?? "",
+  });
+  useHead({
+    meta: [
+      ...(post.date
+        ? [{ property: "article:published_time", content: post.date }]
+        : []),
+      ...(post.author
+        ? [{ property: "article:author", content: post.author }]
+        : []),
+    ],
+  });
+}
+
 const formatDate = (dateString: string) => {
   if (!dateString) return "";
   const date = new Date(dateString);
