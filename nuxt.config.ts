@@ -7,8 +7,23 @@ export default defineNuxtConfig({
   nitro: {
     static: true,
   },
+  site: {
+    url: "https://autobutler.org",
+    name: "AutoButler",
+  },
   app: {
     head: {
+      meta: [
+        { name: "description", content: "AutoButler — your personal home data butler. Self-hosted file management, backup, and media serving." },
+        { property: "og:site_name", content: "AutoButler" },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: "https://autobutler.org/android-chrome-512x512.png" },
+        { property: "og:image:width", content: "512" },
+        { property: "og:image:height", content: "512" },
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:image", content: "https://autobutler.org/android-chrome-512x512.png" },
+        { name: "theme-color", content: "#20b2aa" },
+      ],
       link: [
         {
           rel: "icon",

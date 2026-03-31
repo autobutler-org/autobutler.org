@@ -49,6 +49,21 @@ interface BlogPost extends ContentCollectionItem {
   author?: string;
 }
 
+useSeoMeta({
+  title: "Blog — AutoButler",
+  description: "Updates, insights, and stories from the AutoButler team.",
+  ogTitle: "AutoButler Blog",
+  ogDescription: "Updates, insights, and stories from the AutoButler team.",
+  ogType: "website",
+  ogUrl: "https://autobutler.org/blogs",
+  ogSiteName: "AutoButler",
+  ogImage: "https://autobutler.org/android-chrome-512x512.png",
+  twitterCard: "summary",
+  twitterTitle: "AutoButler Blog",
+  twitterDescription: "Updates, insights, and stories from the AutoButler team.",
+  twitterImage: "https://autobutler.org/android-chrome-512x512.png",
+});
+
 const { data: articles } = await useAsyncData("blogs", async () => {
   const allContent = await queryCollection("content").all();
 

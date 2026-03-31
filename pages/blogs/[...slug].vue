@@ -86,6 +86,39 @@ const isError = (p: BlogPost | ErrorPage | null): p is ErrorPage => {
   return p !== null && "_error" in p;
 };
 
+if (page.value && !isError(page.value)) {
+  const post = page.value as BlogPost;
+  const title = post.title || "AutoButler Blog";
+  const description = post.description || "Read more on the AutoButler blog.";
+  const url = `https://autobutler.org${route.path}`;
+
+  useSeoMeta({
+    title,
+    ogTitle: title,
+    description,
+    ogDescription: description,
+    ogUrl: url,
+    ogType: "article",
+    ogImage: "https://autobutler.org/android-chrome-512x512.png",
+    twitterCard: "summary",
+    twitterTitle: title,
+    twitterDescription: description,
+    twitterImage: "https://autobutler.org/android-chrome-512x512.png",
+  });
+
+  useHead({
+    title: `${title} — AutoButler`,
+    meta: [
+      ...(post.date
+        ? [{ property: "article:published_time", content: post.date }]
+        : []),
+      ...(post.author
+        ? [{ property: "article:author", content: post.author }]
+        : []),
+    ],
+  });
+}
+
 const formatDate = (dateString: string) => {
   if (!dateString) return "";
   const date = new Date(dateString);
