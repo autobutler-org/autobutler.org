@@ -8,7 +8,7 @@ navigation:
 
 # Migrating from Google — Google Takeout Guide
 
-Google Takeout lets you download a copy of everything you've stored with Google — your photos, Drive files, emails, and more. This guide walks you through exporting your Google data and importing it into AutoButler so your files live at home, on your own hardware.
+Google Takeout lets you download a copy of everything you've stored with Google — your photos, Drive files, emails, and more. This guide walks you through exporting your Google data and importing it into AutoButler, where it lives **on your own hardware, on your own home network** — not on anyone else's server.
 
 ---
 
@@ -42,11 +42,14 @@ When Google emails you that your export is ready:
 
 ## Step 3: Upload to AutoButler
 
-1. Open AutoButler in your browser and navigate to **Files**
-2. Create a folder for your Google data if you want to keep things organized (e.g. `Google Import`)
-3. Navigate into that folder
-4. Click **Upload** and select your Takeout zip file(s)
-5. Wait for the upload to complete — large files may take a few minutes depending on your network
+AutoButler runs on your home network — your files go from your computer directly to the device in your home, without passing through the internet or any cloud service.
+
+1. Make sure you're connected to your home WiFi
+2. Open AutoButler in your browser and navigate to **Files**
+3. Create a folder for your Google data if you want to keep things organized (e.g. `Google Import`)
+4. Navigate into that folder
+5. Click **Upload** and select your Takeout zip file(s)
+6. Wait for the upload to complete — large files may take a few minutes depending on your home network speed
 
 > **Tip:** You can upload multiple zip files at once by selecting them all in the file picker.
 
@@ -69,11 +72,11 @@ After extraction you can delete the original zip file to reclaim space.
 
 ## Step 5: Browse your files
 
-Your photos and documents are now stored locally on your AutoButler. You can:
+Your photos and documents are now stored on **your device, in your home** — not on Google's servers, not on anyone else's. You can access them from any device connected to your home WiFi:
 
 - Browse them in the **Files** section
 - View photos in the **Photos** section (AutoButler automatically finds images in your files)
-- Access them from any device on your home network
+- Access them from any phone, tablet, or computer on your home network
 
 ---
 
