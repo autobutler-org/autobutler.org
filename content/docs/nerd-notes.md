@@ -3,7 +3,7 @@ title: Nerd Notes
 description: Technical overview of AutoButler — stack, architecture, installation, and development.
 navigation:
   title: Nerd Notes
-  order: 4
+  order: 5
 ---
 
 # Nerd Notes
