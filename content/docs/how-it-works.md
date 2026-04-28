@@ -18,18 +18,16 @@ Here's what that looks like.
 
 ## Your files, your network
 
-## ::mermaid
-
-code: |
-graph LR
-Phone["📱 Your Phone"] -->|WiFi| Router["🏠 Home Router"]
-Router --> Butler["🤖 AutoButler"]
-Butler --> Drive["💾 Your Drive"]
-Laptop["💻 Your Laptop"] -->|WiFi| Router
-Tablet["📱 Tablet"] -->|WiFi| Router
-
+::mermaid
 ---
-
+code: |
+  graph LR
+  Phone["📱 Your Phone"] -->|WiFi| Router["🏠 Home Router"]
+  Router --> Butler["🤖 AutoButler"]
+  Butler --> Drive["💾 Your Drive"]
+  Laptop["💻 Your Laptop"] -->|WiFi| Router
+  Tablet["📱 Tablet"] -->|WiFi| Router
+---
 ::
 
 Every device on your home WiFi can access AutoButler.
@@ -38,22 +36,20 @@ not on Google's servers, not on Apple's servers, not anywhere else.
 
 ## How this is different from iCloud or Google Photos
 
-## ::mermaid
-
-code: |
-graph TD
-subgraph cloud["❌ Cloud Storage — your data leaves home"]
-P1["📱 Your Phone"] -->|Internet| CS["☁️ Google / Apple Servers"]
-CS -->|Internet| P2["💻 Your Laptop"]
-end
-subgraph local["✅ AutoButler — your data stays home"]
-P3["📱 Your Phone"] -->|Local WiFi| AB["🤖 AutoButler"]
-AB --> D["💾 Your Drive"]
-AB -->|Local WiFi| P4["💻 Your Laptop"]
-end
-
+::mermaid
 ---
-
+code: |
+  graph TD
+  subgraph cloud["❌ Cloud Storage — your data leaves home"]
+  P1["📱 Your Phone"] -->|Internet| CS["☁️ Google / Apple Servers"]
+  CS -->|Internet| P2["💻 Your Laptop"]
+  end
+  subgraph local["✅ AutoButler — your data stays home"]
+  P3["📱 Your Phone"] -->|Local WiFi| AB["🤖 AutoButler"]
+  AB --> D["💾 Your Drive"]
+  AB -->|Local WiFi| P4["💻 Your Laptop"]
+  end
+---
 ::
 
 With cloud storage, your photos and files travel over the internet
@@ -72,21 +68,19 @@ When you set up AutoButler, your phone and your device establish a
 private, encrypted tunnel between them. This happens automatically —
 you don't need to configure anything.
 
-## ::mermaid
-
-code: |
-graph TD
-Phone["📱 Your Phone\n(anywhere in the world)"]
-Pi["🤖 AutoButler\n(at home)"]
-Coord["AutoButler\nCoordination Server"]
-Drive["💾 Your Drive"]
-Phone <-->|"Encrypted direct tunnel"| Pi
-Pi --- Drive
-Phone -.->|"Connection setup only"| Coord
-Coord -.->|"Connection setup only"| Pi
-
+::mermaid
 ---
-
+code: |
+  graph TD
+  Phone["📱 Your Phone\n(anywhere in the world)"]
+  Pi["🤖 AutoButler\n(at home)"]
+  Coord["AutoButler\nCoordination Server"]
+  Drive["💾 Your Drive"]
+  Phone <-->|"Encrypted direct tunnel"| Pi
+  Pi --- Drive
+  Phone -.->|"Connection setup only"| Coord
+  Coord -.->|"Connection setup only"| Pi
+---
 ::
 
 The coordination server only helps your phone and your AutoButler
