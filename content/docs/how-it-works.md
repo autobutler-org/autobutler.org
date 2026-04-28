@@ -106,10 +106,10 @@ simple structure:
   computer. Organized by date, easy to browse.
 - **Documents** — PDFs, spreadsheets, notes — anything you want to
   keep safe on your own hardware.
-- **Backups** — Automatic backups of your devices, so you always have
-  a copy.
-- **Media** — Music, movies, audiobooks — your personal library,
-  streamable to any device in your home.
+- **Backups** — Back up one drive to another with a single tap, so
+  you always have a second copy.
+- **Books & Media** — Read EPUBs, watch videos, and browse your
+  files from any device on your network.
 
 Everything is stored in plain folders on your drive. No proprietary
 format, no lock-in. If you ever want to unplug and move to something
