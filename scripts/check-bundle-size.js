@@ -6,7 +6,7 @@
  * size budgets per resource type. Exits non-zero if any budget is exceeded.
  *
  * Budgets (uncompressed, source maps excluded):
- *   JS total:    1024 KB  (1 MB)
+ *   JS total:    4096 KB  (4 MB — includes lazy-loaded mermaid chunks)
  *   CSS total:    200 KB
  *   Images total:  15 MB  (product photos + WebP assets)
  *   Overall total: 20 MB
@@ -21,7 +21,7 @@ import { join, extname } from 'path';
 const OUTPUT_DIR = '.output/public';
 
 const BUDGETS = {
-  js: { label: 'JavaScript', maxKB: 1024 },
+  js: { label: 'JavaScript', maxKB: 4096 },
   css: { label: 'CSS', maxKB: 200 },
   images: { label: 'Images', maxKB: 15360 },
   total: { label: 'Total', maxKB: 20480 },
