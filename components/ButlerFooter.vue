@@ -59,15 +59,9 @@ onMounted(() => {
       // If we have a custom scroll container, get it directly
       if (props.customScrollContainer) {
         target = e.target as HTMLElement;
-        console.log(
-          "Scroll event on custom container:",
-          props.customScrollContainer,
-        );
-        console.log("Target element:", target);
       } else {
         // For window scroll, use document.documentElement
         target = document.documentElement;
-        console.log("Scroll event on window");
       }
 
       // Check if we're at the bottom of the scroll area
@@ -84,16 +78,6 @@ onMounted(() => {
         Math.min(1, (triggerDistance - distanceFromBottom) / triggerDistance),
       );
       const isAtBottom = distanceFromBottom < triggerDistance;
-
-      console.log("Scroll debug:", {
-        scrollTop,
-        scrollHeight,
-        clientHeight,
-        distanceFromBottom,
-        progress,
-        isAtBottom,
-        currentVisible: isVisible.value,
-      });
 
       // Update visibility and progress
       isVisible.value = isAtBottom;
@@ -115,19 +99,8 @@ onMounted(() => {
       // Wait for next tick to ensure DOM is ready
       nextTick(() => {
         const container = document.querySelector(props.customScrollContainer);
-        console.log(
-          "Looking for container:",
-          props.customScrollContainer,
-          "Found:",
-          container,
-        );
         if (container) {
           container.addEventListener("scroll", handleScroll);
-          console.log("Added scroll listener to:", container);
-        } else {
-          console.warn(
-            `Custom scroll container "${props.customScrollContainer}" not found`,
-          );
         }
       });
     } else {
