@@ -3,12 +3,20 @@
     <div class="community-page">
       <h1>Community</h1>
       <p>
-        Join the AutoButler movement! Talk to devs in our
+        Join the AutoButler community! The primary hub is
         <a
-          href="https://join.slack.com/t/autobutlerworld/shared_invite/zt-38nisoaua-hJk1KPC5O7OA~eRD8GDVIw"
-          >Slack workspace</a
-        >, or you can get community attention or help by visiting our
-        <a href="https://www.reddit.com/r/autobutler/">Reddit community</a>.
+          href="https://github.com/autobutler-org/autobutler"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >, where you can open issues, start discussions, browse the source, and
+        follow development. Have a bug or feature request? Head to
+        <a
+          href="https://github.com/autobutler-org/autobutler/issues"
+          target="_blank"
+          rel="noopener"
+          >GitHub Issues</a
+        >.
       </p>
     </div>
   </PageContainer>
@@ -46,5 +54,15 @@ useSeoMeta({
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
 }
-</style>
 
+.community-page a {
+  color: #20b2aa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.community-page a:hover {
+  color: #1a8f89;
+  text-decoration: underline;
+}
+</style>
