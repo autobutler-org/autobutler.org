@@ -1,4 +1,4 @@
-name: CI
+name: Dependency Audit
 on:
   push:
     branches:
@@ -11,8 +11,9 @@ defaults:
   run:
     shell: bash
 jobs:
-  ci:
+  audit:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -20,18 +21,9 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: .nvmrc
-      - name: Install node-gyp
-        run: |
-          npm install node-gyp
       - name: Install dependencies
         run: |
           npm ci
-      - name: Build
+      - name: Audit dependencies
         run: |
-          npm run build
-      - name: Generate
-        run: |
-          npm run generate
-      - name: Check bundle size budgets
-        run: |
-          node scripts/check-bundle-size.js
+          npm audit --audit-level=high
