@@ -41,7 +41,6 @@ const password = ref("");
 
 const handleLogin = () => {
   // Implement login logic
-  console.log("Login attempted", { email: email.value });
 };
 
 const forgotPassword = () => {
