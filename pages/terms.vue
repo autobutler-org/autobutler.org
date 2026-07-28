@@ -13,88 +13,73 @@ useSeoMeta({
 <template>
   <main class="terms-page">
     <div class="terms-content">
-      <h1>Terms of Service</h1>
-      <p class="last-updated">Last updated: March 2026</p>
+      <h1>Terms and Conditions</h1>
+      <p class="last-updated">Last updated: June 2026</p>
 
-      <div class="section plain-talk">
-        <p>
-          Plain talk first: AutoButler is open-source software you run on your
-          own hardware. We don't host your data and we don't have a subscription
-          to cancel. These terms are about using this website
-          (autobutler.org) and the software we publish here.
-        </p>
-      </div>
-
+      <!-- 1 -->
       <div class="section">
-        <h2>1. The Software</h2>
+        <h2>1. Personal Use</h2>
         <p>
-          AutoButler is released under an open-source license. You can view the
-          source code, fork it, run it, and modify it within the terms of that
-          license. The license file in the repository is the authoritative
-          source on what you can and can't do with the code.
-        </p>
-        <p>
-          <a
-            href="https://github.com/autobutler-org/autobutler"
-            target="_blank"
-            rel="noopener noreferrer"
-            >View the source and license on GitHub →</a
-          >
+          Autobutler is designed for personal use to manage and back up your
+          own photos and files. You may not use the software to store or
+          distribute content that violates applicable laws or the rights of
+          others.
         </p>
       </div>
 
+      <!-- 2 -->
       <div class="section">
-        <h2>2. This Website</h2>
+        <h2>2. Your Data</h2>
         <p>
-          Autobutler.org is an informational site. You're welcome to read it,
-          link to it, and share it. We ask only that you don't use it in a way
-          that's misleading (for example, implying we endorse something we
-          don't).
+          You retain full ownership of all data stored through Autobutler. The
+          app operates on your own hardware; no data is uploaded to third-party
+          servers without your explicit action. You are solely responsible for
+          the security and backup of your data.
         </p>
       </div>
 
+      <!-- 3 -->
       <div class="section">
         <h2>3. No Warranty</h2>
         <p>
-          AutoButler is provided as-is. We do our best to make it reliable and
-          secure, but we can't guarantee it will always work perfectly. You're
-          running it on your own hardware — you're responsible for your own
-          data and backups.
-        </p>
-        <p>
-          To be explicit: we're not liable for data loss, downtime, or anything
-          else that goes wrong when you use this software. Back up your data.
+          Autobutler is provided "as is", without warranty of any kind, express
+          or implied. The authors make no guarantees regarding uptime, data
+          integrity, or fitness for a particular purpose. Use at your own risk.
         </p>
       </div>
 
+      <!-- 4 -->
       <div class="section">
-        <h2>4. Contributing</h2>
+        <h2>4. Acceptable Use</h2>
         <p>
-          If you contribute to AutoButler — code, bug reports, documentation —
-          thank you. By submitting a pull request you agree that your
-          contribution can be included under the project's existing license.
+          You agree not to use Autobutler for any unlawful purpose, to attempt
+          to gain unauthorised access to other systems, or to interfere with
+          the operation of the software for other users. Because Autobutler
+          runs entirely on your own hardware and we have no access to your data
+          or device, these terms are legally binding but not technically
+          enforceable by us. You are solely responsible for your own compliance
+          with applicable laws.
         </p>
       </div>
 
+      <!-- 5 -->
       <div class="section">
-        <h2>5. Changes</h2>
+        <h2>5. Limitation of Liability</h2>
         <p>
-          If we update these terms, we'll update the date above. We won't
-          change them in ways that are sneaky or harmful — if something
-          significant changes, we'll say so clearly.
+          To the maximum extent permitted by law, the developers of Autobutler
+          shall not be liable for any indirect, incidental, special, or
+          consequential damages arising from your use of the software, even if
+          advised of the possibility of such damages.
         </p>
       </div>
 
+      <!-- 6 -->
       <div class="section">
-        <h2>Questions?</h2>
+        <h2>6. Changes to These Terms</h2>
         <p>
-          If something here is unclear or you have questions, open an issue on
-          <a
-            href="https://github.com/autobutler-org/autobutler"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >.
+          We may update these Terms from time to time. Continued use of the
+          application after changes are posted constitutes your acceptance of
+          the revised Terms.
         </p>
       </div>
     </div>
@@ -115,7 +100,7 @@ useSeoMeta({
 }
 
 h1 {
-  color: #4caf50;
+  color: #20b2aa;
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
@@ -131,16 +116,9 @@ h1 {
   margin-bottom: 2.5rem;
 }
 
-.plain-talk {
-  background: rgba(76, 175, 80, 0.06);
-  border-left: 3px solid #4caf50;
-  padding: 1rem 1.25rem;
-  border-radius: 0 6px 6px 0;
-}
-
 h2 {
-  color: #81c784;
-  font-size: 1.5rem;
+  color: #20b2aa;
+  font-size: 1.4rem;
   margin-bottom: 0.75rem;
 }
 
@@ -151,11 +129,15 @@ p {
 }
 
 a {
-  color: #4caf50;
+  color: #20b2aa;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+strong {
+  color: #ffffff;
 }
 </style>
