@@ -42,15 +42,27 @@ export const scrollHelpers = {
 
 // Desktop scroll handling functions
 export const desktopScrollHandlers = {
-  ensureContentReady: (): Promise<void> => {
-    return new Promise((resolve) => {
+  // Returns a { promise, cancel } pair so callers can abort the polling loop
+  // before it fires and re-locks overflow on a page that doesn't own the docs
+  // scroll container.  Without cancellation, a deferred setTimeout callback
+  // could run after navigation and hide the new page's scrollbar.
+  ensureContentReady: (): { promise: Promise<void>; cancel: () => void } => {
+    let cancelled = false;
+    let timerId: ReturnType<typeof setTimeout> | null = null;
+    let rejectFn: ((reason?: unknown) => void) | null = null;
+
+    const promise = new Promise<void>((resolve, reject) => {
+      rejectFn = reject;
+
       const checkContent = () => {
+        if (cancelled) return;
+
         const contentArea = document.querySelector(".content");
         if (
           !contentArea ||
           contentArea.scrollHeight <= contentArea.clientHeight
         ) {
-          setTimeout(checkContent, 100);
+          timerId = setTimeout(checkContent, 100);
           return;
         }
 
@@ -61,6 +73,19 @@ export const desktopScrollHandlers = {
       };
       checkContent();
     });
+
+    const cancel = () => {
+      if (cancelled) return;
+      cancelled = true;
+      if (timerId !== null) {
+        clearTimeout(timerId);
+        timerId = null;
+      }
+      // Reject the promise so any awaiting callers unblock cleanly
+      rejectFn?.(new DOMException("Cancelled", "AbortError"));
+    };
+
+    return { promise, cancel };
   },
 
   handleWheel: (e: WheelEvent) => {
@@ -155,29 +180,65 @@ export const pathHelpers = {
   },
 };
 
-// Desktop scroll setup function
-export const setupDesktopScrolling = async () => {
+// Desktop scroll setup function.
+//
+// Returns synchronously so the caller can register `cancel` in `onUnmounted`
+// BEFORE awaiting `done`.  This closes a race where navigation triggers
+// unmount while `ensureContentReady` is still polling — without an early
+// cancel the setTimeout callback would fire after navigation and re-lock
+// the new page's body overflow.
+//
+// Usage in a component:
+//
+//   const { cancel, done } = setupDesktopScrolling();
+//   onUnmounted(cancel);   // always registered, handles early unmount
+//   await done;            // if already cancelled, resolves as a no-op
+//
+export const setupDesktopScrolling = (): {
+  cancel: () => void;
+  done: Promise<void>;
+} => {
   const isDesktop = () => window.innerWidth >= 1024;
-  if (!isDesktop()) return () => {}; // Return empty cleanup for mobile
 
-  await desktopScrollHandlers.ensureContentReady();
+  if (!isDesktop()) {
+    // Mobile: nothing to set up, return no-op handles
+    return { cancel: () => {}, done: Promise.resolve() };
+  }
 
-  // Add event listeners
-  window.addEventListener("wheel", desktopScrollHandlers.handleWheel, {
-    passive: false,
-  });
-  window.addEventListener("keydown", desktopScrollHandlers.handleKeydown);
-  document.addEventListener("click", desktopScrollHandlers.handleAnchorClick);
+  const { promise, cancel } = desktopScrollHandlers.ensureContentReady();
+  let listenersAdded = false;
 
-  // Return cleanup function
-  return () => {
+  const fullCleanup = () => {
+    // Cancel any pending poll (no-op if already resolved)
+    cancel();
+    // Restore scrollability regardless of whether setup completed
     document.body.style.overflow = "";
     document.documentElement.style.overflow = "";
-    window.removeEventListener("wheel", desktopScrollHandlers.handleWheel);
-    window.removeEventListener("keydown", desktopScrollHandlers.handleKeydown);
-    document.removeEventListener(
-      "click",
-      desktopScrollHandlers.handleAnchorClick,
-    );
+    if (listenersAdded) {
+      window.removeEventListener("wheel", desktopScrollHandlers.handleWheel);
+      window.removeEventListener(
+        "keydown",
+        desktopScrollHandlers.handleKeydown,
+      );
+      document.removeEventListener(
+        "click",
+        desktopScrollHandlers.handleAnchorClick,
+      );
+      listenersAdded = false;
+    }
   };
+
+  const done = promise.then(() => {
+    // Guard: if cancel() was already called, don't add listeners
+    if (document.body.style.overflow !== "hidden") return;
+
+    window.addEventListener("wheel", desktopScrollHandlers.handleWheel, {
+      passive: false,
+    });
+    window.addEventListener("keydown", desktopScrollHandlers.handleKeydown);
+    document.addEventListener("click", desktopScrollHandlers.handleAnchorClick);
+    listenersAdded = true;
+  });
+
+  return { cancel: fullCleanup, done };
 };

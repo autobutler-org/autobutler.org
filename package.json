@@ -25,7 +25,7 @@
     "@nuxt/content": "^3.11.2",
     "@nuxt/icon": "^2.2.1",
     "better-sqlite3": "^12.6.2",
-    "markdownlint-cli2": "^0.21.0",
+    "markdownlint-cli2": "^0.23.2",
     "mermaid": "^11.14.0",
     "nuxt": "^4.4.8",
     "vue": "^3.5.28",

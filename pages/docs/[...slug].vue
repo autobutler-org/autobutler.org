@@ -311,7 +311,7 @@ const { scrollToTop } = scrollHelpers;
 const handleMobileScroll = scrollHelpers.handleMobileScroll(showScrollToTop);
 
 // Setup desktop scrolling and mobile scroll detection
-onMounted(async () => {
+onMounted(() => {
   const isDesktop = () => window.innerWidth >= 1024;
 
   if (!isDesktop()) {
@@ -326,9 +326,14 @@ onMounted(async () => {
     return;
   }
 
-  // Setup desktop scrolling
-  const cleanup = await setupDesktopScrolling();
-  onUnmounted(cleanup);
+  // setupDesktopScrolling returns synchronously so we can register cancel
+  // in onUnmounted BEFORE awaiting done.  This prevents the content-ready
+  // polling loop from firing after navigation and re-locking body overflow.
+  const { cancel, done } = setupDesktopScrolling();
+  onUnmounted(cancel);
+  done.catch(() => {
+    // Navigation happened before content was ready; cancel already fired.
+  });
 });
 
 // SEO
