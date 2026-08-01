@@ -9,21 +9,19 @@
 
 <style scoped>
 .page-wrapper {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 2rem 1rem;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
   left: 0;
   right: 0;
 }
 
 .gradient-overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
