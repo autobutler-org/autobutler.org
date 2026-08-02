@@ -32,7 +32,8 @@
     "vue-router": "^5.0.2"
   },
   "overrides": {
-    "uuid": "^14.0.0"
+    "uuid": "^14.0.0",
+    "esbuild": ">=0.28.1"
   },
   "devDependencies": {
     "@nuxt/devtools": "^3.2.1",
