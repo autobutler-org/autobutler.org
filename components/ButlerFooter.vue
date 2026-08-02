@@ -1,5 +1,6 @@
 <template>
   <footer
+    ref="footerEl"
     v-show="isVisible"
     class="footer"
     :class="{
@@ -43,10 +44,14 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const { displayVersion } = useVersion();
-// useState serializes the value from SSR to the client, so both see the
+// useState serializes the value from SSR to the client, so both sides see the
 // same year even across a year-rollover at midnight on New Year's Eve.
-const currentYear = useState('footer-year', () => new Date().getFullYear());
+const currentYear = useState("footer-year", () => new Date().getFullYear());
 const isVisible = ref(!props.showOnBottom);
+
+// Template ref — avoids document.querySelector(".footer") which can select
+// unrelated elements (e.g. <footer class="post-footer"> in blog post pages).
+const footerEl = ref<HTMLElement | null>(null);
 
 // Handle scroll detection for reverse sticky behavior
 let scrollHandler: ((e: Event) => void) | null = null;
@@ -81,15 +86,18 @@ onMounted(() => {
       );
       const isAtBottom = distanceFromBottom < triggerDistance;
 
-      // Update visibility and progress
+      // Update visibility
       isVisible.value = isAtBottom;
 
-      // Apply progressive transform for smooth appearance
-      if (isAtBottom) {
-        const footer = document.querySelector(".footer") as HTMLElement;
-        if (footer) {
+      // Apply progressive transform using the template ref — never touches
+      // unrelated .footer elements elsewhere in the page.
+      if (footerEl.value) {
+        if (isAtBottom) {
           const translateY = (1 - progress) * 100;
-          footer.style.transform = `translateY(${translateY}%)`;
+          footerEl.value.style.transform = `translateY(${translateY}%)`;
+        } else {
+          // Reset when no longer near bottom so re-entry starts clean.
+          footerEl.value.style.transform = "";
         }
       }
     };
