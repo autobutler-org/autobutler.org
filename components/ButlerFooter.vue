@@ -43,7 +43,9 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const { displayVersion } = useVersion();
-const currentYear = computed(() => new Date().getFullYear());
+// useState serializes the value from SSR to the client, so both see the
+// same year even across a year-rollover at midnight on New Year's Eve.
+const currentYear = useState('footer-year', () => new Date().getFullYear());
 const isVisible = ref(!props.showOnBottom);
 
 // Handle scroll detection for reverse sticky behavior
