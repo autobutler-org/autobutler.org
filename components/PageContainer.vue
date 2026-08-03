@@ -23,7 +23,12 @@
 }
 
 .gradient-overlay {
-  position: fixed;
+  /* position: absolute so the overlay is scoped to .page-wrapper.
+     Using position: fixed here caused the overlay to cover viewport-relative
+     coordinates regardless of scroll position, which stacked on top of
+     scrolled-past content and produced the visual element-duplication
+     reported in #91. */
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
