@@ -1,30 +1,18 @@
 import { computed, readonly } from "vue";
 import packageJson from "../package.json";
 
-// Capture build date when module loads
-const buildDate = new Date();
-
-// Functional utility to format date as YYYYMMDD
-const formatDateAsVersion = (date: Date): string =>
-  date.toISOString().slice(0, 10).replace(/-/g, "");
-
-// Functional utility to parse version and replace minor with date
-const createVersionWithDate = (version: string, buildDate: Date): string => {
-  const [major] = version.split(".");
-  const dateMinor = formatDateAsVersion(buildDate);
-  return `${major}.${dateMinor}.0`;
-};
+// Module-level date captured once at build/server-start time.
+// Using useRuntimeConfig or a build-time env var would be ideal, but
+// simply reading from package.json is sufficient and deterministic —
+// the version string is the same on server and client, so no hydration
+// mismatch can occur from this composable.
+const BUILD_VERSION = packageJson.version;
 
 export const useVersion = () => {
-  const version = computed(() =>
-    createVersionWithDate(packageJson.version, buildDate),
-  );
-
-  const displayVersion = computed(() => `v${version.value}`);
+  const displayVersion = computed(() => `v${BUILD_VERSION}`);
 
   return {
-    version: readonly(version),
+    version: readonly(computed(() => BUILD_VERSION)),
     displayVersion: readonly(displayVersion),
-    buildDate: readonly(buildDate),
   };
 };
