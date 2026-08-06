@@ -64,39 +64,39 @@ recovery phrase shown exactly once. Write it down. It's the only way to reset yo
 
 ## API
 
-The REST API is at `/api/v1/`. Swagger UI is at `http://<host>/swagger`.
+The REST API lives under `/api/v0/`. Swagger UI is at `http://<host>/swagger`.
 
 ### Authentication
 
-All endpoints require a session token except `/auth/setup`, `/auth/login`,
-`/auth/recover`, and `/auth/status`.
+All endpoints require a session token except `/api/v0/auth/setup`, `/api/v0/auth/login`,
+`/api/v0/auth/recover`, and `/api/v0/auth/status`.
 
 ```bash
 # Login
-curl -s -X POST http://localhost/api/v1/auth/login \
+curl -s -X POST http://localhost/api/v0/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username":"you","password":"your-password"}'
 # → {"token":"<64-char hex token>"}
 
 # Use the token
-curl http://localhost/api/v1/health \
+curl http://localhost/api/v0/health \
   -H "Authorization: Bearer <token>"
 ```
 
 Tokens are valid for 30 days. Pass them as `Authorization: Bearer <token>` or as a
-`session` cookie.
+`session` cookie. The session cookie is also accepted (set automatically by the web UI).
 
 ### Key endpoints
 
 | Method | Path | What it does |
 | ------ | ---- | ------------ |
-| GET | `/api/v1/health` | System health (CPU, memory, disk, temperature) |
-| GET | `/api/v1/cirrus` | List files |
-| POST | `/api/v1/cirrus/upload/{path}` | Upload a file |
-| GET | `/api/v1/storage/devices/status` | List storage devices |
-| PATCH | `/api/v1/storage/devices/{devicePath}/name` | Rename a device |
-| GET | `/api/v1/version` | Installed version |
-| POST | `/api/v1/version/latest` | Update to latest release |
+| GET | `/api/v0/health` | System health (CPU, memory, disk, temperature, S.M.A.R.T.) |
+| GET | `/api/v0/cirrus` | List files |
+| POST | `/api/v0/cirrus/upload/{path}` | Upload a file |
+| GET | `/api/v0/storage/devices/status` | List storage devices |
+| PATCH | `/api/v0/storage/devices/{devicePath}/name` | Rename a device |
+| GET | `/api/v0/version` | Installed version |
+| POST | `/api/v0/version/latest` | Update to latest release |
 
 ---
 
@@ -113,8 +113,9 @@ USB device detection uses the `usbutil` package. Mounting/unmounting USB storage
 root — run with `AS_ROOT=1` in development.
 
 **Auth.** Passwords are bcrypt-hashed (cost 12). Session tokens are 32 bytes of
-`crypto/rand` (256-bit entropy). The recovery phrase is a 6-word phrase from a 256-word
-wordlist (~48 bits — deliberate tradeoff for usability on a home device).
+`crypto/rand` (256-bit entropy), stored as SHA-256 hashes at rest — a leaked database
+file does not yield valid bearer credentials. The recovery phrase is a 6-word phrase
+from a 256-word wordlist (~48 bits — deliberate tradeoff for usability on a home device).
 
 **Updates.** The butler can update itself in-place via the `/version/update` API. It downloads
 the new binary as a tarball, extracts it, and atomically renames it over the running binary.
