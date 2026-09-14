@@ -1,11 +1,12 @@
-<template>
-  <div class="landing-page">
+waitlist bytes 2667
+ass="landing-page">
     <div class="gradient-overlay" />
     <div class="card waitlist-card">
       <h1>Sign Up for Early Access</h1>
       <p class="intro">
-        We're still building AutoButler and planning to launch this summer! Sign
-        up to be notified when we're ready to ship.
+        We're building Quark — AutoButler's private home cloud — and opening
+        friends-and-family access in early 2027. Sign up to be notified when
+        we're ready.
       </p>
 
       <div class="mailchimp-embed">
@@ -20,10 +21,10 @@
       </div>
 
       <div class="launch-info">
-        <p><strong>Coming Summer 2026</strong></p>
+        <p><strong>Friends &amp; family — early 2027</strong></p>
         <p>
-          We're working hard to bring you the best self-hosted storage solution.
-          Stay tuned!
+          Join the waitlist for Quark. At-cost friends-and-family first;
+          public when it's ready.
         </p>
       </div>
     </div>
@@ -33,12 +34,12 @@
 <script setup lang="ts">
 // Mailchimp embed - no additional logic needed
 useSeoMeta({
-  title: "Join the Waitlist — AutoButler",
+  title: "Join the Waitlist — Quark",
   description:
-    "Get early access to AutoButler. Join the waitlist for the private cloud device built for your home.",
-  ogTitle: "Join the Waitlist — AutoButler",
+    "Get early access to Quark by AutoButler. Join the waitlist for the private home cloud built for your house.",
+  ogTitle: "Join the Waitlist — Quark",
   ogDescription:
-    "Get early access to AutoButler. Join the waitlist for the private cloud device built for your home.",
+    "Get early access to Quark by AutoButler. Join the waitlist for the private home cloud built for your house.",
   ogType: "website",
 });
 </script>
