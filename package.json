@@ -33,7 +33,8 @@
   },
   "overrides": {
     "uuid": "^14.0.0",
-    "esbuild": ">=0.28.1"
+    "esbuild": ">=0.28.1",
+    "smol-toml": ">=1.7.1"
   },
   "devDependencies": {
     "@nuxt/devtools": "^3.2.1",
