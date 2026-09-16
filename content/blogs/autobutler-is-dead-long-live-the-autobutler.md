@@ -9,7 +9,7 @@ Hello friends! We have a variety of product updates in queue for you, and we've 
 
 It's been a few months - I think our last blog post was early in the summer, and while we did take a bit of time off from AutoButler, we've still managed to get a fair amount done, including a rebrand…
 
-Quark is the new flagship product for AutoButler, LLC.
+[Quark](https://quark.autobutler.org) is the new flagship product for AutoButler, LLC.
 
 We are keeping the company name and website at [autobutler.org](https://autobutler.org), but we have a new website for our product itself. Increasingly we are realizing that we want to do so much more than just make these data storage solutions; additionally, we had some notable problems with getting our app into the Apple app store under the name "Autobutler" (apparently someone else had the idea of naming their car wash the same thing, and Apple won't let you have the same name as anyone else; I can't help but imagine this is a major part of why we get tech products with ridiculous names) - so we took inspiration from some of our fellow, more reasonable privacy-focused tech companies and named our product Quark.
 
