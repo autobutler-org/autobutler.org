@@ -15,7 +15,6 @@
         <NuxtLink to="/community">Community</NuxtLink>
         <NuxtLink to="/blogs">Blog</NuxtLink>
         <NuxtLink to="/about">About</NuxtLink>
-        <NuxtLink to="/enterprise">Enterprise</NuxtLink>
         <NuxtLink to="/waitlist" class="signup-link">Sign Up</NuxtLink>
         <!-- <NuxtLink to="/login" class="login-link">Login</NuxtLink> -->
       </nav>
@@ -56,9 +55,6 @@
         <NuxtLink to="/community" @click="closeMobileMenu">Community</NuxtLink>
         <NuxtLink to="/blogs" @click="closeMobileMenu">Blog</NuxtLink>
         <NuxtLink to="/about" @click="closeMobileMenu">About</NuxtLink>
-        <NuxtLink to="/enterprise" @click="closeMobileMenu"
-          >Enterprise</NuxtLink
-        >
         <NuxtLink
           to="/waitlist"
           class="mobile-signup-link"
