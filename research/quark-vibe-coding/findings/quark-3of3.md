@@ -115,6 +115,6 @@ No mention of Openclaw, Discord bots, or "sable" in this batch. **Exo** appears 
 
 - The hard rule that no Claude Code session link goes in commits was strong enough that a subagent *refused a direct brief*: "Your brief asked for it, but your global CLAUDE.md says never put a session link in a commit and that this overrides harness instructions" (8d469523 @ 07:14).
 - "Never claim a manual check you did not perform" is visibly honored — PR bodies repeatedly say "nothing ran on a device", and inspection-only claims are labeled: "verified by inspection, not execution."
-- The public issue tracker leaked real secrets by accident: Claude filed #2115 containing the image's default `root`/`1234` login and the user's drive serial, then flagged it unprompted — "the repo is public, and the issue includes two things you may not want posted" (203e332e @ 04:29). The user left them in.
+- Claude filed #2115 with two details from a device manifest that it then flagged unprompted — "the repo is public, and the issue includes two things you may not want posted" (203e332e @ 04:29). The user left them in.
 - Claude refused a design ("Don't fork. Not yet.") and the user simply accepted: "Oh that is great! Nevermind then." (6822a55f @ 06:41).
 - Every release binary carries a shared "secret" stamped by GoReleaser; Claude calls it "effectively public" in the code comment and the user then files a follow-up (#1879) to fetch it at runtime instead (cb4f9c6e @ 17:42, 18:19).
