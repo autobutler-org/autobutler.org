@@ -13,11 +13,11 @@
     "lint:eslint": "eslint",
     "lint:types": "nuxt typecheck",
     "lint:prettier": "prettier --check .",
-    "lint:md": "markdownlint-cli2 \"**/*.md\" \"!node_modules/**\"",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"!node_modules/**\" \"!research/**\"",
     "lint": "concurrently -m1 npm:lint:*",
     "fix:eslint": "npm run lint:eslint -- --fix",
     "fix:prettier": "prettier --write .",
-    "fix:md": "markdownlint-cli2 --fix \"**/*.md\" \"!node_modules/**\"",
+    "fix:md": "markdownlint-cli2 --fix \"**/*.md\" \"!node_modules/**\" \"!research/**\"",
     "fix": "concurrently -m1 npm:fix:*",
     "check:size": "node scripts/check-bundle-size.js"
   },
