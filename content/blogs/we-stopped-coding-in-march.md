@@ -134,7 +134,7 @@ in [PR #116](https://github.com/autobutler-org/quark/pull/116) in June 2025. On 
 and zero test files, as mentioned earlier.
 
 **Copilot-assisted, October to December 2025.** We added a `.github/copilot-instructions.md` in
-[PR #281](https://github.com/autobutler-org/quark/pull/281). It was 49 lines, all about where CSS is allowed to live (the]
+[PR #281](https://github.com/autobutler-org/quark/pull/281). It was 49 lines, all about where CSS is allowed to live (the
 frontend frustrations start to bare their teeth right here).
 That file is the literal ancestor of our current `AGENTS.md`, as `git` records a rename in March 2026. We also tried Copilot's
 coding agent in Github's UI. It opened 5 PRs, and we closed all 5 without merging. Still to this day, I believe this is
