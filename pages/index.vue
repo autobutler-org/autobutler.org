@@ -18,7 +18,7 @@
       <div class="tenets-section">
         <h2 class="highlight">What We Believe</h2>
         <div class="tenets-list">
-          <div class="tenet-card tenet-card--wide">
+          <div class="tenet-card">
             <p>
               We believe that there is an ongoing movement towards creating a
               permanent "rental class," and that the way out of that is to
@@ -66,7 +66,7 @@
               </p>
             </div>
           </div>
-          <div class="tenet-card tenet-card--wide">
+          <div class="tenet-card">
             <p>
               We believe that one of the pending benefits of artificial
               intelligence is the ability to create things that help the
@@ -515,10 +515,6 @@ onMounted(() => {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
-}
-
-.tenet-card--wide {
-  text-align: center;
 }
 
 .tenet-card:hover {
