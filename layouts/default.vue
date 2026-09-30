@@ -14,6 +14,8 @@ import ButlerHeader from "~/components/ButlerHeader.vue";
 
 // Get current route to conditionally show footer
 const route = useRoute();
+// The docs live on quark.autobutler.org; /docs/* here is only redirect stubs
+// in public/, which never render through this layout.
 const isDocsPage = computed(() => route.path.startsWith("/docs"));
 </script>
 

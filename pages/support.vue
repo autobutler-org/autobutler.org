@@ -29,7 +29,7 @@ const browserOptions = [
 
 const submitToGitHub = () => {
   // Build the GitHub issue URL with query parameters
-  const baseUrl = "https://github.com/autobutler-org/autobutler/issues/new";
+  const baseUrl = "https://github.com/autobutler-org/quark/issues/new";
   const params = new URLSearchParams();
 
   params.append("template", "bug.yaml");
@@ -74,18 +74,22 @@ useSeoMeta({
         </p>
         <div class="help-link-grid">
           <a
-            href="/docs/getting-started"
+            href="https://quark.autobutler.org/docs/getting-started"
+            target="_blank"
+            rel="noopener"
             class="help-link-card"
             aria-label="Getting started guide"
           >
             <Icon name="heroicons:rocket-launch" class="help-link-icon" />
             <span class="help-link-title">Getting Started</span>
             <span class="help-link-desc"
-              >Set up your AutoButler for the first time</span
+              >Set up your Quark for the first time</span
             >
           </a>
           <a
-            href="/docs/help"
+            href="https://quark.autobutler.org/docs/help"
+            target="_blank"
+            rel="noopener"
             class="help-link-card"
             aria-label="Troubleshooting guide"
           >
@@ -96,7 +100,7 @@ useSeoMeta({
             >
           </a>
           <a
-            href="https://github.com/autobutler-org/autobutler/issues"
+            href="https://github.com/autobutler-org/quark/issues"
             target="_blank"
             rel="noopener"
             class="help-link-card"
@@ -112,7 +116,7 @@ useSeoMeta({
             >
           </a>
           <a
-            href="https://github.com/autobutler-org/autobutler"
+            href="https://github.com/autobutler-org/quark"
             target="_blank"
             rel="noopener"
             class="help-link-card"
@@ -132,7 +136,7 @@ useSeoMeta({
         Found a bug? Report it directly to our GitHub issue tracker. Or, if you
         have a feature request, head to
         <a
-          href="https://github.com/autobutler-org/autobutler/issues/new?template=feature.yaml"
+          href="https://github.com/autobutler-org/quark/issues/new?template=feature.yaml"
           target="_blank"
           rel="noopener"
           >our Feature request page</a

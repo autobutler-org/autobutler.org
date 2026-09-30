@@ -3,22 +3,24 @@
     <div class="gradient-overlay" />
     <div class="hero-section">
       <h1>Data Autonomy For Everyone.</h1>
-      <p class="subtitle">AutoButler is a company that makes products for humans.</p>
+      <p class="subtitle">
+        AutoButler is a company that makes products for humans.
+      </p>
     </div>
 
     <div class="content-wrapper">
       <div class="about-section">
         <p>
           AutoButler is Brandon and James, who want to change the world.
-          Technology isn't evil, we just think there's a better vision for
-          what we can use it to do to improve the lives of people.
+          Technology isn't evil, we just think there's a better vision for what
+          we can use it to do to improve the lives of people.
         </p>
       </div>
 
       <div class="tenets-section">
         <h2 class="highlight">What We Believe</h2>
         <div class="tenets-list">
-          <div class="tenet-card tenet-card--wide">
+          <div class="tenet-card">
             <p>
               We believe that there is an ongoing movement towards creating a
               permanent "rental class," and that the way out of that is to
@@ -46,8 +48,8 @@
             </div>
             <div class="tenet-card">
               <p>
-                We believe that better products and companies are the answer
-                to bad products and companies.
+                We believe that better products and companies are the answer to
+                bad products and companies.
               </p>
             </div>
             <div class="tenet-card">
@@ -66,11 +68,11 @@
               </p>
             </div>
           </div>
-          <div class="tenet-card tenet-card--wide">
+          <div class="tenet-card">
             <p>
               We believe that one of the pending benefits of artificial
-              intelligence is the ability to create things that help the
-              working class opt out of bad systems.
+              intelligence is the ability to create things that help the working
+              class opt out of bad systems.
             </p>
           </div>
         </div>
@@ -83,6 +85,22 @@
           <a href="https://quark.autobutler.org">Quark</a>, which is a
           wifi-router plug-in device that turns your USB storage into cloud
           storage.
+        </p>
+        <p>
+          Your photos, files, documents and spreadsheets live on a drive you
+          own, in a room you can walk into. Everyone in the house gets their own
+          account and their own private space, there is a password vault, and
+          you can reach any of it from outside the house over a private network
+          only your household is on. Encrypted household chat and a shared
+          calendar are in review now.
+        </p>
+        <p>
+          Quark is in beta, with friends-and-family access opening in early
+          2027. All of the code is public, so you can
+          <a href="https://github.com/autobutler-org/quark">read it yourself</a
+          >, and the
+          <a href="https://quark.autobutler.org/docs">documentation</a> is there
+          before you buy anything.
         </p>
       </div>
 
@@ -515,10 +533,6 @@ onMounted(() => {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
-}
-
-.tenet-card--wide {
-  text-align: center;
 }
 
 .tenet-card:hover {
