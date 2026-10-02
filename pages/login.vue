@@ -126,4 +126,10 @@ input:focus {
 .form-footer a:hover {
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: 0 1rem;
+  }
+}
 </style>
