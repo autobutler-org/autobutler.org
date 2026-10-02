@@ -259,6 +259,10 @@ const formatDate = (dateString: string) => {
 }
 
 @media (max-width: 768px) {
+  .blog-post-page {
+    padding: 2rem 1rem;
+  }
+
   .post-header h1 {
     font-size: 2rem;
   }
