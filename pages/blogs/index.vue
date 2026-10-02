@@ -178,6 +178,10 @@ const formatDate = (dateString?: string) => {
 }
 
 @media (max-width: 768px) {
+  .blogs-page {
+    padding: 2rem 1rem;
+  }
+
   .blogs-header h1 {
     font-size: 2rem;
   }
