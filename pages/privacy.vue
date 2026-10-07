@@ -16,16 +16,16 @@ useSeoMeta({
       <h1>Privacy Policy</h1>
 
       <div class="section">
-        <p class="last-updated">Last Updated: September 8, 2026</p>
+        <p class="last-updated">Last Updated: October 6, 2026</p>
       </div>
 
       <div class="section">
         <h2>We Built Quark to Keep Your Stuff Yours</h2>
         <p>
           AutoButler sells Quark, a personal cloud that runs on hardware you
-          own. We designed the product so your photos, files, and documents
-          stay under your control. This policy covers (1) the Quark product and
-          (2) the Autobutler website and related online services.
+          own. We designed the product so your photos, files, and documents stay
+          under your control. This policy covers (1) the Quark product and (2)
+          the Autobutler website and related online services.
         </p>
       </div>
 
@@ -79,19 +79,21 @@ useSeoMeta({
         <div class="subsection">
           <h3>Cookies / local preferences</h3>
           <p>
-            We may use a small number of cookies or local storage for
-            preferences and basic site function. These are not for cross-site
-            advertising. You can block cookies in your browser; some features
-            may not work as well.
+            The Website does not currently set cookies or use local storage of
+            its own. The waitlist and newsletter sign-up forms are provided by
+            Mailchimp (see Sharing below), which may set its own cookies under
+            its own policies. You can block cookies in your browser; some
+            features may not work as well.
           </p>
         </div>
 
         <div class="subsection">
           <h3>Analytics / marketing measurement</h3>
           <p>
-            If we add privacy-respecting measurement tools later, we will update
-            this policy before they collect personal data beyond what is
-            described here.
+            We do not currently use analytics or marketing measurement tools on
+            the Website. If we add privacy-respecting measurement tools later,
+            we will update this policy before they collect personal data beyond
+            what is described here.
           </p>
         </div>
       </div>
@@ -112,6 +114,19 @@ useSeoMeta({
           run the Website (for example hosting), under obligations consistent
           with this policy, or when required by law.
         </p>
+        <p>
+          Our waitlist and newsletter sign-up forms are provided by Mailchimp
+          (Intuit Inc.). Mailchimp processes the email address and any other
+          details you submit through those forms on our behalf, and your browser
+          connects to Mailchimp's servers when a form loads. Mailchimp handles
+          that information according to its own
+          <a
+            href="https://mailchimp.com/legal/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >legal terms and privacy policy</a
+          >.
+        </p>
       </div>
 
       <div class="section">
@@ -121,8 +136,8 @@ useSeoMeta({
           Website/waitlist/support channels, and request correction or deletion,
           by emailing
           <a href="mailto:support@autobutler.org">support@autobutler.org</a>.
-          Device-local Quark content is under your control on your hardware —
-          we typically cannot access or delete it remotely.
+          Device-local Quark content is under your control on your hardware — we
+          typically cannot access or delete it remotely.
         </p>
       </div>
 
