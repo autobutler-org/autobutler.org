@@ -16,6 +16,7 @@ export default defineNuxtConfig({
             "AutoButler — the company behind Quark, a self-hosted personal cloud device. No subscriptions, no data mining, just your files on hardware you own.",
         },
         { property: "og:site_name", content: "AutoButler" },
+        { property: "og:title", content: "AutoButler" },
         { property: "og:type", content: "website" },
         {
           property: "og:image",
