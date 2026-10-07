@@ -16,7 +16,6 @@
         <NuxtLink to="/blogs">Blog</NuxtLink>
         <NuxtLink to="/about">About</NuxtLink>
         <NuxtLink to="/waitlist" class="signup-link">Sign Up</NuxtLink>
-        <!-- <NuxtLink to="/login" class="login-link">Login</NuxtLink> -->
       </nav>
 
       <!-- Mobile Hamburger Button -->
@@ -60,9 +59,6 @@
           class="mobile-signup-link"
           @click="closeMobileMenu"
           >Sign Up</NuxtLink
-        >
-        <NuxtLink to="/login" class="mobile-login-link" @click="closeMobileMenu"
-          >Login</NuxtLink
         >
       </nav>
     </div>
@@ -192,19 +188,6 @@ onMounted(() => {
   border-color: rgba(0, 255, 170, 0.4);
 }
 
-.login-link {
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.login-link:hover {
-  border-color: rgba(0, 255, 170, 0.3);
-  background: linear-gradient(
-    135deg,
-    rgba(0, 255, 170, 0.15),
-    rgba(0, 187, 255, 0.15)
-  );
-}
-
 /* Mobile Menu Button */
 .mobile-menu-button {
   display: none;
@@ -317,24 +300,6 @@ onMounted(() => {
 .mobile-nav-content a:focus {
   color: #fff;
   padding-left: 0.5rem;
-}
-
-.mobile-login-link {
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 4px !important;
-  padding: 1rem !important;
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.mobile-login-link:hover {
-  border-color: rgba(0, 255, 170, 0.3) !important;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 255, 170, 0.15),
-    rgba(0, 187, 255, 0.15)
-  ) !important;
-  padding-left: 1rem !important;
 }
 
 /* Mobile Overlay */
