@@ -5,14 +5,14 @@
       <p>
         Join the AutoButler community! The primary hub is
         <a
-          href="https://github.com/autobutler-org/autobutler"
+          href="https://github.com/autobutler-org/quark"
           target="_blank"
           rel="noopener"
           >GitHub</a
         >, where you can open issues, start discussions, browse the source, and
         follow development. Have a bug or feature request? Head to
         <a
-          href="https://github.com/autobutler-org/autobutler/issues"
+          href="https://github.com/autobutler-org/quark/issues"
           target="_blank"
           rel="noopener"
           >GitHub Issues</a

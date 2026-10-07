@@ -19,7 +19,8 @@
     "fix:prettier": "prettier --write .",
     "fix:md": "markdownlint-cli2 --fix \"**/*.md\" \"!node_modules/**\"",
     "fix": "concurrently -m1 npm:fix:*",
-    "check:size": "node scripts/check-bundle-size.js"
+    "check:size": "node scripts/check-bundle-size.js",
+    "test": "node --test \"tests/**/*.test.mjs\""
   },
   "dependencies": {
     "@nuxt/content": "^3.11.2",

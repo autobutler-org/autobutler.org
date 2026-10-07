@@ -19,7 +19,7 @@ useSeoMeta({
 
       <div class="channels">
         <a
-          href="https://github.com/autobutler-org/autobutler/issues/new/choose"
+          href="https://github.com/autobutler-org/quark/issues/new/choose"
           target="_blank"
           rel="noopener noreferrer"
           class="channel-card"
@@ -42,9 +42,7 @@ useSeoMeta({
               Found a bug or have a feature request? Open an issue on GitHub and
               we'll track it properly.
             </p>
-            <span class="channel-link"
-              >github.com/autobutler-org/autobutler →</span
-            >
+            <span class="channel-link">github.com/autobutler-org/quark →</span>
           </div>
         </a>
 
