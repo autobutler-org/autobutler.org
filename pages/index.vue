@@ -142,10 +142,8 @@
                       style="display: none"
                     ></div>
                   </div>
-                  <div
-                    aria-hidden="true"
-                    style="position: absolute; left: -5000px"
-                  >
+                  <!-- Anti-bot honeypot: real subscribers never see or fill this in. -->
+                  <div class="honeypot" aria-hidden="true">
                     <input
                       type="text"
                       name="b_83e0cf2d6edd852308ba6671f_a3382ba074"
@@ -336,6 +334,11 @@ onMounted(() => {
 #mc_embed_signup input[type="email"]::placeholder,
 #mc_embed_signup input[type="text"]::placeholder {
   color: rgba(255, 255, 255, 0.4);
+}
+
+#mc_embed_signup .honeypot {
+  position: absolute;
+  left: -5000px;
 }
 
 #mc_embed_signup .button {
