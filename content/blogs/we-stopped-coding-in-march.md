@@ -240,8 +240,8 @@ As always, we love you all and we want to build stuff for you. Feel free to reac
 Grace and peace to you,
 James
 
-<!-- --- -->
+---
 
-<!-- This is part 1 of 9 in our series on how we build Quark with AI agents. -->
+This is part 1 of 9 in our series on how we build Quark with AI agents.
 
-<!-- Next: [The issue is the prompt](/blogs/the-issue-is-the-prompt) → -->
+Next: [The issue is the prompt](/blogs/the-issue-is-the-prompt) →
