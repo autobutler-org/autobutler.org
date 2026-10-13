@@ -175,22 +175,35 @@ import { onMounted } from "vue";
 
 // SEO meta
 useSeoMeta({
-  title: "AutoButler — Data Autonomy For Everyone",
+  title: "AutoButler | Data Autonomy for Everyone",
   description:
-    "AutoButler believes products should be made for people, not the other way around. See what we stand for.",
-  ogTitle: "AutoButler — Data Autonomy For Everyone",
+    "AutoButler builds open-source tools for data autonomy, starting with Quark, a private home cloud for your router.",
+  ogTitle: "AutoButler | Data Autonomy for Everyone",
   ogDescription:
-    "AutoButler believes products should be made for people, not the other way around. See what we stand for.",
+    "AutoButler builds open-source tools for data autonomy, starting with Quark, a private home cloud for your router.",
   ogType: "website",
   ogUrl: "https://autobutler.org",
   twitterCard: "summary_large_image",
-  twitterTitle: "AutoButler — Data Autonomy For Everyone",
+  twitterTitle: "AutoButler | Data Autonomy for Everyone",
   twitterDescription:
-    "AutoButler believes products should be made for people, not the other way around. See what we stand for.",
+    "AutoButler builds open-source tools for data autonomy, starting with Quark, a private home cloud for your router.",
 });
 
-// Load Mailchimp CSS
+// Load Mailchimp CSS, plus Organization structured data for search engines
 useHead({
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "AutoButler",
+        url: "https://autobutler.org",
+        logo: "https://autobutler.org/android-chrome-512x512.png",
+        sameAs: ["https://github.com/autobutler-org"],
+      }),
+    },
+  ],
   link: [
     {
       rel: "stylesheet",
