@@ -6,8 +6,8 @@
       <p class="intro">
         Quark is AutoButler's private home cloud — a box you plug in so your
         files live at your place, not on someone else's servers. We're opening
-        friends-and-family access in early 2027. Leave your email and we'll
-        tell you when seats open.
+        friends-and-family access in early 2027. Leave your email and we'll tell
+        you when seats open.
       </p>
 
       <div class="mailchimp-embed">

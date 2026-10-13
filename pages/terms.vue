@@ -19,9 +19,9 @@ useSeoMeta({
       <div class="section">
         <h2>Definitions</h2>
         <p>
-          <strong>AutoButler</strong> (or <strong>AutoButler LLC</strong>,
-          "we", "us", "our") means the company that owns and sells Quark and
-          operates autobutler.org.
+          <strong>AutoButler</strong> (or <strong>AutoButler LLC</strong>, "we",
+          "us", "our") means the company that owns and sells Quark and operates
+          autobutler.org.
         </p>
         <p>
           <strong>Quark</strong> means the personal cloud hardware product and
@@ -52,10 +52,9 @@ useSeoMeta({
       <div class="section">
         <h2>2. Your Data</h2>
         <p>
-          You retain full ownership of all data you store with Quark. By
-          default your content stays on hardware you control. Any optional
-          backup or sync service we may offer later would require your
-          explicit opt-in.
+          You retain full ownership of all data you store with Quark. By default
+          your content stays on hardware you control. Any optional backup or
+          sync service we may offer later would require your explicit opt-in.
         </p>
         <p>
           Some features (for example remote access via a mesh/VPN you enable, or
@@ -132,9 +131,7 @@ useSeoMeta({
           Questions about these Terms:
           <a href="mailto:support@autobutler.org">support@autobutler.org</a>.
           Software license details for open-source components:
-          <a
-            href="https://github.com/autobutler-org/quark"
-            target="_blank"
+          <a href="https://github.com/autobutler-org/quark" target="_blank"
             >https://github.com/autobutler-org/quark</a
           >.
         </p>
