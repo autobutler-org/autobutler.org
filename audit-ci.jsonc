@@ -1,0 +1,19 @@
+{
+  "$schema": "https://github.com/IBM/audit-ci/raw/main/docs/schema.json",
+  // TEMPORARY allowlist (added 2026-10-13, autobutler.org #174).
+  // Only build/dev-time advisories with no compatible patched release.
+  // Keyed by GHSA ID so any NEW advisory still fails the check.
+  // Remove each entry once Nuxt or the upstream package ships a fix.
+  "high": true,
+  "allowlist": [
+    // simple-git via @nuxt/devtools, @nuxt/cli, vite-builder: remove when Nuxt moves to simple-git >=4.0.1
+    "GHSA-v5rq-49vh-5v5c", // @simple-git/argv-parser <2.0.1
+    "GHSA-x6jw-m9v5-85vh", // simple-git <4.0.1
+    "GHSA-g4wm-2vf7-vfgr", // simple-git <=3.36.0
+    "GHSA-858h-whjf-mvg5", // simple-git <=3.36.0
+    // node-forge via listhen/nitropack: remove when node-forge >1.4.0 ships and the lock picks it up
+    "GHSA-86w9-cpqp-85rv",
+    // braces via micromatch (@nuxt/content, markdownlint-cli2): remove when braces >3.0.3 ships
+    "GHSA-vfj7-8cjw-p6xm",
+  ],
+}
