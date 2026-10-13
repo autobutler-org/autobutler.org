@@ -6,14 +6,34 @@ export default defineNuxtConfig({
   css: ["~/assets/css/content.css"],
   nitro: {
     static: true,
+    prerender: {
+      // Crawl from "/" so every linked page is prerendered, and list each
+      // route explicitly so none depends on being linked.
+      crawlLinks: true,
+      routes: [
+        "/",
+        "/about",
+        "/blogs",
+        "/community",
+        "/contact",
+        "/enterprise",
+        "/privacy",
+        "/stories",
+        "/support",
+        "/terms",
+        "/waitlist",
+        "/sitemap.xml",
+      ],
+    },
   },
   app: {
     head: {
+      htmlAttrs: { lang: "en" },
       meta: [
         {
           name: "description",
           content:
-            "AutoButler — the company behind Quark, a self-hosted personal cloud device. No subscriptions, no data mining, just your files on hardware you own.",
+            "AutoButler builds open-source tools for data autonomy, starting with Quark, a private home cloud for your router.",
         },
         { property: "og:site_name", content: "AutoButler" },
         { property: "og:title", content: "AutoButler" },
