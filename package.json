@@ -40,7 +40,7 @@
   "devDependencies": {
     "@nuxt/devtools": "^3.2.1",
     "@nuxt/eslint": "^1.15.1",
-    "concurrently": "^9.2.1",
+    "concurrently": "^10.0.0",
     "eslint": "^10.0.0",
     "npm-check-updates": "^19.3.2",
     "prettier": "^3.8.1",
