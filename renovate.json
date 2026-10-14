@@ -1,4 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>autobutler-org/renovate-config"]
+  "extends": ["github>autobutler-org/renovate-config"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on monday"]
+  }
 }

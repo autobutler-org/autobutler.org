@@ -26,4 +26,4 @@ jobs:
           npm ci
       - name: Audit dependencies
         run: |
-          npm audit --audit-level=high
+          npx --yes audit-ci@7 --config audit-ci.jsonc
