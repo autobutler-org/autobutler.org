@@ -1,9 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
   title: "Contact — AutoButler",
-  description: "Get in touch with the AutoButler team via GitHub or email.",
+  description: "Get in touch with us via GitHub or email.",
   ogTitle: "Contact — AutoButler",
-  ogDescription: "Get in touch with the AutoButler team via GitHub or email.",
+  ogDescription: "Get in touch with us via GitHub or email.",
   ogType: "website",
 });
 </script>
