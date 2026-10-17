@@ -89,10 +89,9 @@
         <p>
           Your photos, files, documents and spreadsheets live on a drive you
           own, in a room you can walk into. Everyone in the house gets their own
-          account and their own private space, there is a password vault, and
-          you can reach any of it from outside the house over a private network
-          only your household is on. Encrypted household chat and a shared
-          calendar are in review now.
+          account and their own private space, and there is a password vault.
+          Reaching it from outside the house is coming soon. Encrypted household
+          chat and a shared calendar are in review now.
         </p>
         <p>
           Quark is in beta, with friends-and-family access opening in early
