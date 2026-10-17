@@ -54,10 +54,10 @@ const submitToGitHub = () => {
 useSeoMeta({
   title: "Support — AutoButler",
   description:
-    "Get help with AutoButler. Report bugs, request features, and find answers.",
+    "Get help with Quark. Report bugs, request features, and find answers.",
   ogTitle: "Support — AutoButler",
   ogDescription:
-    "Get help with AutoButler. Report bugs, request features, and find answers.",
+    "Get help with Quark. Report bugs, request features, and find answers.",
   ogType: "website",
 });
 </script>
@@ -120,7 +120,7 @@ useSeoMeta({
             target="_blank"
             rel="noopener"
             class="help-link-card"
-            aria-label="AutoButler GitHub repository (opens in new tab)"
+            aria-label="Quark GitHub repository (opens in new tab)"
           >
             <Icon name="mdi:github" class="help-link-icon" />
             <span class="help-link-title">GitHub</span>

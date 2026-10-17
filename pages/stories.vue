@@ -4,7 +4,7 @@
     <div class="hero-section">
       <h1>Why would I need this?</h1>
       <p class="subtitle">
-        Here's a few scenarios where AutoButler might be for you.
+        Here's a few scenarios where Quark might be for you.
       </p>
     </div>
 
@@ -12,12 +12,11 @@
       <div class="manifesto-section">
         <h2>You have kids.</h2>
         <p>
-          Did you know that if you post a picture of your kid on Facebook, Meta
-          starts creating a "shadow profile"? This is so that when that kid gets
-          a Facebook account, Meta has background info to immediately start
-          targeting that kid with ads. They also will use any public photo you
-          post for AI training data. Google and Apple both use stored photos in
-          their storage systems for AI training.
+          Did you know that photos of your kid posted on social media can feed a
+          profile of them before they ever have an account of their own? That
+          background info can be used to target them with ads later on. Public
+          photos can also end up as AI training data, and cloud photo services
+          may use stored photos to improve their AI features.
         </p>
       </div>
 
@@ -37,13 +36,13 @@
       </div>
 
       <div class="manifesto-section">
-        <h2>You believe there's a war for privacy worth fighting.</h2>
+        <h2>You want privacy to be the normal option.</h2>
         <p>
-          So much of this war seems lost - we gave Big Tech our data for free,
-          while we recieved convenience. But we don't believe you have to make
-          that into a binary decision - you can protect your data, and still
-          have the convenience of automatically backing up your photos and
-          memories.
+          It can feel like that ship has sailed - we gave our data away for
+          free, and received convenience in return. But we don't believe you
+          have to make that into a binary decision - you can protect your data,
+          and still have the convenience of automatically backing up your photos
+          and memories.
         </p>
       </div>
     </div>
@@ -54,10 +53,10 @@
 useSeoMeta({
   title: "Stories — AutoButler",
   description:
-    "Real stories from people who chose privacy and data independence with AutoButler.",
+    "Everyday reasons people choose privacy and data independence with Quark.",
   ogTitle: "Stories — AutoButler",
   ogDescription:
-    "Real stories from people who chose privacy and data independence with AutoButler.",
+    "Everyday reasons people choose privacy and data independence with Quark.",
   ogType: "website",
 });
 </script>
