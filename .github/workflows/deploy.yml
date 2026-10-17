@@ -49,3 +49,34 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+  # Ping IndexNow (Bing, Yandex, etc.) with every sitemap URL so changes get recrawled quickly.
+  # Best effort: a failed ping never fails the deploy.
+  indexnow:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs:
+      - deploy
+    continue-on-error: true
+    permissions: {}
+    env:
+      HOST: autobutler.org
+      # Must match the key file committed at public/<key>.txt.
+      KEY: f3a6d1da35e3154ab0fa6b6f8695f5e3
+    steps:
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          set -euo pipefail
+          curl -fsS "https://${HOST}/sitemap.xml" \
+            | grep -o '<loc>[^<]*</loc>' \
+            | sed -e 's|<loc>||' -e 's|</loc>||' > urls.txt
+          echo "Submitting $(wc -l < urls.txt) URLs"
+          jq -Rn --arg host "$HOST" --arg key "$KEY" \
+            '{host: $host, key: $key, keyLocation: "https://\($host)/\($key).txt", urlList: [inputs | select(length > 0)]}' \
+            < urls.txt > body.json
+          status=$(curl -sS -o response.txt -w '%{http_code}' \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data-binary @body.json)
+          echo "IndexNow HTTP status: ${status}"
+          cat response.txt
+          [[ "$status" =~ ^20[02]$ ]]
