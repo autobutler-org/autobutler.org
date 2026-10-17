@@ -33,9 +33,8 @@ useSeoMeta({
           <a href="https://quark.autobutler.org">Quark</a> is our flagship
           product. It is a device that plugs into your wifi router and turns
           your USB storage into cloud storage. Everyone in the house gets their
-          own account and their own private space, there is a password vault,
-          and you can reach any of it from outside the house over a private
-          network only your household is on.
+          own account and their own private space, and there is a password
+          vault. Reaching it from outside the house is coming soon.
         </p>
         <p>
           The outcome is that your photos, files, documents and spreadsheets
