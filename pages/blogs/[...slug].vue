@@ -99,11 +99,11 @@ if (page.value && !isError(page.value)) {
     ogDescription: description,
     ogUrl: url,
     ogType: "article",
-    ogImage: "https://autobutler.org/android-chrome-512x512.png",
-    twitterCard: "summary",
+    ogImage: "https://autobutler.org/og-image.png",
+    twitterCard: "summary_large_image",
     twitterTitle: title,
     twitterDescription: description,
-    twitterImage: "https://autobutler.org/android-chrome-512x512.png",
+    twitterImage: "https://autobutler.org/og-image.png",
   });
 
   useHead({

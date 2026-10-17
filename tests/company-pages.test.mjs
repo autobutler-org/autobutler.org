@@ -88,10 +88,13 @@ test("the newsletter form has a hidden honeypot named for its Mailchimp list", (
   assert.match(read("pages/index.vue"), /\.honeypot\s*\{[^}]*left:\s*-5000px/);
 });
 
-test("og:title and og:url are set site-wide and twitter:card is unchanged", () => {
+test("og:title, og:url and the 1200x630 og:image are set site-wide", () => {
   const config = read("nuxt.config.ts");
   assert.match(config, /property: "og:title", content: "AutoButler"/);
-  assert.match(config, /name: "twitter:card", content: "summary"/);
+  assert.match(config, /name: "twitter:card", content: "summary_large_image"/);
+  assert.match(config, /content: "https:\/\/autobutler\.org\/og-image\.png"/);
+  const png = readFileSync(join(root, "public/og-image.png"));
+  assert.deepEqual([png.readUInt32BE(16), png.readUInt32BE(20)], [1200, 630]);
   assert.match(
     read("app.vue"),
     /ogUrl: \(\) => `https:\/\/autobutler\.org\$\{/,

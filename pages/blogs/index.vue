@@ -55,11 +55,11 @@ useSeoMeta({
   ogType: "website",
   ogUrl: "https://autobutler.org/blogs",
   ogSiteName: "AutoButler",
-  ogImage: "https://autobutler.org/android-chrome-512x512.png",
-  twitterCard: "summary",
+  ogImage: "https://autobutler.org/og-image.png",
+  twitterCard: "summary_large_image",
   twitterTitle: "AutoButler Blog",
   twitterDescription: "Updates, insights, and stories from our team.",
-  twitterImage: "https://autobutler.org/android-chrome-512x512.png",
+  twitterImage: "https://autobutler.org/og-image.png",
 });
 
 const { data: articles } = await useAsyncData("blogs", async () => {
