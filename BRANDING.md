@@ -84,9 +84,12 @@ This section is about how we talk about the mission publicly — it matters
 as much as the words themselves.
 
 - **We are not positioning this as a fight against a company, or against
-  "big tech" as an enemy.** Don't name specific competitors, and don't use
-  language that frames this as a takedown, an exposure, or a war. We're
-  offering a better option, not attacking an existing one.
+  "big tech" as an enemy.** Mentioning competitors is allowed. You may
+  call out, factually, when competitors do really unpleasant things or
+  when we genuinely don't know what they're doing. Never be nasty or
+  classless about competitors. Classless/nasty copy is blocked, not
+  competitor mentions. We're offering a better option, not attacking an
+  existing one.
 - **Keep claims about the category, not accusations about individuals.**
   It's fine to describe how subscription cloud storage or big-tech data
   practices generally work; it's not fine to make specific, unverified
@@ -131,7 +134,9 @@ as much as the words themselves.
 
 - Call Quark's software "the AutoButler app," "AutoButler OS," or similar —
   AutoButler is the company, not the product.
-- Name a specific competitor, or imply this is a fight against one.
+- Be nasty or classless about competitors, or imply this is a fight
+  against one. (Mentioning competitors is allowed; factual call-outs
+  are allowed — see Positioning guardrails.)
 - Use combative or grievance-toned language about "big tech" or "cloud
   providers" as a group.
 - Invent a company-level tagline before the real one (tracked in
