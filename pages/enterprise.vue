@@ -9,10 +9,10 @@
       </p>
 
       <section class="section">
-        <h2>Why AutoButler for Your Organization?</h2>
+        <h2>Why Quark for Your Organization?</h2>
         <p>
-          Stop paying monthly subscriptions for cloud storage. AutoButler gives
-          you complete control over your data with a one-time purchase, ensuring
+          Stop paying monthly subscriptions for cloud storage. Quark gives you
+          complete control over your data with a one-time purchase, ensuring
           privacy and long-term cost savings.
         </p>
       </section>
@@ -72,8 +72,8 @@
       <section class="section cta-section">
         <h2>Ready to Get Started?</h2>
         <p>
-          Contact us to discuss how AutoButler can serve your organization's
-          storage needs.
+          Contact us to discuss how Quark can serve your organization's storage
+          needs.
         </p>
         <div class="cta-buttons">
           <NuxtLink to="/contact" class="btn btn-primary">Contact Us</NuxtLink>
@@ -88,10 +88,10 @@
 useSeoMeta({
   title: "Enterprise — AutoButler",
   description:
-    "AutoButler for organizations. Private, self-hosted cloud storage with no vendor lock-in.",
+    "Quark for organizations. Private, self-hosted cloud storage with no vendor lock-in.",
   ogTitle: "Enterprise — AutoButler",
   ogDescription:
-    "AutoButler for organizations. Private, self-hosted cloud storage with no vendor lock-in.",
+    "Quark for organizations. Private, self-hosted cloud storage with no vendor lock-in.",
   ogType: "website",
 });
 </script>
