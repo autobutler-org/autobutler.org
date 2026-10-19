@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  AutoButler business card, front. 3.5in x 2in trim + 0.125in bleed.
-  viewBox units are 1/100 in: bleed edge 0..375 x 0..225, trim 12.5..362.5 x 12.5..212.5,
+  AutoButler business card, front. 3.5in x 2in trim + 0.055in bleed (3.61in x 2.11in).
+  viewBox units are 1/100 in: bleed edge 7..368 x 7..218 (background extends past it), trim 12.5..362.5 x 12.5..212.5,
   safe zone 25..350 x 25..200. {{NAME}} {{TITLE}} {{EMAIL}} are filled by build.mjs (TITLE is uppercased as an eyebrow).
   Style follows quark.autobutler.org (editorial redesign): bone canvas, ink text, hairlines, Newsreader + Geist Mono.
 -->
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="3.75in" height="2.25in" viewBox="0 0 375 225">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="3.61in" height="2.11in" viewBox="7 7 361 211">
   <rect id="background" width="375" height="225" fill="#f7f6f3"/>
 
   <g id="content">

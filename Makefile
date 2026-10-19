@@ -119,6 +119,7 @@ check/size: ## [js] Check bundle size against performance budgets (run after gen
 	$(JS_EXEC) run check:size
 	echo "[check/size] end"
 
+.PHONY: business-cards business-cards-export
 business-cards: ## Build the founder business card SVGs into business-cards/build
 	$(JS_EXEC) business-cards/build.mjs
 
@@ -136,8 +137,9 @@ business-cards-export: business-cards ## Export print-ready cards (outlined SVG,
 	mkdir -p "$$out"
 	for svg in business-cards/build/*.svg; do
 		name=$$(basename "$$svg" .svg)
-		# cairo writes unitless 96 dpi px; restore physical size so editors import it at 3.75in x 2.25in
-		rsvg-convert -f svg "$$svg" | sed '2s/width="360" height="216"/width="3.75in" height="2.25in"/' > "$$out/$$name.svg"
+		# cairo writes unitless 96 dpi px; copy the source's physical size back so editors import it at print size
+		dims=$$(grep -o -m1 'width="[0-9.]*in" height="[0-9.]*in"' "$$svg")
+		rsvg-convert -f svg "$$svg" | sed "2s/width=\"[0-9.]*\" height=\"[0-9.]*\"/$$dims/" > "$$out/$$name.svg"
 		rsvg-convert -f pdf "$$svg" -o "$$out/$$name.pdf"
 		rsvg-convert -f png -d 600 -p 600 "$$svg" -o "$$out/$$name.png"
 	done
