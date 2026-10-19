@@ -46,7 +46,8 @@ Requires `rsvg-convert` from librsvg (`brew install librsvg`); the target tells 
 
 ## Print specs
 
-- Trim size 3.5in × 2in (US standard), 0.055in bleed on all sides, so the document is 3.61in × 2.11in (our print service's spec).
+- Trim size 3.5in × 2in (US standard), 0.055in bleed on all sides, so the document is
+  3.61in × 2.11in (our print service's spec).
 - viewBox units are 1/100 in. Trim is 12.5–362.5 × 12.5–212.5; keep text inside the safe zone,
   25–350 × 25–200 (0.125in inside the trim).
 - Style follows the `quark.autobutler.org` editorial redesign (`assets/main.css`): flat bone canvas `#f7f6f3`, ink
