@@ -28,6 +28,22 @@ make business-cards
 
 Node stdlib only, no network. Edit `people.json` or the template, then rerun.
 
+## Export
+
+```sh
+make business-cards-export
+```
+
+Builds the cards, then writes print-ready files for every theme to `build/export/`, rendered with the bundled fonts so
+nothing depends on fonts being installed:
+
+- `<name>.svg`: every text element converted to outlines (glyph paths), at 3.75in × 2.25in
+- `<name>.pdf`: vector, fonts embedded, full 3.75in × 2.25in bleed size
+- `<name>.png`: 600 dpi raster of the full bleed area (2250 × 1350 px)
+
+Upload the PDF (or the outlined SVG) to a print service; the PNG is for previews or services that only take images.
+Requires `rsvg-convert` from librsvg (`brew install librsvg`); the target tells you if it's missing.
+
 ## Print specs
 
 - Trim size 3.5in × 2in (US standard), 0.125in bleed on all sides, so the document is 3.75in × 2.25in.

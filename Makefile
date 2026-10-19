@@ -122,6 +122,27 @@ check/size: ## [js] Check bundle size against performance budgets (run after gen
 business-cards: ## Build the founder business card SVGs into business-cards/build
 	$(JS_EXEC) business-cards/build.mjs
 
+business-cards-export: business-cards ## Export print-ready cards (outlined SVG, PDF, 600 dpi PNG) to business-cards/build/export
+	if ! command -v rsvg-convert >/dev/null; then \
+		echo "rsvg-convert not found: install it with 'brew install librsvg', then rerun 'make business-cards-export'" >&2; \
+		exit 1; \
+	fi
+	fc_dir=$$(mktemp -d)
+	trap 'rm -rf "$$fc_dir"' EXIT
+	printf '<?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "fonts.dtd"><fontconfig><dir>%s</dir><cachedir>%s</cachedir></fontconfig>\n' \
+		"$(CURDIR)/business-cards/fonts" "$$fc_dir/cache" > "$$fc_dir/fonts.conf"
+	export FONTCONFIG_FILE="$$fc_dir/fonts.conf" PANGOCAIRO_BACKEND=fc
+	out=business-cards/build/export
+	mkdir -p "$$out"
+	for svg in business-cards/build/*.svg; do
+		name=$$(basename "$$svg" .svg)
+		# cairo writes unitless 96 dpi px; restore physical size so editors import it at 3.75in x 2.25in
+		rsvg-convert -f svg "$$svg" | sed '2s/width="360" height="216"/width="3.75in" height="2.25in"/' > "$$out/$$name.svg"
+		rsvg-convert -f pdf "$$svg" -o "$$out/$$name.pdf"
+		rsvg-convert -f png -d 600 -p 600 "$$svg" -o "$$out/$$name.png"
+	done
+	echo "exported outlined SVG, PDF and 600 dpi PNG to $$out"
+
 .PHONY: help
 help: ## Displays help info
 	awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
