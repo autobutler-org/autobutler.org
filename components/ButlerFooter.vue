@@ -1,278 +1,107 @@
 <template>
-  <footer
-    v-show="isVisible"
-    ref="footerEl"
-    class="footer"
-    :class="{
-      'footer-visible': isVisible,
-      'footer-compact': compact,
-    }"
-  >
-    <div class="gradient-overlay" />
-    <div class="footer-content">
-      <div class="footer-info">
-        <p class="copyright">
-          © {{ currentYear }} AutoButler. All rights reserved.
+  <footer class="footer">
+    <div class="inner">
+      <div class="brand">
+        <p class="wordmark">AutoButler</p>
+        <p class="tagline">
+          AutoButler is a company that makes products for humans.
         </p>
-        <p class="version">{{ displayVersion }}</p>
-        <p class="soli-deo-gloria">Soli Deo Gloria</p>
       </div>
-      <div class="footer-links">
+      <nav aria-label="Footer">
+        <a href="https://quark.autobutler.org">Quark</a>
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
         <a href="/contact">Contact</a>
-        <a href="https://github.com/autobutler-org/quark">Github</a>
+        <a href="https://github.com/autobutler-org/quark">GitHub</a>
+      </nav>
+      <div class="legal">
+        <p>© {{ currentYear }} AutoButler. All rights reserved.</p>
+        <p>{{ displayVersion }}</p>
+        <p class="soli-deo-gloria">Soli Deo Gloria</p>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick } from "vue";
 import { useVersion } from "~/composables/useVersion";
-
-// Props to control visibility
-interface Props {
-  showOnBottom?: boolean;
-  customScrollContainer?: string;
-  compact?: boolean;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  showOnBottom: false,
-  customScrollContainer: "",
-  compact: false,
-});
 
 const { displayVersion } = useVersion();
 // useState serializes the value from SSR to the client, so both sides see the
 // same year even across a year-rollover at midnight on New Year's Eve.
 const currentYear = useState("footer-year", () => new Date().getFullYear());
-const isVisible = ref(!props.showOnBottom);
-
-// Template ref — avoids document.querySelector(".footer") which can select
-// unrelated elements (e.g. <footer class="post-footer"> in blog post pages).
-const footerEl = ref<HTMLElement | null>(null);
-
-// Handle scroll detection for reverse sticky behavior
-let scrollHandler: ((e: Event) => void) | null = null;
-
-onMounted(() => {
-  if (props.showOnBottom) {
-    isVisible.value = false;
-
-    const handleScroll = (e: Event) => {
-      let target: HTMLElement;
-
-      // If we have a custom scroll container, get it directly
-      if (props.customScrollContainer) {
-        target = e.target as HTMLElement;
-      } else {
-        // For window scroll, use document.documentElement
-        target = document.documentElement;
-      }
-
-      // Check if we're at the bottom of the scroll area
-      const scrollTop = target.scrollTop;
-      const scrollHeight = target.scrollHeight;
-      const clientHeight = target.clientHeight;
-
-      const distanceFromBottom = scrollHeight - clientHeight - scrollTop;
-      const triggerDistance = 100; // Start showing 100px from bottom
-
-      // Calculate progress (0 to 1) as user approaches bottom
-      const progress = Math.max(
-        0,
-        Math.min(1, (triggerDistance - distanceFromBottom) / triggerDistance),
-      );
-      const isAtBottom = distanceFromBottom < triggerDistance;
-
-      // Update visibility
-      isVisible.value = isAtBottom;
-
-      // Apply progressive transform using the template ref — never touches
-      // unrelated .footer elements elsewhere in the page.
-      if (footerEl.value) {
-        if (isAtBottom) {
-          const translateY = (1 - progress) * 100;
-          footerEl.value.style.transform = `translateY(${translateY}%)`;
-        } else {
-          // Reset when no longer near bottom so re-entry starts clean.
-          footerEl.value.style.transform = "";
-        }
-      }
-    };
-
-    scrollHandler = handleScroll;
-
-    // Use custom scroll container if provided, otherwise use window
-    if (props.customScrollContainer) {
-      // Wait for next tick to ensure DOM is ready
-      nextTick(() => {
-        const container = document.querySelector(props.customScrollContainer);
-        if (container) {
-          container.addEventListener("scroll", handleScroll);
-        }
-      });
-    } else {
-      window.addEventListener("scroll", handleScroll);
-    }
-  }
-});
-
-onUnmounted(() => {
-  if (scrollHandler) {
-    if (props.customScrollContainer) {
-      const container = document.querySelector(props.customScrollContainer);
-      if (container) {
-        container.removeEventListener("scroll", scrollHandler);
-      }
-    } else {
-      window.removeEventListener("scroll", scrollHandler);
-    }
-    scrollHandler = null;
-  }
-});
 </script>
 
 <style scoped>
 .footer {
+  border-top: 1px solid var(--color-border);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: 2.5rem var(--gutter);
   width: 100%;
-  padding: 1.5rem 0;
-  position: relative;
-  background: rgba(28, 32, 34, 0.98);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.footer-visible {
-  /* Transform is now handled by JavaScript for smooth scroll effect */
-}
-
-.footer-compact {
-  padding: 0.75rem 0; /* Half the normal padding */
-}
-
-.footer-compact .footer-content {
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-}
-
-.footer-compact .footer-info {
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-}
-
-.footer-compact .copyright {
-  font-size: 0.8rem;
-  margin: 0;
-}
-
-.footer-compact .version {
-  font-size: 0.7rem;
-  margin: 0;
-}
-
-.footer-compact .footer-links {
-  gap: 1rem;
-}
-
-.footer-compact .footer-links a {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.8rem;
-}
-
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 255, 170, 0.02),
-    rgba(0, 187, 255, 0.02)
-  );
-  pointer-events: none;
-}
-
-.footer-content {
-  position: relative;
-  max-width: 1200px;
+  max-width: var(--content-width);
   margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 4rem var(--gutter) 3rem;
 }
 
-.footer-info {
+p {
+  margin: 0;
+}
+
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-strong);
+}
+
+.tagline {
+  margin-top: 0.75rem;
+  max-width: 18rem;
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+nav {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: var(--text-small);
 }
 
-.copyright {
-  margin: 0;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, 0.7);
+a {
+  color: var(--color-text);
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  transition: color var(--duration-fast) ease;
 }
 
-.footer-links a:hover {
-  color: #fff;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 255, 170, 0.1),
-    rgba(0, 187, 255, 0.1)
-  );
+a:hover {
+  color: var(--color-text-strong);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
-.version {
-  margin: 0;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: 300;
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  grid-column: 1 / -1;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  line-height: 1.6;
+  color: var(--color-text-muted);
 }
 
 .soli-deo-gloria {
-  margin: 0;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-serif);
+  font-size: var(--text-small);
   font-style: italic;
-  font-weight: 300;
-}
-
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .footer-info {
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-links {
-    gap: 1rem;
-  }
 }
 </style>

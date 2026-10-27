@@ -1,42 +1,42 @@
 <template>
-  <div class="blogs-page">
-    <PageContainer>
-      <div class="blogs-header">
-        <h1>Blog</h1>
-        <p class="subtitle">Updates, insights, and stories from our team</p>
-      </div>
+  <main class="page page-wide">
+    <header class="blogs-header">
+      <h1>Blog</h1>
+      <p class="lede">Updates, insights, and stories from our team</p>
+    </header>
 
-      <div v-if="articles && articles.length > 0" class="blog-list">
-        <article
-          v-for="article in articles"
-          :key="article.path"
-          class="blog-card"
-        >
-          <NuxtLink :to="article.path" class="blog-link">
-            <div class="blog-meta">
-              <time
-                v-if="article.date || article.meta?.date"
-                :datetime="(article.date || article.meta?.date) as string"
-                >{{
-                  formatDate((article.date || article.meta?.date) as string)
-                }}</time
-              >
-              <span v-if="article.author || article.meta?.author" class="author"
-                >by {{ article.author || article.meta?.author }}</span
-              >
-            </div>
+    <div v-if="articles && articles.length > 0" class="blog-list">
+      <article
+        v-for="article in articles"
+        :key="article.path"
+        class="blog-card reveal"
+      >
+        <NuxtLink :to="article.path" class="blog-link">
+          <div class="blog-meta">
+            <time
+              v-if="article.date || article.meta?.date"
+              :datetime="(article.date || article.meta?.date) as string"
+              >{{
+                formatDate((article.date || article.meta?.date) as string)
+              }}</time
+            >
+            <span v-if="article.author || article.meta?.author" class="author"
+              >by {{ article.author || article.meta?.author }}</span
+            >
+          </div>
+          <div class="blog-body">
             <h2>{{ article.title }}</h2>
             <p class="description">{{ article.description }}</p>
             <span class="read-more">Read more →</span>
-          </NuxtLink>
-        </article>
-      </div>
+          </div>
+        </NuxtLink>
+      </article>
+    </div>
 
-      <div v-else class="no-posts">
-        <p>No blog posts yet. Check back soon!</p>
-      </div>
-    </PageContainer>
-  </div>
+    <div v-else class="no-posts">
+      <p>No blog posts yet. Check back soon!</p>
+    </div>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -92,110 +92,76 @@ const formatDate = (dateString?: string) => {
 </script>
 
 <style scoped>
-.blogs-page {
-  min-height: 100vh;
-  padding: 2rem 0;
-}
-
 .blogs-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.blogs-header h1 {
-  font-size: 3rem;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 1rem;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3.5rem;
 }
 
 .blog-list {
-  display: grid;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+  border-top: 1px solid var(--color-text-strong);
 }
 
 .blog-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--color-border-strong);
 }
 
-.blog-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(32, 178, 170, 0.5);
-  transform: translateY(-2px);
-}
-
+/* A ruled index: mono date on the left, serif title and summary on the right. */
 .blog-link {
-  text-decoration: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 2rem 0;
   color: inherit;
-  display: block;
+  text-decoration: none;
 }
 
 .blog-meta {
   display: flex;
-  gap: 1rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 1rem;
-}
-
-.author {
-  color: #20b2aa;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 .blog-card h2 {
-  font-size: 1.8rem;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  transition: color var(--duration-fast) ease;
 }
 
 .description {
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  max-width: var(--prose-width);
+  margin: 0 0 1rem;
+  color: var(--color-text-muted);
 }
 
 .read-more {
-  color: #20b2aa;
-  font-weight: 600;
-  display: inline-block;
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-text-strong);
+}
+
+.blog-link:hover .read-more {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .no-posts {
-  text-align: center;
-  padding: 3rem;
-  color: rgba(255, 255, 255, 0.6);
+  padding: 3rem 0;
+  color: var(--color-text-muted);
 }
 
-@media (max-width: 768px) {
-  .blogs-page {
-    padding: 2rem 1rem;
+@media (min-width: 960px) {
+  .blog-link {
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 5rem;
   }
 
-  .blogs-header h1 {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .blog-card {
-    padding: 1.5rem;
-  }
-
-  .blog-card h2 {
-    font-size: 1.4rem;
+  .blog-meta {
+    flex-direction: column;
+    padding-top: 0.6rem;
   }
 }
 </style>

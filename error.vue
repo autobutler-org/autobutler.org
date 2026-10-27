@@ -16,8 +16,8 @@ useSeoMeta({
 
 <template>
   <NuxtLayout>
-    <main class="error-page">
-      <p class="status">{{ error.statusCode }}</p>
+    <main class="page">
+      <p class="eyebrow">Error {{ error.statusCode }}</p>
       <h1>{{ title }}</h1>
       <p v-if="isNotFound">
         The page you're looking for doesn't exist or has moved.
@@ -25,7 +25,7 @@ useSeoMeta({
       <p v-else>Sorry about that. Please try again in a moment.</p>
       <a
         href="/"
-        class="home-link"
+        class="btn btn-primary"
         @click.prevent="clearError({ redirect: '/' })"
         >Back to the home page</a
       >
@@ -34,35 +34,7 @@ useSeoMeta({
 </template>
 
 <style scoped>
-.error-page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 4rem 1rem;
-  text-align: center;
-}
-
-.status {
-  color: #81c784;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-h1 {
-  color: #4caf50;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  color: #e0e0e0;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.home-link {
-  display: inline-block;
+.btn {
   margin-top: 1rem;
-  font-weight: 600;
 }
 </style>

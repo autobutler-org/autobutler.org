@@ -1,85 +1,100 @@
 <template>
-  <div class="landing-page">
-    <div class="gradient-overlay" />
-    <div class="hero-section">
-      <h1>Data Autonomy For Everyone.</h1>
-      <p class="subtitle">
-        AutoButler is a company that makes products for humans.
-      </p>
-    </div>
-
-    <div class="content-wrapper">
-      <div class="about-section">
-        <p>
-          AutoButler is Brandon and James, who want to change the world.
-          Technology isn't evil, we just think there's a better vision for what
-          we can use it to do to improve the lives of people.
-        </p>
-      </div>
-
-      <div class="tenets-section">
-        <h2 class="highlight">What We Believe</h2>
-        <div class="tenets-list">
-          <div class="tenet-card">
-            <p>
-              We believe that there is an ongoing movement towards creating a
-              permanent "rental class," and that the way out of that is to
-              create non-rental products.
-            </p>
-          </div>
-          <div class="tenets-grid-middle">
-            <div class="tenet-card">
-              <p>We believe in an open, transparent, safe internet.</p>
-            </div>
-            <div class="tenet-card">
-              <p>
-                We believe that individuals should have control over data
-                associated with them.
-              </p>
-            </div>
-            <div class="tenet-card">
-              <p>We believe that products are made for people.</p>
-            </div>
-            <div class="tenet-card">
-              <p>
-                We believe that if a customer doesn't want something, they
-                shouldn't be forced into it.
-              </p>
-            </div>
-            <div class="tenet-card">
-              <p>
-                We believe that better products and companies are the answer to
-                bad products and companies.
-              </p>
-            </div>
-            <div class="tenet-card">
-              <p>We believe that the Fourth Amendment applies to data.</p>
-            </div>
-            <div class="tenet-card">
-              <p>
-                We believe in the inherent dignity and value of humanity and
-                human creativity.
-              </p>
-            </div>
-            <div class="tenet-card">
-              <p>
-                We believe that we have the right to do what we want with our
-                own product, even if that makes it less profitable.
-              </p>
-            </div>
-          </div>
-          <div class="tenet-card">
-            <p>
-              We believe that one of the pending benefits of artificial
-              intelligence is the ability to create things that help the working
-              class opt out of bad systems.
-            </p>
+  <main class="home">
+    <section class="hero">
+      <div class="texture" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1>Data Autonomy For Everyone.</h1>
+          <p class="subhead">
+            AutoButler is a company that makes products for humans.
+          </p>
+          <p class="hero-lede">
+            AutoButler is Brandon and James, who want to change the world.
+            Technology isn't evil, we just think there's a better vision for
+            what we can use it to do to improve the lives of people.
+          </p>
+          <div class="actions">
+            <a href="https://quark.autobutler.org" class="btn btn-primary"
+              >Meet Quark</a
+            >
+            <NuxtLink to="/about" class="btn btn-secondary"
+              >About AutoButler</NuxtLink
+            >
           </div>
         </div>
+        <dl class="facts" aria-label="AutoButler at a glance">
+          <div class="fact">
+            <dt>Founders</dt>
+            <dd>Brandon Apol, James Orson</dd>
+          </div>
+          <div class="fact">
+            <dt>Flagship product</dt>
+            <dd>Quark</dd>
+          </div>
+          <div class="fact">
+            <dt>Subscription</dt>
+            <dd>None</dd>
+          </div>
+          <div class="fact">
+            <dt>Funding</dt>
+            <dd>No venture capital</dd>
+          </div>
+          <div class="fact">
+            <dt>Source</dt>
+            <dd>Public, MIT-0</dd>
+          </div>
+        </dl>
       </div>
+    </section>
 
-      <div class="flagship-section">
-        <h2 class="highlight">Our Flagship Product</h2>
+    <section class="split">
+      <header class="split-aside">
+        <p class="eyebrow">Tenets</p>
+        <h2>What We Believe</h2>
+      </header>
+      <ol class="tenets reveal">
+        <li>
+          We believe that there is an ongoing movement towards creating a
+          permanent "rental class," and that the way out of that is to create
+          non-rental products.
+        </li>
+        <li>We believe in an open, transparent, safe internet.</li>
+        <li>
+          We believe that individuals should have control over data associated
+          with them.
+        </li>
+        <li>We believe that products are made for people.</li>
+        <li>
+          We believe that if a customer doesn't want something, they shouldn't
+          be forced into it.
+        </li>
+        <li>
+          We believe that better products and companies are the answer to bad
+          products and companies.
+        </li>
+        <li>We believe that the Fourth Amendment applies to data.</li>
+        <li>
+          We believe in the inherent dignity and value of humanity and human
+          creativity.
+        </li>
+        <li>
+          We believe that we have the right to do what we want with our own
+          product, even if that makes it less profitable.
+        </li>
+        <li>
+          We believe that one of the pending benefits of artificial intelligence
+          is the ability to create things that help the working class opt out of
+          bad systems.
+        </li>
+      </ol>
+    </section>
+
+    <section class="split">
+      <header class="split-aside">
+        <p class="eyebrow">Quark</p>
+        <h2>Our Flagship Product</h2>
+      </header>
+      <div class="flagship reveal">
         <p>
           Our flagship product is called
           <a href="https://quark.autobutler.org">Quark</a>, which is a
@@ -101,72 +116,77 @@
           <a href="https://quark.autobutler.org/docs">documentation</a> is there
           before you buy anything.
         </p>
+        <div class="actions">
+          <a href="https://quark.autobutler.org" class="btn btn-secondary"
+            >quark.autobutler.org</a
+          >
+        </div>
       </div>
+    </section>
 
-      <div class="cta-section">
-        <ClientOnly>
-          <div id="mc_embed_shell">
-            <div id="mc_embed_signup">
-              <form
-                id="mc-embedded-subscribe-form"
-                action="https://autobutler.us5.list-manage.com/subscribe/post?u=83e0cf2d6edd852308ba6671f&amp;id=a3382ba074&amp;f_id=00a0c2e1f0"
-                method="post"
-                name="mc-embedded-subscribe-form"
-                class="validate"
-                target="_blank"
-              >
-                <div id="mc_embed_signup_scroll">
-                  <h2>Want updates?</h2>
-                  <p class="mc-powered-by">Powered by Mailchimp</p>
-                  <div class="mc-field-group">
-                    <label for="mce-EMAIL">Email Address</label
-                    ><input
-                      id="mce-EMAIL"
-                      type="email"
-                      name="EMAIL"
-                      class="required email"
-                      required="true"
-                      value=""
-                    />
-                  </div>
-                  <div id="mce-responses" class="clear">
-                    <div
-                      id="mce-error-response"
-                      class="response"
-                      style="display: none"
-                    ></div>
-                    <div
-                      id="mce-success-response"
-                      class="response"
-                      style="display: none"
-                    ></div>
-                  </div>
-                  <!-- Anti-bot honeypot: real subscribers never see or fill this in. -->
-                  <div class="honeypot" aria-hidden="true">
-                    <input
-                      type="text"
-                      name="b_83e0cf2d6edd852308ba6671f_a3382ba074"
-                      tabindex="-1"
-                      value=""
-                    />
-                  </div>
-                  <div class="clear">
-                    <input
-                      id="mc-embedded-subscribe"
-                      type="submit"
-                      name="subscribe"
-                      class="button"
-                      value="Subscribe"
-                    />
-                  </div>
+    <section class="cta-section">
+      <ClientOnly>
+        <div id="mc_embed_shell" class="card reveal">
+          <div id="mc_embed_signup">
+            <form
+              id="mc-embedded-subscribe-form"
+              action="https://autobutler.us5.list-manage.com/subscribe/post?u=83e0cf2d6edd852308ba6671f&amp;id=a3382ba074&amp;f_id=00a0c2e1f0"
+              method="post"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+            >
+              <div id="mc_embed_signup_scroll">
+                <h2>Want updates?</h2>
+                <p class="mc-powered-by">Powered by Mailchimp</p>
+                <div class="mc-field-group">
+                  <label for="mce-EMAIL">Email Address</label
+                  ><input
+                    id="mce-EMAIL"
+                    type="email"
+                    name="EMAIL"
+                    class="required email"
+                    required="true"
+                    value=""
+                  />
                 </div>
-              </form>
-            </div>
+                <div id="mce-responses" class="clear">
+                  <div
+                    id="mce-error-response"
+                    class="response"
+                    style="display: none"
+                  ></div>
+                  <div
+                    id="mce-success-response"
+                    class="response"
+                    style="display: none"
+                  ></div>
+                </div>
+                <!-- Anti-bot honeypot: real subscribers never see or fill this in. -->
+                <div class="honeypot" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="b_83e0cf2d6edd852308ba6671f_a3382ba074"
+                    tabindex="-1"
+                    value=""
+                  />
+                </div>
+                <div class="clear">
+                  <input
+                    id="mc-embedded-subscribe"
+                    type="submit"
+                    name="subscribe"
+                    class="button btn btn-primary"
+                    value="Subscribe"
+                  />
+                </div>
+              </div>
+            </form>
           </div>
-        </ClientOnly>
-      </div>
-    </div>
-  </div>
+        </div>
+      </ClientOnly>
+    </section>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -188,7 +208,8 @@ useSeoMeta({
     "AutoButler builds open-source tools for data autonomy, starting with Quark, a private home cloud for your router.",
 });
 
-// Load Mailchimp CSS, plus Organization structured data for search engines
+// Organization structured data for search engines. The Mailchimp form is
+// styled below on the site tokens, so Mailchimp's own stylesheet is not loaded.
 useHead({
   script: [
     {
@@ -201,13 +222,6 @@ useHead({
         logo: "https://autobutler.org/android-chrome-512x512.png",
         sameAs: ["https://github.com/autobutler-org"],
       }),
-    },
-  ],
-  link: [
-    {
-      rel: "stylesheet",
-      href: "//cdn-images.mailchimp.com/embedcode/classic-061523.css",
-      type: "text/css",
     },
   ],
 });
@@ -261,91 +275,229 @@ onMounted(() => {
 });
 </script>
 
-<style>
-@import "@/assets/css/common.css";
-
-/* Mailchimp form styles */
-#mc_embed_shell {
-  max-width: 100%;
-  overflow: hidden;
+<style scoped>
+.hero {
+  position: relative;
+  isolation: isolate;
 }
 
-#mc_embed_signup {
-  background: rgba(255, 255, 255, 0.05);
-  clear: left;
-  font:
-    14px Helvetica,
-    Arial,
-    sans-serif;
-  width: 600px;
-  max-width: 100%;
-  margin: 2rem auto;
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-sizing: border-box;
+/* A faint drafting grid behind the headline, fading out toward the facts. */
+.texture {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--color-grid-line) 1px, var(--mask-clear) 1px),
+    linear-gradient(90deg, var(--color-grid-line) 1px, var(--mask-clear) 1px);
+  background-size: 4rem 4rem;
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 70% at 30% 20%,
+    var(--mask-opaque),
+    var(--mask-clear)
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 70% at 30% 20%,
+    var(--mask-opaque),
+    var(--mask-clear)
+  );
 }
 
-#mc_embed_signup * {
-  box-sizing: border-box;
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3.5rem;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: clamp(4rem, 9vw, 8rem) var(--gutter) clamp(3rem, 6vw, 5rem);
 }
 
+h1 {
+  max-width: 11ch;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.035em;
+  color: var(--color-text-strong);
+}
+
+.subhead {
+  margin: 2rem 0 0;
+  font-size: var(--text-lede);
+  font-weight: 500;
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-text-strong);
+}
+
+.hero-lede {
+  max-width: var(--lede-width);
+  margin: 0.75rem 0 0;
+  font-size: var(--text-lede);
+  color: var(--color-text-muted);
+  text-wrap: pretty;
+}
+
+.hero .actions {
+  margin-top: 2.5rem;
+}
+
+.facts {
+  margin: 0;
+  border-top: 1px solid var(--color-text-strong);
+  align-self: end;
+}
+
+.fact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-border-strong);
+}
+
+dt {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+dd {
+  margin: 0;
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-text-strong);
+}
+
+/* Two-column section: a sticky heading beside the body, as in Quark's manifesto. */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--section-gap) var(--gutter) 0;
+}
+
+.split h2,
 #mc_embed_signup h2 {
-  font-family: var(--font-hero);
-  font-size: 3rem;
-  color: #fff;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-strong);
+  text-wrap: balance;
+}
+
+.tenets {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-text-strong);
+  list-style: none;
+  counter-reset: tenet;
+}
+
+.tenets li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-border-strong);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-strong);
+  text-wrap: pretty;
+  counter-increment: tenet;
+}
+
+.tenets li::before {
+  content: counter(tenet, decimal-leading-zero);
+  padding-top: 0.3em;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+}
+
+.flagship {
+  max-width: var(--prose-width);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.flagship p {
+  margin: 0 0 1.5rem;
+  text-wrap: pretty;
+}
+
+.flagship p:first-child {
+  font-size: var(--text-lede);
+  line-height: 1.6;
+  color: var(--color-text-strong);
+}
+
+.flagship a:not(.btn) {
+  color: var(--color-text-strong);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-strong);
+  text-underline-offset: 0.25em;
+  transition: text-decoration-color var(--duration-fast) ease;
+}
+
+.flagship a:not(.btn):hover {
+  text-decoration-color: currentcolor;
+}
+
+.cta-section {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--section-gap) var(--gutter);
+}
+
+#mc_embed_shell {
+  max-width: 40rem;
 }
 
 #mc_embed_signup .mc-powered-by {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 1.5rem;
-  font-weight: 400;
-}
-
-#mc_embed_signup .mc-field-group {
-  margin-bottom: 1.5rem;
+  margin: 0.75rem 0 2rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 #mc_embed_signup label {
   display: block;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-text-strong);
 }
 
-#mc_embed_signup input[type="email"],
-#mc_embed_signup input[type="text"] {
+#mc_embed_signup input[type="email"] {
   width: 100%;
-  padding: 0.875rem 1rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  color: #fff;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  min-height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-canvas);
+  color: var(--color-text-strong);
+  font: inherit;
+  font-size: max(16px, var(--text-body)); /* 16px keeps iOS from zooming in */
+  transition: border-color var(--duration-fast) ease;
 }
 
-#mc_embed_signup input[type="email"]:focus,
-#mc_embed_signup input[type="text"]:focus {
-  outline: none;
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-#mc_embed_signup input[type="email"]::placeholder,
-#mc_embed_signup input[type="text"]::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+#mc_embed_signup input[type="email"]:hover {
+  border-color: var(--color-text-muted);
 }
 
 #mc_embed_signup .honeypot {
@@ -353,360 +505,49 @@ onMounted(() => {
   left: -5000px;
 }
 
-#mc_embed_signup .button {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 187, 255, 0.85),
-    rgba(0, 149, 255, 0.75)
-  ) !important;
-  border: 1px solid rgba(0, 187, 255, 0.5) !important;
-  color: #fff !important;
-  padding: 1rem 2.5rem !important;
-  font-size: 1.1rem !important;
-  font-weight: 600 !important;
-  border-radius: 8px !important;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 1rem !important;
-  line-height: 1.5 !important;
-  vertical-align: middle;
-  display: inline-block;
-  text-align: center;
-  box-sizing: border-box;
-  font-family: inherit !important;
-  height: auto !important;
-  min-height: auto !important;
-  box-shadow: 0 4px 15px rgba(0, 187, 255, 0.3);
-}
-
-#mc_embed_signup .button:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 220, 255, 0.95),
-    rgba(0, 187, 255, 0.85)
-  ) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 187, 255, 0.5);
+#mc_embed_signup .clear {
+  margin-top: 1rem;
 }
 
 #mc_embed_signup .response {
-  color: rgba(255, 255, 255, 0.9);
-  margin-top: 1rem;
-  padding: 0.75rem;
-  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: var(--text-small);
 }
 
-#mc_embed_signup #mce-error-response {
-  background: rgba(255, 50, 50, 0.1);
-  border: 1px solid rgba(255, 50, 50, 0.3);
+#mc_embed_signup #mce-error-response,
+#mc_embed_signup :deep(.mce_inline_error) {
+  background: var(--pastel-red);
+  color: var(--pastel-red-ink);
+}
+
+#mc_embed_signup :deep(.mce_inline_error) {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-small);
 }
 
 #mc_embed_signup #mce-success-response {
-  background: rgba(50, 255, 150, 0.1);
-  border: 1px solid rgba(50, 255, 150, 0.3);
+  background: var(--pastel-green);
+  color: var(--pastel-green-ink);
 }
 
-#mc_embed_signup .clear {
-  clear: both;
-  text-align: center;
-}
-
-#mc_embed_signup div#mce-responses {
-  margin: 0;
-  padding: 0;
-}
-
-.landing-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(135deg, #1a1a1a, #232323);
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-section {
-  text-align: center;
-  padding: 12rem 2rem 8rem;
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 8rem;
-}
-
-.content-wrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.hero-section h1 {
-  font-family: var(--font-hero);
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: translateY(-10vh);
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2.5rem;
-  opacity: 0.9;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.feature-card {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.feature-card h3 {
-  color: #fff;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
-}
-
-.feature-card:hover h3 {
-  color: #66d9ff;
-}
-
-.feature-card p {
-  color: rgba(255, 255, 255, 0.8);
-  transition: color 0.3s ease;
-}
-
-.feature-card:hover p {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.tenets-section {
-  padding: 4rem 2rem 2rem;
-  text-align: center;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.tenets-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-  text-align: left;
-}
-
-.tenets-grid-middle {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.tenet-card {
-  padding: 1.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.tenet-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.tenet-card p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.05rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.about-section {
-  padding: 4rem 2rem 2rem;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.about-section p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.flagship-section {
-  padding: 4rem 2rem;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.flagship-section p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.flagship-section a {
-  color: rgba(0, 187, 255, 0.9);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.flagship-section a:hover {
-  color: rgba(0, 255, 170, 0.9);
-  text-decoration: underline;
-}
-
-.cta-section {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.03);
-  width: 100%;
-}
-
-.highlight {
-  font-family: var(--font-hero);
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.btn {
-  font-size: 1.1rem;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.btn.primary {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.1)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.btn.primary:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0.2)
-  );
-  transform: translateY(-2px);
-}
-
-.btn.secondary {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 900px) {
-  .tenets-grid-middle {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-family: var(--font-hero);
-    font-size: 2rem;
+@media (min-width: 960px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) 19rem;
+    gap: 5rem;
   }
 
-  .subtitle {
-    font-size: 1.2rem;
+  .split {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 5rem;
   }
 
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .tenets-grid-middle {
-    grid-template-columns: 1fr;
-  }
-
-  #mc_embed_signup {
-    padding: 2rem 1.5rem;
-    width: 100%;
-    margin: 1rem auto;
-  }
-
-  #mc_embed_signup h2 {
-    font-size: 1.5rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  #mc_embed_signup input[type="email"],
-  #mc_embed_signup input[type="text"] {
-    font-size: 16px !important; /* Prevents zoom on iOS */
-    padding: 1rem !important;
-  }
-
-  #mc_embed_signup .button {
-    width: 100%;
-    padding: 1rem !important;
-    font-size: 1rem !important;
-  }
-
-  #mc_embed_signup label {
-    font-size: 0.95rem;
+  .split-aside {
+    position: sticky;
+    top: calc(var(--header-height) + 2.5rem);
+    align-self: start;
   }
 }
 </style>

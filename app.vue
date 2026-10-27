@@ -19,7 +19,3 @@ useHead({
   ],
 });
 </script>
-
-<style>
-@import "@/assets/css/reset.css";
-</style>

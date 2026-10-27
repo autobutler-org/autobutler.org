@@ -3,7 +3,18 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   modules: ["@nuxt/eslint", "@nuxt/content", "@nuxt/icon"],
-  css: ["~/assets/css/content.css"],
+  /*
+   * Fonts are self-hosted, matching quark.autobutler.org: @fontsource packages
+   * are bundled into the build, so no request ever leaves for a font CDN.
+   */
+  css: [
+    "@fontsource-variable/newsreader/opsz.css",
+    "@fontsource-variable/newsreader/opsz-italic.css",
+    "@fontsource-variable/geist",
+    "@fontsource-variable/geist-mono",
+    "~/assets/css/main.css",
+    "~/assets/css/content.css",
+  ],
   nitro: {
     static: true,
     prerender: {
@@ -49,7 +60,16 @@ export default defineNuxtConfig({
           name: "twitter:image",
           content: "https://autobutler.org/og-image.png",
         },
-        { name: "theme-color", content: "#20b2aa" },
+        {
+          name: "theme-color",
+          content: "#f7f6f3",
+          media: "(prefers-color-scheme: light)",
+        },
+        {
+          name: "theme-color",
+          content: "#161615",
+          media: "(prefers-color-scheme: dark)",
+        },
       ],
       link: [
         {
@@ -95,9 +115,8 @@ export default defineNuxtConfig({
         // Configure content module for better TOC generation
         highlight: {
           theme: {
-            default: "catppuccin-mocha",
-            dark: "catppuccin-mocha",
-            light: "catppuccin-latte",
+            default: "github-light",
+            dark: "github-dark",
           },
           preload: [
             "json",
