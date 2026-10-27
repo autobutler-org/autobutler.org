@@ -1,15 +1,10 @@
 <template>
-  <div class="landing-page">
-    <div class="gradient-overlay" />
-    <div class="hero-section">
-      <h1>Why would I need this?</h1>
-      <p class="subtitle">
-        Here's a few scenarios where Quark might be for you.
-      </p>
-    </div>
+  <main class="page">
+    <h1>Why would I need this?</h1>
+    <p class="lede">Here's a few scenarios where Quark might be for you.</p>
 
-    <div class="content-wrapper">
-      <div class="manifesto-section">
+    <div class="stories">
+      <section class="story reveal">
         <h2>You have kids.</h2>
         <p>
           Did you know that photos of your kid posted on social media can feed a
@@ -18,9 +13,9 @@
           photos can also end up as AI training data, and cloud photo services
           may use stored photos to improve their AI features.
         </p>
-      </div>
+      </section>
 
-      <div class="manifesto-section">
+      <section class="story reveal">
         <h2>You don't like paying for things you own already.</h2>
         <p>
           Remember twenty years ago when buying a movie, music album, or video
@@ -33,9 +28,9 @@
           owning the plumbing in your house than a Spotify subscription to your
           own data.
         </p>
-      </div>
+      </section>
 
-      <div class="manifesto-section">
+      <section class="story reveal">
         <h2>You want privacy to be the normal option.</h2>
         <p>
           It can feel like that ship has sailed - we gave our data away for
@@ -44,9 +39,9 @@
           and still have the convenience of automatically backing up your photos
           and memories.
         </p>
-      </div>
+      </section>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -61,187 +56,35 @@ useSeoMeta({
 });
 </script>
 
-<style>
-@import "@/assets/css/common.css";
-
-.landing-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(135deg, #1a1a1a, #232323);
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
+<style scoped>
+.stories {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--color-text-strong);
+  counter-reset: story;
 }
 
-.hero-section {
-  text-align: center;
-  padding: 4rem 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
+.story {
+  padding: 2.5rem 0 1.25rem;
+  border-bottom: 1px solid var(--color-border-strong);
+  counter-increment: story;
 }
 
-.content-wrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.hero-section h1 {
-  font-size: 3.5rem;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2.5rem;
-  opacity: 0.9;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.feature-card {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: inherit;
+.story::before {
+  content: counter(story, decimal-leading-zero);
   display: block;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.feature-card h3 {
-  color: #fff;
   margin-bottom: 1rem;
-  transition: color 0.3s ease;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
 }
 
-.feature-card:hover h3 {
-  color: #66d9ff;
+.story h2 {
+  margin-top: 0;
 }
 
-.feature-card p {
-  color: rgba(255, 255, 255, 0.8);
-  transition: color 0.3s ease;
-}
-
-.feature-card:hover p {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.manifesto-section {
-  padding: 4rem 2rem;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.manifesto-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.cta-section {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.03);
-  width: 100%;
-}
-
-.highlight {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.btn {
-  font-size: 1.1rem;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.btn.primary {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.1)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.btn.primary:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0.2)
-  );
-  transform: translateY(-2px);
-}
-
-.btn.secondary {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
+.story p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
 }
 </style>

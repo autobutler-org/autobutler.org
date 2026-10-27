@@ -1,35 +1,33 @@
 <template>
-  <div class="landing-page">
-    <div class="gradient-overlay" />
-    <div class="card waitlist-card">
-      <h1>Join the waitlist</h1>
-      <p class="intro">
-        Quark is AutoButler's private home cloud — a box you plug in so your
-        files live at your place, not on someone else's servers. We're opening
-        friends-and-family access in early 2027. Leave your email and we'll tell
-        you when seats open.
+  <main class="page">
+    <h1>Join the waitlist</h1>
+    <p class="lede">
+      Quark is AutoButler's private home cloud — a box you plug in so your files
+      live at your place, not on someone else's servers. We're opening
+      friends-and-family access in early 2027. Leave your email and we'll tell
+      you when seats open.
+    </p>
+
+    <div class="launch-info">
+      <p class="launch-label">Friends &amp; family — early 2027</p>
+      <p>
+        At-cost for friends and family first. Public later, when it's ready —
+        not before.
       </p>
-
-      <div class="mailchimp-embed">
-        <iframe
-          src="https://eepurl.com/jy9kaA"
-          width="100%"
-          height="1200"
-          frameborder="0"
-          scrolling="auto"
-          style="border: none"
-        ></iframe>
-      </div>
-
-      <div class="launch-info">
-        <p><strong>Friends &amp; family — early 2027</strong></p>
-        <p>
-          At-cost for friends and family first. Public later, when it's ready —
-          not before.
-        </p>
-      </div>
     </div>
-  </div>
+
+    <div class="card mailchimp-embed">
+      <iframe
+        src="https://eepurl.com/jy9kaA"
+        title="Waitlist sign-up form"
+        width="100%"
+        height="1200"
+        frameborder="0"
+        scrolling="auto"
+        style="border: none"
+      ></iframe>
+    </div>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -46,88 +44,35 @@ useSeoMeta({
 </script>
 
 <style scoped>
-@import "@/assets/css/common.css";
-
-.waitlist-card {
-  max-width: 800px;
+.launch-info {
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--pastel-yellow);
+  color: var(--color-text-strong);
 }
 
-.intro {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 2rem;
-  text-align: center;
+.launch-info p {
+  margin: 0;
+}
+
+.launch-info .launch-label {
+  margin-bottom: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--pastel-yellow-ink);
 }
 
 .mailchimp-embed {
-  margin: 2rem 0;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  padding: 1rem;
+  padding: 0;
   overflow: hidden;
-  min-height: 1200px;
 }
 
 .mailchimp-embed iframe {
   display: block;
-  margin: 0 auto;
   min-height: 1200px;
-}
-
-.launch-info {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: rgba(32, 178, 170, 0.1);
-  border-radius: 8px;
-  border: 1px solid rgba(32, 178, 170, 0.3);
-}
-
-.launch-info p {
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
-
-.launch-info strong {
-  color: #20b2aa;
-  font-size: 1.2rem;
-}
-
-@media (max-width: 768px) {
-  .waitlist-card {
-    padding: 0.5rem;
-    margin: 0;
-  }
-
-  .intro {
-    padding: 0 0.5rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .mailchimp-embed {
-    margin: 1rem -0.5rem;
-    padding: 0;
-    border-radius: 0;
-  }
-
-  .mailchimp-embed iframe {
-    width: 100%;
-    border-radius: 0;
-  }
-
-  .launch-info {
-    margin: 1rem 0.5rem;
-    padding: 1rem;
-  }
-
-  .launch-info p {
-    font-size: 0.9rem;
-  }
-
-  .launch-info strong {
-    font-size: 1rem;
-  }
 }
 </style>

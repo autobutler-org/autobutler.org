@@ -32,16 +32,22 @@ onMounted(async () => {
   if (!code || !el.value) return;
 
   const mermaid = (await import("mermaid")).default;
+  // Diagrams follow the page theme, drawn in the site's ink and hairlines.
+  // Mermaid needs literal colors, so read the resolved tokens.
+  const token = (name: string) =>
+    getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   mermaid.initialize({
     startOnLoad: false,
-    theme: "dark",
+    theme: "base",
     themeVariables: {
-      primaryColor: "#1a1a2e",
-      primaryTextColor: "#ffffff",
-      primaryBorderColor: "#20b2aa",
-      lineColor: "#20b2aa",
-      secondaryColor: "#2d2d2d",
-      tertiaryColor: "#1a1a2e",
+      fontFamily: token("--font-sans"),
+      background: token("--color-surface"),
+      primaryColor: token("--color-surface"),
+      primaryTextColor: token("--color-text-strong"),
+      primaryBorderColor: token("--color-border-strong"),
+      lineColor: token("--color-text-muted"),
+      secondaryColor: token("--color-surface-sunken"),
+      tertiaryColor: token("--color-canvas"),
     },
   });
 
@@ -54,7 +60,12 @@ onMounted(async () => {
 .mermaid-diagram {
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 0 0 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  overflow-x: auto;
 }
 
 .mermaid-diagram :deep(svg) {

@@ -1,351 +1,223 @@
 <template>
-  <header class="header">
-    <div class="gradient-overlay" />
-    <div class="header-content">
-      <div class="logo">
-        <NuxtLink to="/" class="logo-link">AutoButler</NuxtLink>
-      </div>
-
-      <!-- Desktop Navigation -->
-      <nav class="header-links desktop-nav">
+  <header class="masthead">
+    <div class="bar">
+      <NuxtLink to="/" class="wordmark">
+        <img
+          class="mark"
+          src="/android-chrome-192x192.png"
+          alt=""
+          width="192"
+          height="192"
+        />
+        AutoButler
+      </NuxtLink>
+      <nav id="site-nav" aria-label="Site" :class="{ open: menuOpen }">
         <!-- Single forward to the Quark product site — only one product exists today.
              Revert to a "Products" dropdown when a second product ships, see #121. -->
-        <a href="https://quark.autobutler.org" class="quark-link">Quark</a>
-        <a href="https://quark.autobutler.org/support">Support</a>
-        <NuxtLink to="/community">Community</NuxtLink>
-        <NuxtLink to="/blogs">Blog</NuxtLink>
-        <NuxtLink to="/about">About</NuxtLink>
-        <NuxtLink to="/waitlist" class="signup-link">Sign Up</NuxtLink>
-      </nav>
-
-      <!-- Mobile Hamburger Button -->
-      <button
-        class="mobile-menu-button"
-        :aria-expanded="isMobileMenuOpen"
-        aria-label="Toggle navigation menu"
-        @click="toggleMobileMenu"
-      >
-        <span class="hamburger-line" :class="{ open: isMobileMenuOpen }" />
-        <span class="hamburger-line" :class="{ open: isMobileMenuOpen }" />
-        <span class="hamburger-line" :class="{ open: isMobileMenuOpen }" />
-      </button>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-nav" :class="{ open: isMobileMenuOpen }">
-      <div class="mobile-nav-header">
-        <button
-          class="mobile-close-button"
-          aria-label="Close navigation menu"
-          @click="closeMobileMenu"
-        >
-          <span class="close-icon">×</span>
-        </button>
-      </div>
-      <nav class="mobile-nav-content">
-        <!-- Single forward to the Quark product site — see #121 for reintroducing
-             a Products list once there's more than one. -->
-        <a href="https://quark.autobutler.org" @click="closeMobileMenu"
-          >Quark</a
-        >
-        <a href="https://quark.autobutler.org/support" @click="closeMobileMenu"
+        <a href="https://quark.autobutler.org" @click="closeMenu">Quark</a>
+        <a href="https://quark.autobutler.org/support" @click="closeMenu"
           >Support</a
         >
-        <NuxtLink to="/community" @click="closeMobileMenu">Community</NuxtLink>
-        <NuxtLink to="/blogs" @click="closeMobileMenu">Blog</NuxtLink>
-        <NuxtLink to="/about" @click="closeMobileMenu">About</NuxtLink>
-        <NuxtLink
-          to="/waitlist"
-          class="mobile-signup-link"
-          @click="closeMobileMenu"
+        <NuxtLink to="/community" @click="closeMenu">Community</NuxtLink>
+        <NuxtLink to="/blogs" @click="closeMenu">Blog</NuxtLink>
+        <NuxtLink to="/about" @click="closeMenu">About</NuxtLink>
+      </nav>
+      <div class="end">
+        <NuxtLink to="/waitlist" class="cta" @click="closeMenu"
           >Sign Up</NuxtLink
         >
-      </nav>
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-label="Menu"
+          aria-controls="site-nav"
+          :aria-expanded="menuOpen"
+          @click="menuOpen = !menuOpen"
+        >
+          <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
-
-    <!-- Mobile Menu Overlay -->
-    <div
-      class="mobile-overlay"
-      :class="{ open: isMobileMenuOpen }"
-      @click="closeMobileMenu"
-    />
   </header>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 
-const isMobileMenuOpen = ref(false);
+const menuOpen = ref(false);
 
-const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+const closeMenu = () => {
+  menuOpen.value = false;
 };
 
-const closeMobileMenu = () => {
-  isMobileMenuOpen.value = false;
+const closeOnEscape = (e: KeyboardEvent) => {
+  if (e.key === "Escape") closeMenu();
 };
 
-// Close mobile menu when clicking outside or on escape key
-onMounted(() => {
-  const handleEscape = (e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      closeMobileMenu();
-    }
-  };
-
-  document.addEventListener("keydown", handleEscape);
-
-  onUnmounted(() => {
-    document.removeEventListener("keydown", handleEscape);
-  });
-});
+onMounted(() => document.addEventListener("keydown", closeOnEscape));
+onUnmounted(() => document.removeEventListener("keydown", closeOnEscape));
 </script>
 
 <style scoped>
-.header {
-  width: 100%;
-  padding: 1rem 0;
-  position: fixed;
+.masthead {
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  background: rgba(28, 32, 34, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 10;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-canvas-veil);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  backdrop-filter: saturate(1.4) blur(12px);
 }
 
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 255, 170, 0.02),
-    rgba(0, 187, 255, 0.02)
-  );
-  pointer-events: none;
-  z-index: -1;
-}
-
-.header-content {
+.bar {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 1;
-}
-
-.logo-link {
-  font-family: var(--font-hero);
-  color: rgba(255, 255, 255, 0.95);
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.logo-link:hover {
-  color: #fff;
-  text-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
-}
-
-/* Desktop Navigation */
-.desktop-nav {
-  display: flex;
   gap: 2rem;
-  align-items: center;
-}
-
-.desktop-nav a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-}
-
-.desktop-nav a:hover {
-  color: #fff;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 255, 170, 0.1),
-    rgba(0, 187, 255, 0.1)
-  );
-}
-
-.quark-link {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.quark-link:hover {
-  border-color: rgba(0, 255, 170, 0.4);
-}
-
-/* Mobile Menu Button */
-.mobile-menu-button {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 24px;
-  height: 24px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 102;
-}
-
-.hamburger-line {
   width: 100%;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.8);
-  transition: all 0.3s ease;
-  transform-origin: center;
+  max-width: var(--content-width);
+  height: var(--header-height);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
 }
 
-.hamburger-line.open:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-line.open:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-line.open:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
-}
-
-/* Mobile Navigation */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 300px;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  background: rgba(28, 32, 34, 0.98);
-  backdrop-filter: blur(20px);
-  transition: right 0.3s ease;
-  z-index: 1001;
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.mobile-nav.open {
-  right: 0;
-}
-
-.mobile-nav-header {
-  flex-shrink: 0;
-  padding: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  justify-content: flex-end;
+.wordmark {
+  display: inline-flex;
   align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-text-strong);
+  text-decoration: none;
 }
 
-.mobile-close-button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
+/* The icon is a circle on an opaque square; clip to the circle. */
+.mark {
+  width: 1.5rem;
+  height: auto;
+  border-radius: 50%;
+}
+
+nav {
   display: flex;
+  gap: 1.75rem;
+  margin-right: auto;
+  font-size: var(--text-small);
+}
+
+nav a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+nav a:hover,
+nav a.router-link-active {
+  color: var(--color-text-strong);
+}
+
+.end {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  height: 2.25rem;
+  padding: 0 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-ink);
+  color: var(--color-on-ink);
+  font-size: var(--text-small);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--duration-fast) ease,
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.cta:hover {
+  background: var(--color-ink-hover);
+}
+
+.cta:active {
+  transform: var(--press);
+}
+
+.menu-toggle {
+  display: none;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  cursor: pointer;
 }
 
-.close-icon {
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 300;
-  line-height: 1;
+.menu-icon,
+.menu-icon::before {
+  display: block;
+  width: 0.95rem;
+  height: 1.5px;
+  background: var(--color-text-strong);
 }
 
-.mobile-close-button:hover {
-  background: rgba(255, 255, 255, 0.1);
+.menu-icon {
+  position: relative;
+  top: -0.15rem;
 }
 
-.mobile-close-button:hover .close-icon {
-  color: #fff;
-}
-
-.mobile-nav-content {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  gap: 1.5rem;
-}
-
-.mobile-nav-content a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  font-size: 1.1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
-}
-
-.mobile-nav-content a:hover,
-.mobile-nav-content a:focus {
-  color: #fff;
-  padding-left: 0.5rem;
-}
-
-/* Mobile Overlay */
-.mobile-overlay {
-  position: fixed;
-  top: 0;
+.menu-icon::before {
+  content: "";
+  position: absolute;
   left: 0;
-  width: 100vw;
-  height: 100dvh;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 1000;
-  pointer-events: none;
+  top: 0.35rem;
 }
 
-.mobile-overlay.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
+@media (max-width: 760px) {
+  .bar {
+    justify-content: space-between;
   }
 
-  .mobile-menu-button {
+  .menu-toggle {
     display: flex;
   }
-}
 
-@media (max-width: 480px) {
-  .mobile-nav {
-    width: 280px;
-    right: -280px;
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0.5rem var(--gutter) 1rem;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-canvas);
+    font-size: var(--text-body);
   }
 
-  .header-content {
-    padding: 0 1rem;
+  nav.open {
+    display: flex;
   }
 
-  .logo-link {
-    font-size: 1.3rem;
+  nav a {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-strong);
+  }
+
+  nav a:last-child {
+    border-bottom: none;
   }
 }
 </style>
