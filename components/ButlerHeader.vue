@@ -1,7 +1,16 @@
 <template>
   <header class="masthead">
     <div class="bar">
-      <NuxtLink to="/" class="wordmark">AutoButler</NuxtLink>
+      <NuxtLink to="/" class="wordmark">
+        <img
+          class="mark"
+          src="/android-chrome-192x192.png"
+          alt=""
+          width="192"
+          height="192"
+        />
+        AutoButler
+      </NuxtLink>
       <nav id="site-nav" aria-label="Site" :class="{ open: menuOpen }">
         <!-- Single forward to the Quark product site — only one product exists today.
              Revert to a "Products" dropdown when a second product ships, see #121. -->
@@ -73,12 +82,22 @@ onUnmounted(() => document.removeEventListener("keydown", closeOnEscape));
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: var(--tracking-snug);
   color: var(--color-text-strong);
   text-decoration: none;
+}
+
+/* The icon is a circle on an opaque square; clip to the circle. */
+.mark {
+  width: 1.5rem;
+  height: auto;
+  border-radius: 50%;
 }
 
 nav {
