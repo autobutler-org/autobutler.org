@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--
+  Share cards for autobutler.org. Light is the image crawlers fetch
+  (public/og-image.png). Dark is the matching card (public/og-image-dark.png).
+
+  Regenerate from the repo root, then downscale the 2x captures:
+
+  chrome="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+  for theme in light dark; do
+    "$chrome" --headless=new --disable-gpu --hide-scrollbars \
+      --force-device-scale-factor=2 --window-size=1200,630 \
+      --virtual-time-budget=5000 \
+      --screenshot="/tmp/og-$theme@2x.png" \
+      "file://$PWD/assets/images/og-card.html?theme=$theme"
+  done
+  sips -z 630 1200 "/tmp/og-light@2x.png" --out public/og-image.png
+  sips -z 630 1200 "/tmp/og-dark@2x.png" --out public/og-image-dark.png
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AutoButler share card</title>
+    <style>
+      @font-face {
+        font-family: "Newsreader Variable";
+        font-style: normal;
+        font-weight: 200 800;
+        font-display: block;
+        src: url("../../node_modules/@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2")
+          format("woff2");
+      }
+
+      @font-face {
+        font-family: "Geist Variable";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: block;
+        src: url("../../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2")
+          format("woff2");
+      }
+
+      :root {
+        --canvas: #f7f6f3;
+        --ink: #111111;
+        --muted: #6a6964;
+        --grid: rgba(17, 17, 17, 0.045);
+        color-scheme: light;
+      }
+
+      :root[data-theme="dark"] {
+        --canvas: #161615;
+        --ink: #f2f1ee;
+        --muted: #9c9a94;
+        --grid: rgba(255, 255, 255, 0.035);
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: var(--canvas);
+      }
+
+      .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 1200px;
+        height: 630px;
+        padding: 72px 80px 68px;
+        background: var(--canvas);
+        color: var(--ink);
+        font-family: "Geist Variable", "Helvetica Neue", Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-feature-settings: "ss01", "cv11";
+      }
+
+      /* Same faint drafting grid as the homepage hero. */
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(var(--grid) 1px, transparent 1px),
+          linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+        background-size: 64px 64px;
+        background-position: center top;
+        -webkit-mask-image: radial-gradient(
+          ellipse 80% 70% at 28% 18%,
+          #000,
+          transparent
+        );
+        mask-image: radial-gradient(
+          ellipse 80% 70% at 28% 18%,
+          #000,
+          transparent
+        );
+        pointer-events: none;
+      }
+
+      .lockup,
+      .copy {
+        position: relative;
+      }
+
+      .lockup {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .mark {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .wordmark {
+        font-family: "Newsreader Variable", Georgia, serif;
+        font-size: 44px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 14ch;
+        font-family: "Newsreader Variable", Georgia, serif;
+        font-size: 92px;
+        font-weight: 400;
+        font-optical-sizing: auto;
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+      }
+
+      .subhead {
+        margin: 28px 0 0;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1.35;
+        letter-spacing: -0.015em;
+      }
+
+      .lede {
+        margin: 8px 0 0;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1.35;
+        letter-spacing: -0.015em;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <article class="card">
+      <div class="lockup">
+        <img
+          class="mark"
+          src="../../public/android-chrome-512x512.png"
+          alt=""
+          width="512"
+          height="512"
+        />
+        <p class="wordmark">AutoButler</p>
+      </div>
+      <div class="copy">
+        <h1>Data Autonomy<br />For Everyone.</h1>
+        <p class="subhead">
+          AutoButler is a company that makes products for humans.
+        </p>
+        <p class="lede">
+          Starting with Quark, a private home cloud for your router.
+        </p>
+      </div>
+    </article>
+    <script>
+      const theme = new URLSearchParams(location.search).get("theme");
+      if (theme === "dark") document.documentElement.dataset.theme = "dark";
+    </script>
+  </body>
+</html>

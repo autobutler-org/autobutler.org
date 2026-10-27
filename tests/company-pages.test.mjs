@@ -93,8 +93,10 @@ test("og:title, og:url and the 1200x630 og:image are set site-wide", () => {
   assert.match(config, /property: "og:title", content: "AutoButler"/);
   assert.match(config, /name: "twitter:card", content: "summary_large_image"/);
   assert.match(config, /content: "https:\/\/autobutler\.org\/og-image\.png"/);
-  const png = readFileSync(join(root, "public/og-image.png"));
-  assert.deepEqual([png.readUInt32BE(16), png.readUInt32BE(20)], [1200, 630]);
+  for (const name of ["og-image.png", "og-image-dark.png"]) {
+    const png = readFileSync(join(root, "public", name));
+    assert.deepEqual([png.readUInt32BE(16), png.readUInt32BE(20)], [1200, 630]);
+  }
   assert.match(
     read("app.vue"),
     /ogUrl: \(\) => `https:\/\/autobutler\.org\$\{/,
