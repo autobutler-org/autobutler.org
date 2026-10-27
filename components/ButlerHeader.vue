@@ -9,7 +9,7 @@
           width="192"
           height="192"
         />
-        AutoButler
+        <span class="wordmark-text">AutoButler</span>
       </NuxtLink>
       <nav id="site-nav" aria-label="Site" :class="{ open: menuOpen }">
         <!-- Single forward to the Quark product site — only one product exists today.
@@ -98,6 +98,14 @@ onUnmounted(() => document.removeEventListener("keydown", closeOnEscape));
   width: 1.5rem;
   height: auto;
   border-radius: 50%;
+}
+
+/*
+ * Trim the text box to cap height so flex centering lines the logo up with
+ * the letters rather than with the font's taller line box.
+ */
+.wordmark-text {
+  text-box: trim-both cap alphabetic;
 }
 
 nav {
