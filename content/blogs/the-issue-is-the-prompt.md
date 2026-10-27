@@ -140,4 +140,4 @@ This is part 2 of 9 in our series on how we build Quark with AI agents.
 
 ← Previous: [We stopped coding in March](/blogs/we-stopped-coding-in-march)
 
-Next: [Zero appovals, a wall of checks](/blogs/zero-approvals) →
+Next: [Zero approvals, a wall of checks](/blogs/zero-approvals) →
