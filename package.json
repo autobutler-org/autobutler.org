@@ -35,16 +35,24 @@
   "overrides": {
     "uuid": "^14.0.0",
     "esbuild": ">=0.28.1",
-    "smol-toml": ">=1.7.1"
+    "smol-toml": ">=1.7.1",
+    "eslint-webpack-plugin": "^6.0.0",
+    "katex": "^0.18.10"
   },
   "devDependencies": {
     "@nuxt/devtools": "^3.2.1",
-    "@nuxt/eslint": "^1.15.1",
+    "@nuxt/eslint": "^1.17.0",
     "concurrently": "^10.0.0",
     "eslint": "^10.0.0",
     "npm-check-updates": "^23.0.0",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.2.4"
+  },
+  "allowScripts": {
+    "better-sqlite3": true,
+    "esbuild": true,
+    "fsevents": true,
+    "unrs-resolver": true
   }
 }
