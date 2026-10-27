@@ -13,7 +13,7 @@ useSeoMeta({
 <template>
   <main class="page">
     <h1>Terms and Conditions</h1>
-    <p class="last-updated">Last updated: September 8, 2026</p>
+    <p class="last-updated">Last updated: October 27, 2026</p>
 
     <div>
       <h2>Definitions</h2>
@@ -55,12 +55,15 @@ useSeoMeta({
         service we may offer later would require your explicit opt-in.
       </p>
       <p>
-        Some features (for example remote access via a mesh/VPN you enable, or
-        optional imports from third-party services you choose) may involve
-        third-party networks or services. Those paths happen only when you set
-        them up or take an explicit action. You are solely responsible for the
-        security and backup of your data and for any third-party services you
-        connect.
+        Some optional features involve AutoButler services or third-party
+        networks. Remote access is a service AutoButler runs that an admin on
+        your Quark must turn on; when a direct connection isn't possible, its
+        encrypted traffic may pass through third-party relay servers. Imports
+        from third-party services you choose happen only when you take an
+        explicit action. Our
+        <NuxtLink to="/privacy">Privacy Policy</NuxtLink> explains what remote
+        access shares. You are solely responsible for the security and backup of
+        your data and for any third-party services you connect.
       </p>
     </div>
 
