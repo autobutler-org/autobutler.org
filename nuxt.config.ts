@@ -55,7 +55,15 @@ export default defineNuxtConfig({
         },
         { property: "og:image:width", content: "1200" },
         { property: "og:image:height", content: "630" },
+        {
+          property: "og:image:alt",
+          content: "AutoButler. Data Autonomy For Everyone.",
+        },
         { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:image:alt",
+          content: "AutoButler. Data Autonomy For Everyone.",
+        },
         {
           name: "twitter:image",
           content: "https://autobutler.org/og-image.png",
