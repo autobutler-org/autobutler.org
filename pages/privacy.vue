@@ -68,15 +68,15 @@ useSeoMeta({
         </p>
         <p>
           The networking software that remote access is built on can send
-          diagnostic logs to its maker. We are turning that off on Quark and in
-          the phone apps (<a
+          diagnostic logs to its maker. That is off on Quark and in the phone
+          apps as of version 0.56.3 (<a
             href="https://github.com/autobutler-org/quark/issues/3786"
             target="_blank"
             rel="noopener noreferrer"
             >quark#3786</a
-          >). Until that update ships, a Quark or phone with remote access on
-          may send some of these logs, which can include device details and IP
-          addresses, while it connects.
+          >). Earlier versions with remote access on may send some of these
+          logs, which can include device details and IP addresses, while they
+          connect, so update your Quark and phone apps.
         </p>
       </div>
     </div>
