@@ -36,6 +36,22 @@ test("the about page names Quark as the product and links to its site", () => {
   assert.match(about, /became\s+Quark/);
 });
 
+test("the about page names Errand and links to its site", () => {
+  assert.ok(headings(about, 3).includes("Errand"));
+  assert.match(about, /href="https:\/\/errand\.autobutler\.org"/);
+});
+
+test("the header and footer link to every product site", () => {
+  for (const file of [
+    "components/ButlerHeader.vue",
+    "components/ButlerFooter.vue",
+  ]) {
+    const html = template(file);
+    assert.match(html, /href="https:\/\/quark\.autobutler\.org"[^>]*>Quark</);
+    assert.match(html, /href="https:\/\/errand\.autobutler\.org"[^>]*>Errand</);
+  }
+});
+
 test("the about page lists each founder and keeps the photo", () => {
   const h3s = headings(about, 3);
   assert.ok(h3s.includes("Brandon Apol"));

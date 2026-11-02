@@ -12,9 +12,10 @@
         <span class="wordmark-text">AutoButler</span>
       </NuxtLink>
       <nav id="site-nav" aria-label="Site" :class="{ open: menuOpen }">
-        <!-- Single forward to the Quark product site — only one product exists today.
-             Revert to a "Products" dropdown when a second product ships, see #121. -->
+        <!-- One forward link per product site. If this list keeps growing,
+             fold these into a "Products" dropdown, see #121. -->
         <a href="https://quark.autobutler.org" @click="closeMenu">Quark</a>
+        <a href="https://errand.autobutler.org" @click="closeMenu">Errand</a>
         <a href="https://quark.autobutler.org/support" @click="closeMenu"
           >Support</a
         >
