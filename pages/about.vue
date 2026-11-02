@@ -25,7 +25,7 @@ useSeoMeta({
       <h2>What AutoButler does</h2>
       <p>
         We build and sell one product today, and we write the software that runs
-        on it.
+        on it. We also build Errand, the system that runs our own builds.
       </p>
       <h3>Quark</h3>
       <p>
@@ -38,6 +38,14 @@ useSeoMeta({
       <p>
         The outcome is that your photos, files, documents and spreadsheets live
         on a drive you own, in a room you can walk into.
+      </p>
+      <h3>Errand</h3>
+      <p>
+        <a href="https://errand.autobutler.org">Errand</a> is our self-hosted
+        GitHub Actions runner stack on Kubernetes. A fresh runner starts for
+        each job and is removed when the job ends. Today it runs AutoButler's
+        own builds, for Quark and the projects around it. It is not open to
+        other teams yet.
       </p>
     </section>
 
@@ -179,7 +187,8 @@ useSeoMeta({
         <dd>Quark, a home personal cloud on hardware you own</dd>
         <dt>Products</dt>
         <dd>
-          <a href="https://quark.autobutler.org">Quark</a>
+          <a href="https://quark.autobutler.org">Quark</a>,
+          <a href="https://errand.autobutler.org">Errand</a>
         </dd>
         <dt>Availability</dt>
         <dd>Beta. Friends-and-family access opens in early 2027.</dd>

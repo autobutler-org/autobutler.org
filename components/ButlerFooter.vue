@@ -9,6 +9,7 @@
       </div>
       <nav aria-label="Footer">
         <a href="https://quark.autobutler.org">Quark</a>
+        <a href="https://errand.autobutler.org">Errand</a>
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
         <a href="/contact">Contact</a>
