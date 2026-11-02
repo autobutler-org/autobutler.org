@@ -14,8 +14,18 @@
       <nav id="site-nav" aria-label="Site" :class="{ open: menuOpen }">
         <!-- One forward link per product site. If this list keeps growing,
              fold these into a "Products" dropdown, see #121. -->
-        <a href="https://quark.autobutler.org" @click="closeMenu">Quark</a>
-        <a href="https://errand.autobutler.org" @click="closeMenu">Errand</a>
+        <a
+          href="https://quark.autobutler.org"
+          class="product"
+          @click="closeMenu"
+          >Quark</a
+        >
+        <a
+          href="https://errand.autobutler.org"
+          class="product"
+          @click="closeMenu"
+          >Errand</a
+        >
         <a href="https://quark.autobutler.org/support" @click="closeMenu"
           >Support</a
         >
@@ -111,6 +121,7 @@ onUnmounted(() => document.removeEventListener("keydown", closeOnEscape));
 
 nav {
   display: flex;
+  align-items: center;
   gap: 1.75rem;
   margin-right: auto;
   font-size: var(--text-small);
@@ -125,6 +136,27 @@ nav a {
 nav a:hover,
 nav a.router-link-active {
   color: var(--color-text-strong);
+}
+
+/* Product sites live on their own subdomains; outline them so they read as
+   destinations rather than pages of this site. */
+nav a.product {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-strong);
+  transition:
+    color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease;
+}
+
+nav a.product:hover {
+  border-color: var(--color-text-strong);
+}
+
+/* Pull the pair together so they read as a set. */
+nav a.product + a.product {
+  margin-left: -1rem;
 }
 
 .end {
@@ -207,6 +239,7 @@ nav a.router-link-active {
     left: 0;
     right: 0;
     flex-direction: column;
+    align-items: stretch;
     gap: 0;
     margin: 0;
     padding: 0.5rem var(--gutter) 1rem;
@@ -227,6 +260,23 @@ nav a.router-link-active {
 
   nav a:last-child {
     border-bottom: none;
+  }
+
+  nav a.product {
+    align-self: flex-start;
+    margin: 0.75rem 0 0;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--color-border-strong);
+  }
+
+  nav a.product + a.product {
+    margin-left: 0;
+  }
+
+  /* The row under the last product link keeps the list's separator. */
+  nav a.product + a:not(.product) {
+    margin-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
   }
 }
 </style>
