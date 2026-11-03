@@ -52,6 +52,22 @@ test("the header and footer link to every product site", () => {
   }
 });
 
+test("the header sets the product links apart with a border", () => {
+  const html = template("components/ButlerHeader.vue");
+  for (const site of ["quark", "errand"]) {
+    assert.match(
+      html,
+      new RegExp(
+        `<a\\s+href="https://${site}\\.autobutler\\.org"\\s+class="product"`,
+      ),
+    );
+  }
+  assert.match(
+    read("components/ButlerHeader.vue"),
+    /nav a\.product\s*\{[^}]*border:\s*1px solid/,
+  );
+});
+
 test("the about page lists each founder and keeps the photo", () => {
   const h3s = headings(about, 3);
   assert.ok(h3s.includes("Brandon Apol"));
