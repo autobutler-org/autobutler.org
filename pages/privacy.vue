@@ -15,7 +15,7 @@ useSeoMeta({
     <h1>Privacy Policy</h1>
 
     <div>
-      <p class="last-updated">Last Updated: October 6, 2026</p>
+      <p class="last-updated">Last Updated: October 27, 2026</p>
     </div>
 
     <div>
@@ -36,15 +36,49 @@ useSeoMeta({
         photos or documents to train AI models.
       </p>
       <p>
-        If you enable remote access, sync, or import features that involve
-        third-party services (for example a mesh/VPN you configure, or importing
-        from Google, iCloud, or OneDrive), those services process data according
-        to their own terms and your settings. That is your choice and your
-        responsibility.
+        If you use sync or import features that involve third-party services
+        (for example importing from Google, iCloud, or OneDrive), those services
+        process data according to their own terms and your settings. That is
+        your choice and your responsibility.
       </p>
       <p>
         You are responsible for securing your device, credentials, and backups.
       </p>
+
+      <div class="subsection">
+        <h3>Remote access</h3>
+        <p>
+          Remote access is optional and stays off until an admin on your Quark
+          turns it on. AutoButler runs the service that connects your Quark and
+          your phones.
+        </p>
+        <p>
+          While it is on, our coordination server sees a generated name for each
+          device (not the name you gave it), basic device details such as the
+          operating system, IP addresses, when each device is online, and
+          pairing requests. We use this to connect your devices. Your files do
+          not pass through our servers.
+        </p>
+        <p>
+          Your phone usually connects straight to your Quark. To find that path,
+          and to carry traffic when a direct connection isn't possible, your
+          devices use relay servers run by a third party. The traffic is
+          encrypted end to end, so those relays can't read it, but they do see
+          IP addresses.
+        </p>
+        <p>
+          The networking software that remote access is built on can send
+          diagnostic logs to its maker. That is off on Quark and in the phone
+          apps as of version 0.56.3 (<a
+            href="https://github.com/autobutler-org/quark/issues/3786"
+            target="_blank"
+            rel="noopener noreferrer"
+            >quark#3786</a
+          >). Earlier versions with remote access on may send some of these
+          logs, which can include device details and IP addresses, while they
+          connect, so update your Quark and phone apps.
+        </p>
+      </div>
     </div>
 
     <div>
