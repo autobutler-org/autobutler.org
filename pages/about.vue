@@ -73,9 +73,10 @@ useSeoMeta({
       </p>
       <h3>No analytics and no tracking</h3>
       <p>
-        Quark has no analytics and no tracking, and this website does not use
-        analytics either. We do not train generative AI on your Quark photos or
-        documents.
+        Quark has no analytics and no tracking. This website counts page views
+        without cookies or third-party scripts, and skips you if your browser
+        sends Do Not Track or Global Privacy Control. We do not train generative
+        AI on your Quark photos or documents.
       </p>
       <h3>The source is public</h3>
       <p>
