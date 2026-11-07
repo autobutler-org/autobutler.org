@@ -30,9 +30,10 @@ test("the custom error page uses the site layout and links home", () => {
   assert.match(errorPage, /href="\/"/);
 });
 
-test("the privacy policy names Mailchimp and claims no analytics", () => {
+test("the privacy policy names Mailchimp and GoatCounter", () => {
   const policy = readFileSync(join(root, "pages/privacy.vue"), "utf8");
   assert.match(policy, /Mailchimp/);
-  assert.match(policy, /do not currently use analytics/);
+  assert.match(policy, /GoatCounter/);
+  assert.match(policy, /Global\s+Privacy\s+Control/);
   assert.doesNotMatch(policy, /We may use a small number of cookies/);
 });
