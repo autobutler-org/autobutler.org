@@ -1,9 +1,11 @@
 {
     "cSpell.words": [
+        "componentized",
         "golangci",
         "Openclaw",
         "perma",
         "sqlc",
-        "staticcheck"
+        "staticcheck",
+        "viewports"
     ]
 }
