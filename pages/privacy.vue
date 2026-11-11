@@ -15,7 +15,7 @@ useSeoMeta({
     <h1>Privacy Policy</h1>
 
     <div>
-      <p class="last-updated">Last Updated: October 6, 2026</p>
+      <p class="last-updated">Last Updated: November 7, 2026</p>
     </div>
 
     <div>
@@ -88,10 +88,14 @@ useSeoMeta({
       <div class="subsection">
         <h3>Analytics / marketing measurement</h3>
         <p>
-          We do not currently use analytics or marketing measurement tools on
-          the Website. If we add privacy-respecting measurement tools later, we
-          will update this policy before they collect personal data beyond what
-          is described here.
+          We count page views on autobutler.org and quark.autobutler.org with
+          GoatCounter, an open-source, cookieless counter. Each view sends the
+          site and page you opened and, on your first page, the address of the
+          page that linked you here without its query string. We do not send
+          cookies, identifiers, or anything you type, and GoatCounter does not
+          store your IP address. If your browser sends Do Not Track or Global
+          Privacy Control, nothing is counted. We use the totals to see which
+          pages people read and how they found us.
         </p>
       </div>
     </div>
@@ -111,6 +115,16 @@ useSeoMeta({
         We share personal information only with service providers who help us
         run the Website (for example hosting), under obligations consistent with
         this policy, or when required by law.
+      </p>
+      <p>
+        Page view counts are processed by
+        <a
+          href="https://www.goatcounter.com/help/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GoatCounter</a
+        >
+        as described above.
       </p>
       <p>
         Our waitlist and newsletter sign-up forms are provided by Mailchimp
