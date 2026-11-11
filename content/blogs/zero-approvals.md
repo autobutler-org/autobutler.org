@@ -106,9 +106,8 @@ Never trust anyone writing code without tools like these.
 
 ## What's next
 
-Most of these checks showed up after something went wrong first. Next up is "Every rule is a scar": how a rule gets
-written down after one violation, and how it becomes a script after a second, starting with our
-pre-commit hook.
+Most of these checks showed up after something went wrong first. Next up is "A widget library as a DSL": how we greatly
+improved the coding quality of our agents in regards to frontend correctness.
 
 As always, we love you all and we want to build stuff for you. Feel free to reach out anytime.
 
@@ -117,6 +116,8 @@ James
 
 ---
 
-This is part 3 of 9 in our series on how we build Quark with AI agents.
+This is part 3 of 8 in our series on how we build Quark with AI agents.
 
 ← Previous: [The issue is the prompt](/blogs/the-issue-is-the-prompt)
+
+Next: [A widget library as a DSL](/blogs/widget-library-dsl) →
