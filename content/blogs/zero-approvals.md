@@ -120,3 +120,5 @@ James
 This is part 3 of 9 in our series on how we build Quark with AI agents.
 
 ← Previous: [The issue is the prompt](/blogs/the-issue-is-the-prompt)
+
+Next: [Every rule is a scar](/blogs/every-rule-is-a-scar) →
