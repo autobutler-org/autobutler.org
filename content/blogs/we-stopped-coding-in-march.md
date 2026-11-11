@@ -250,6 +250,6 @@ Grace and peace to you, James
 
 ---
 
-This is part 1 of 9 in our series on how we build Quark with AI agents.
+This is part 1 of 8 in our series on how we build Quark with AI agents.
 
 Next: [The issue is the prompt](/blogs/the-issue-is-the-prompt) →

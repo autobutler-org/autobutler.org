@@ -136,7 +136,7 @@ Grace and peace, James
 
 ---
 
-This is part 2 of 9 in our series on how we build Quark with AI agents.
+This is part 2 of 8 in our series on how we build Quark with AI agents.
 
 ← Previous: [We stopped coding in March](/blogs/we-stopped-coding-in-march)
 
