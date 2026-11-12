@@ -1,11 +1,14 @@
 {
   "cSpell.words": [
+    "bursty",
     "componentized",
     "golangci",
+    "herdr",
     "Openclaw",
     "perma",
     "sqlc",
     "staticcheck",
-    "viewports"
+    "viewports",
+    "worktrees"
   ]
 }

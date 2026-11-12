@@ -181,3 +181,5 @@ James
 This is part 5 of 8 in our series on how we build Quark with AI agents.
 
 ← Previous: [Zero approvals, a wall of checks](/blogs/zero-approvals)
+
+Next: [Three tabs, three clones, a pile of worktrees](/blogs/three-tabs-three-clones) →
