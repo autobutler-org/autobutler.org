@@ -5,7 +5,7 @@ date: 2026-11-11
 author: James Orson
 ---
 
-Hello friends! This is the sixth post in our series on how [Quark](https://quark.autobutler.org) gets built by AI
+Hello friends! This is the fifth post in our series on how [Quark](https://quark.autobutler.org) gets built by AI
 agents. Last time was the widget library. This time is how it looks from my desk working with agents.
 
 Openclaw is what showed Brandon and I that running several agent sessions in parallel was worth it.
@@ -50,7 +50,7 @@ agent edits, especially when I need to spawn off one-off edits or edit submodule
 commit, each one gets its own worktree under `.claude/worktrees/`, so no two agents share a worktree.
 
 We learned the need for this the hard way. In one session, Claude ran two forks against the same working tree at once.
-Here is it's own write-up afterward:
+Here is its own write-up afterward:
 
 > I ran the docs rewrite and the PR 2 build concurrently against the same working tree, and they collided. The PR 2
 > agent restored its stashed work over the top of my PR 1 edits.
@@ -126,7 +126,7 @@ and a Flutter agent working at the same time, each with a list of paths it owned
 "the endpoints do not exist on your branch yet and that is fine, code and test against the contract."
 
 However, contracts change `¯\_(ツ)_/¯`. Whenever I changed that job's contracts, the change went out to three
-live agents. An example of one of those message was "THIRD CONTRACT CHANGE from the maintainer."
+live agents. An example of one of those messages was "THIRD CONTRACT CHANGE from the maintainer."
 
 ## The coordination bill
 
@@ -167,6 +167,6 @@ James
 
 ---
 
-This is part 6 of 8 in our series on how we build Quark with AI agents.
+This is part 5 of 8 in our series on how we build Quark with AI agents.
 
 ← Previous: [A widget library as a DSL](/blogs/widget-library-dsl)

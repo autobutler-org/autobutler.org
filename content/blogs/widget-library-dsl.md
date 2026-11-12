@@ -5,7 +5,7 @@ date: 2026-11-10
 author: James Orson
 ---
 
-Hello friends! This is the fifth post in our series on how [Quark](https://quark.autobutler.org) gets built by AI
+Hello friends! This is the fourth post in our series on how [Quark](https://quark.autobutler.org) gets built by AI
 agents. In the first post I said the frontend was the exception, and that the agents screwed up frontend changes often
 until we built a widget library. So now you will learn what I meant with regards to the library.
 
@@ -157,13 +157,13 @@ with a regression test. A library only helps if the pages use it, which is why t
 
 ## Copy this
 
-- Put your design system in its own package, with data passed in in and all the necessary hooks/callbacks.
+- Put your design system in its own package, with data passed in, and all the necessary hooks/callbacks.
 - Give yourself and your agents a browseable gallery with a generated registry.
 - Test every component at a narrow and a wide viewport. Our first batch of narrow tests found multiple overflow bugs.
 - Write subagents for component work, an engineer and a reviewer at least, and have the engineer run the reviewer's checklist
   on its own work before it opens a PR.
 - Ship package-level skills inside the package. Ours live in `packages/quark_widgets/skills/`.
-- After any move, grep for callers. Zero callers is a finding and says either the app is still writing it's own components
+- After any move, grep for callers. Zero callers is a finding and says either the app is still writing its own components
   inline or the component in the library is dead code.
 
 ## What's next
@@ -178,7 +178,7 @@ James
 
 ---
 
-This is part 5 of 8 in our series on how we build Quark with AI agents.
+This is part 4 of 8 in our series on how we build Quark with AI agents.
 
 ← Previous: [Zero approvals, a wall of checks](/blogs/zero-approvals)
 
