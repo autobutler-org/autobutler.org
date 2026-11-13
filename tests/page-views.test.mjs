@@ -33,7 +33,7 @@ test("a page view sends the host and path and nothing else", () => {
   const url = new URL(
     pageViewUrl({ host: "autobutler.org", path: "/blogs", referrer: "" }),
   );
-  assert.equal(url.origin, "https://autobutler.goatcounter.com");
+  assert.equal(url.origin, "https://goatcounter.cloud.autobutler.org");
   assert.deepEqual([...url.searchParams.keys()], ["p"]);
   assert.equal(url.searchParams.get("p"), "autobutler.org/blogs");
 });
