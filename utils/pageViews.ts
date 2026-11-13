@@ -4,7 +4,8 @@
  * cookie, no storage, no identifier, and nothing at all when the visitor asks
  * not to be tracked or the page is not served from a production host.
  */
-export const PAGE_VIEW_ENDPOINT = "https://autobutler.goatcounter.com/count";
+export const PAGE_VIEW_ENDPOINT =
+  "https://goatcounter.cloud.autobutler.org/count";
 
 export const COUNTED_HOSTS: readonly string[] = ["autobutler.org"];
 
